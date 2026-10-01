@@ -1,0 +1,113 @@
+:root {
+    --fondo: #E5EAF5;
+    --rosa: #FF6F82;
+    --azul-claro: #8FA3ED;
+    --azul: #557FFC;
+    --azul-oscuro: #1E1E50;
+    --blanco: #FFFFFF;
+    --texto: #46464F;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: 'Onest', sans-serif;
+}
+
+.contenido {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.tarjeta-registro {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px;
+    background-color: var(--blanco);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.12);
+}
+
+.titulo {
+    margin: 0 0 20px 0;
+    color: var(--azul-oscuro);
+    font-family: 'Questrial', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--azul-oscuro);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Onest', sans-serif;
+}
+
+.form-control {
+    min-height: 56px;
+    padding: 10px 14px;
+    border: 2px solid var(--azul-claro);
+    border-radius: 12px;
+    background-color: var(--blanco);
+    color: var(--texto);
+    font-family: 'Onest', sans-serif;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 2px rgba(85, 127, 252, 0.20);
+}
+
+.boton {
+    margin-top: 20px;
+}
+
+.btn-registrarse {
+    width: 100%;
+    min-height: 45px;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    font-family: 'Onest', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-registrarse:hover {
+    background-color: #F05F74;
+    color: var(--blanco);
+}
+
+@media (max-width: 576px) {
+    .contenido {
+        padding: 16px;
+    }
+
+    .tarjeta-registro {
+        padding: 16px;
+    }
+
+    .titulo {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+}
