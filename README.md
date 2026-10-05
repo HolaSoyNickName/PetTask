@@ -219,8 +219,8 @@ Pendiente de agregar las capturas del proyecto en computadora.
 Pendiente de agregar las capturas del proyecto en teléfono móvil.
 ### Capturas de móvil
 <p align="center">
-  <img src="./img/movil-inicio.png" width="250"/>
   <img src="./img/movil-mascota-virtual.png" width="250"/> 
+  <img src="./img/movil-inicio.png" width="250"/>
   <img src="./img/movil-racha-actividad.png" width="250"/>
   <img src="./img/movil-tienda-mascota.png" width="250"/>
   <img src="./img/movil-recordatorios.png" width="250"/>
