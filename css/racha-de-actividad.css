@@ -1,0 +1,267 @@
+:root {
+    --fondo: #e5eaf5;
+    --rosa: #ff6f82;
+    --azul-claro: #8fa3ed;
+    --azul: #557ffc;
+    --azul-oscuro: #1e1e50;
+    --blanco: #ffffff;
+    --texto: #1e1e50;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+}
+
+/* CONTENIDO */
+
+.contenido {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.titulo {
+    margin: 0 0 8px 0;
+    color: var(--azul-oscuro);
+    font-family: "Questrial", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.descripcion {
+    margin: 0;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* TARJETAS */
+
+.tarjeta-racha,
+.tarjeta-actividad,
+.tarjeta-estadisticas {
+    margin-bottom: 24px;
+    padding: 32px;
+    border-radius: 12px;
+    background-color: var(--blanco);
+    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.12);
+}
+
+/* RACHA PRINCIPAL */
+
+.tarjeta-racha {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.racha-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: var(--fondo);
+    text-align: center;
+}
+
+.racha-etiqueta {
+    margin-bottom: 8px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.racha-valor {
+    color: var(--rosa);
+    font-family: "Questrial", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.racha-dias {
+    margin-top: 8px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* MENSAJE */
+
+.mensaje-racha {
+    padding: 8px;
+}
+
+.subtitulo {
+    margin: 0 0 16px 0;
+    color: var(--azul-oscuro);
+    font-family: "Questrial", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.mensaje-racha p {
+    margin: 0;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* ACTIVIDAD SEMANAL */
+
+.tarjeta-actividad .subtitulo,
+.tarjeta-estadisticas .subtitulo {
+    margin-bottom: 24px;
+}
+
+.dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+}
+
+.dia {
+    min-height: 100px;
+    padding: 16px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px solid var(--azul-claro);
+    border-radius: 12px;
+    background-color: var(--fondo);
+    text-align: center;
+}
+
+.dia-nombre {
+    color: var(--azul-oscuro);
+    font-family: "Questrial", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dia-estado {
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.dia.completado {
+    border-color: var(--azul);
+    background-color: var(--azul-claro);
+}
+
+.dia.completado .dia-estado {
+    color: var(--azul-oscuro);
+}
+
+.dia.actual {
+    border-color: var(--rosa);
+    background-color: var(--blanco);
+}
+
+.dia.actual .dia-estado {
+    color: var(--rosa);
+    font-weight: 500;
+}
+
+/* ESTADÍSTICAS */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.estadistica {
+    padding: 24px;
+    border-radius: 12px;
+    background-color: var(--fondo);
+    text-align: center;
+}
+
+.estadistica-valor {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--azul);
+    font-family: "Questrial", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.estadistica-etiqueta {
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .tarjeta-racha {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .dias-semana {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .contenido {
+        padding: 16px;
+    }
+
+    .tarjeta-racha,
+    .tarjeta-actividad,
+    .tarjeta-estadisticas {
+        padding: 16px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .dias-semana {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .racha-valor {
+        font-size: 56px;
+    }
+}
