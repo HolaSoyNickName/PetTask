@@ -3,11 +3,11 @@
 ## Integrantes
 
 - **Líder:** Espinoza Cuevas Diego Omar
-- Ordaz Cano Mariana
-- Nolazco Gómez José Daniel
 - Alvarez Del valle Angel
 - Dector Montiel Norma Angelica
 - Hernandez Camargo Bryan Yael
+- Nolazco Gómez José Daniel
+- Ordaz Cano Mariana
 - Sandoval Resendiz Alexander Emir
 - Zarate Garrido Adolfo Alexander 
 
