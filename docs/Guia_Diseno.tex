@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\definecolor{PetInk}{HTML}{1E1E50}
+\definecolor{PetBlue}{HTML}{557FFC}
+\definecolor{PetBlueSoft}{HTML}{8FA3ED}
+\definecolor{PetPink}{HTML}{FF6F82}
+\definecolor{PetPaper}{HTML}{E5EAF5}
+\title{Guía de Diseño\\PetTask}
+\author{Equipo PetTask}
+\date{Octubre de 2026}
+\begin{document}
+\maketitle
+\section{Principios}
+PetTask presenta una interfaz clara y consistente que prioriza la lectura rápida de tareas y estados. Los controles mantienen etiquetas explícitas, contraste suficiente y disposición adaptable.
+\section{Paleta de color}
+\begin{description}
+    \item[Azul oscuro, \#1E1E50] Texto principal, encabezados y navegación.
+    \item[Azul, \#557FFC] Acciones principales y datos destacados.
+    \item[Azul claro, \#8FA3ED] Bordes, estados secundarios y superficies de apoyo.
+    \item[Rosa, \#FF6F82] Acciones destacadas y acentos.
+    \item[Fondo, \#E5EAF5] Fondo general de las vistas.
+    \item[Blanco, \#FFFFFF] Superficies de contenido.
+\end{description}
+\section{Tipografía}
+\begin{itemize}
+    \item Questrial se utiliza en títulos y encabezados.
+    \item Onest se utiliza en texto, formularios, botones y navegación.
+\end{itemize}
+\section{Componentes}
+Las pantallas reutilizan tarjetas, métricas, listas, formularios, filtros, botones y estados vacíos. Los bordes de las tarjetas son discretos y las acciones usan colores coherentes con su importancia.
+\section{Diseño adaptable}
+Las cuadrículas pasan de varias columnas a una columna en pantallas estrechas. Los controles de búsqueda y filtros se expanden para facilitar su uso táctil. Los formularios mantienen etiquetas visibles y campos de ancho completo.
+\section{Accesibilidad}
+Se recomienda mantener el idioma del documento en español, asociar cada etiqueta con su campo, ofrecer foco visible para navegación por teclado y no comunicar estados únicamente mediante color.
+\end{document}

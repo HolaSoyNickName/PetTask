@@ -1,0 +1,239 @@
+:root {
+    --fondo: #e5eaf5;
+    --rosa: #ff6f82;
+    --azul-claro: #8fa3ed;
+    --azul: #557ffc;
+    --azul-oscuro: #1e1e50;
+    --blanco: #ffffff;
+    --texto: #1e1e50;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+}
+
+/* CONTENIDO */
+
+.contenido {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.titulo {
+    margin: 0 0 8px 0;
+    color: var(--azul-oscuro);
+    font-family: "Questrial", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.descripcion {
+    margin: 0;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* TARJETAS */
+
+.tarjeta-recordatorios,
+.tarjeta-notificacion {
+    margin-bottom: 24px;
+    padding: 32px;
+    border-radius: 12px;
+    background-color: var(--blanco);
+    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.12);
+}
+
+/* ENCABEZADO DE SECCIÓN */
+
+.encabezado-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.subtitulo {
+    margin: 0;
+    color: var(--azul-oscuro);
+    font-family: "Questrial", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.cantidad {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: var(--azul-claro);
+    color: var(--azul-oscuro);
+    font-family: "Onest", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* LISTA DE RECORDATORIOS */
+
+.lista-recordatorios {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recordatorio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px;
+    border: 2px solid var(--azul-claro);
+    border-radius: 12px;
+    background-color: var(--fondo);
+}
+
+.recordatorio-info {
+    min-width: 0;
+}
+
+.recordatorio-titulo {
+    margin: 0 0 8px 0;
+    color: var(--azul-oscuro);
+    font-family: "Questrial", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.recordatorio-descripcion {
+    margin: 0 0 16px 0;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.recordatorio-fecha {
+    display: flex;
+    gap: 16px;
+    color: var(--azul);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.estado-recordatorio {
+    min-width: 45px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    font-family: "Onest", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* PRÓXIMO RECORDATORIO */
+
+.notificacion-contenido {
+    text-align: center;
+}
+
+.notificacion-texto {
+    margin: 16px auto 24px auto;
+    max-width: 650px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.proximo-recordatorio {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.proximo-fecha,
+.proximo-hora {
+    min-width: 120px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background-color: var(--fondo);
+    color: var(--azul-oscuro);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .recordatorio {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .estado-recordatorio {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .contenido {
+        padding: 16px;
+    }
+
+    .tarjeta-recordatorios,
+    .tarjeta-notificacion {
+        padding: 16px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .encabezado-seccion {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .recordatorio {
+        padding: 16px;
+    }
+
+    .recordatorio-fecha {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .proximo-recordatorio {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .proximo-fecha,
+    .proximo-hora {
+        width: 100%;
+    }
+}

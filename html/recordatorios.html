@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetTask - Recordatorios</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
+        rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="../css/recordatorios.css" />
+</head>
+
+<body>
+    <main class="contenido">
+        <section class="encabezado">
+            <h1 class="titulo">Recordatorios</h1>
+            <p class="descripcion">
+                Consulta tus recordatorios y las fechas programadas para tus tareas.
+            </p>
+        </section>
+        <section class="tarjeta-recordatorios">
+            <div class="encabezado-seccion">
+                <h2 class="subtitulo">Mis recordatorios</h2>
+                <span class="cantidad">3 recordatorios</span>
+            </div>
+            <div class="lista-recordatorios">
+                <article class="recordatorio">
+                    <div class="recordatorio-info">
+                        <h3 class="recordatorio-titulo">
+                            Entregar proyecto de interfaces
+                        </h3>
+                        <p class="recordatorio-descripcion">
+                            Recuerda entregar el proyecto de Diseño de Interfaces.
+                        </p>
+                        <div class="recordatorio-fecha">
+                            <span>02/10/2026</span>
+                            <span>18:00 h</span>
+                        </div>
+                    </div>
+                    <span class="estado-recordatorio">
+                        Pendiente
+                    </span>
+                </article>
+                <article class="recordatorio">
+                    <div class="recordatorio-info">
+                        <h3 class="recordatorio-titulo">
+                            Terminar diagrama UML
+                        </h3>
+                        <p class="recordatorio-descripcion">
+                            Recuerda completar el diagrama de clases de POO.
+                        </p>
+                        <div class="recordatorio-fecha">
+                            <span>04/10/2026</span>
+                            <span>20:00 h</span>
+                        </div>
+                    </div>
+                    <span class="estado-recordatorio">
+                        Pendiente
+                    </span>
+                </article>
+                <article class="recordatorio">
+                    <div class="recordatorio-info">
+                        <h3 class="recordatorio-titulo">
+                            Revisar tarea de Bases de Datos
+                        </h3>
+                        <p class="recordatorio-descripcion">
+                            Revisa la actividad antes de la fecha de entrega.
+                        </p>
+                        <div class="recordatorio-fecha">
+                            <span>06/10/2026</span>
+                            <span>19:30 h</span>
+                        </div>
+                    </div>
+                    <span class="estado-recordatorio">
+                        Pendiente
+                    </span>
+                </article>
+            </div>
+        </section>
+        <section class="tarjeta-notificacion">
+            <div class="notificacion-contenido">
+                <h2 class="subtitulo">Próximo recordatorio</h2>
+                <p class="notificacion-texto">
+                    El próximo recordatorio se mostrará cuando llegue la fecha y hora programadas.
+                </p>
+                <div class="proximo-recordatorio">
+                    <span class="proximo-fecha">02/10/2026</span>
+                    <span class="proximo-hora">18:00 h</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
