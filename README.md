@@ -6,7 +6,7 @@
 - Alvarez Del valle Angel
 - Dector Montiel Norma Angelica
 - Hernandez Camargo Bryan Yael
-- Nolazco Gómez José Daniel
+- Nolasco Gómez Jose Daniel
 - Ordaz Cano Mariana
 - Sandoval Resendiz Alexander Emir
 - Zarate Garrido Adolfo Alexander 
@@ -65,16 +65,16 @@ PetTask cuenta con las siguientes funcionalidades:
 
 ## Requerimientos funcionales
 
-| RF-001 | Inicio de sesión |
-| RF-002 | Registrarse |
-| RF-003 | Carga de datos general |
-| RF-004 | Ver tareas |
-| RF-005 | Agregar tareas |
-| RF-006 | Actualizar tarea |
-| RF-007 | Eliminar tareas |
-| RF-008 | Interacción con mascota |
-| RF-009 | Tienda de mascota |
-| RF-010 | Racha de actividad |
+| RF-001 | Inicio de sesión         |
+| RF-002 | Registrarse              |
+| RF-003 | Carga de datos general   |
+| RF-004 | Ver tareas               |
+| RF-005 | Agregar tareas           |
+| RF-006 | Actualizar tarea         |
+| RF-007 | Eliminar tareas          |
+| RF-008 | Interacción con mascota  |
+| RF-009 | Tienda de mascota        |
+| RF-010 | Racha de actividad       |
 
 ---
 
@@ -105,13 +105,13 @@ PetTask utiliza una guía de diseño basada en **Material Design**, buscando man
 
 ### Paleta de colores
 
-| Color       | Código    | Uso |
-| Fondo       | `#E5EAF5` | Fondo principal |
+| Color       | Código    | Uso                               |
+| Fondo       | `#E5EAF5` | Fondo principal                   |
 | Blanco      | `#FFFFFF` | Tarjetas y elementos de contenido |
-| Rosa        | `#FF6F82` | Acciones y elementos destacados |
-| Azul claro  | `#8FA3ED` | Bordes y elementos secundarios |
-| Azul        | `#557FFC` | Elementos principales |
-| Azul oscuro | `#1E1E50` | Textos y títulos |
+| Rosa        | `#FF6F82` | Acciones y elementos destacados   |
+| Azul claro  | `#8FA3ED` | Bordes y elementos secundarios    |
+| Azul        | `#557FFC` | Elementos principales             |
+| Azul oscuro | `#1E1E50` | Textos y títulos                  |
 
 ### Tipografías
 
