@@ -217,21 +217,22 @@ Pendiente de agregar las capturas del proyecto en computadora.
 
 ### Capturas de móvil
 Pendiente de agregar las capturas del proyecto en teléfono móvil.
+### Capturas de móvil
 <p align="center">
-  <img src="imagen/movil-inicio.png" width="250"/>
-  <img src="imagen/movil-recordatorios.png" width="250"/>
-  <img src="imagen/movil-racha-actividad.png" width="250"/>
-  <img src="imagen/movil-tienda-mascota.png" width="250"/>
-  <img src="imagen/movil-mascota-virtual.png" width="250"/>
-  <img src="imagen/movil-eliminar-tarea.png" width="250"/>
-  <img src="imagen/movil-agregar-tarea.png" width="250"/>
-  <img src="imagen/movil-actualizar-tarea.png" width="250"/>
-  <img src="imagen/movil-resumen.png" width="250"/>
-  <img src="imagen/movil-registro.png" width="250"/>
-  <img src="imagen/movil-login.png" width="250"/>
-  <img src="imagen/movil-nosotros.png" width="250"/>
-  <img src="imagen/movil-servicios.png" width="250"/>
-  <img src="imagen/movil-contacto.png" width="250"/>
+  <img src="./img/móvil-inicio.png" width="250"/>
+  <img src="./img/movil-recordatorios.png" width="250"/>
+  <img src="./img/movil-racha-actividad.png" width="250"/>
+  <img src="./img/movil-tienda-mascota.png" width="250"/>
+  <img src="./img/movil-mascota-virtual.png" width="250"/>
+  <img src="./img/movil-eliminar-tarea.png" width="250"/>
+  <img src="./img/móvil-agregar-tarea.png" width="250"/>
+  <img src="./img/móvil-actualizar-tarea.png" width="250"/>
+  <img src="./img/móvil-resumen.png" width="250"/>
+  <img src="./img/movil-registro.png" width="250"/>
+  <img src="./img/movil-login.png" width="250"/>
+  <img src="./img/movil-nosotros.png" width="250"/>
+  <img src="./img/movil-servicios.png" width="250"/>
+  <img src="./img/móvil-contacto.png" width="250"/>
 </p>
 
 ## Repositorio
