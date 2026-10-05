@@ -230,8 +230,8 @@ Pendiente de agregar las capturas del proyecto en teléfono móvil.
   <img src="./img/movil-contacto.png" width="250"/>
   <img src="./img/movil-registro.png" width="250"/>
   <img src="./img/movil-login.png" width="250"/>
-  <img src="./img/movil-nosotros.png" width="250"/>
   <img src="./img/movil-agregar-tarea.png" width="250"/>
+  <img src="./img/movil-nosotros.png" width="250"/>
 </p>
 
 ## Repositorio
