@@ -189,7 +189,6 @@ Se realizaron ajustes para:
 Las tarjetas, formularios, botones, listas y demás elementos de la interfaz se reorganizan dependiendo del tamaño disponible.
 
 ### Capturas de escritorio
-Pendiente de agregar las capturas del proyecto en computadora.
 <img width="1363" height="632" alt="image" src="https://github.com/user-attachments/assets/f917bf48-de19-4302-ba6d-9965d23fc5af" />
 <img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/0e53f5d1-714e-4102-bad3-dbc0a4dd256f" />
 <img width="1365" height="636" alt="image" src="https://github.com/user-attachments/assets/929b4111-a0ed-40de-8a91-5436d28c4d81" />
@@ -215,8 +214,6 @@ Pendiente de agregar las capturas del proyecto en computadora.
 
 
 
-### Capturas de móvil
-Pendiente de agregar las capturas del proyecto en teléfono móvil.
 ### Capturas de móvil
 <p align="center">
   <img src="./img/movil-mascota-virtual.png" width="250"/> 
