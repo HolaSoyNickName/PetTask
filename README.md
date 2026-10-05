@@ -190,6 +190,19 @@ Las tarjetas, formularios, botones, listas y demás elementos de la interfaz se 
 
 ### Capturas de escritorio
 Pendiente de agregar las capturas del proyecto en computadora.
+<img width="1365" height="636" alt="image" src="https://github.com/user-attachments/assets/929b4111-a0ed-40de-8a91-5436d28c4d81" />
+<img width="1365" height="640" alt="image" src="https://github.com/user-attachments/assets/6a03041a-6d94-422b-aa63-5f7971c4420b" />
+<img width="1364" height="639" alt="image" src="https://github.com/user-attachments/assets/bb53b0fb-c844-44b7-a6e5-30ae5669f8a4" />
+<img width="1362" height="631" alt="image" src="https://github.com/user-attachments/assets/8b5c88c3-16e2-4cf5-b631-b6e43e16739d" />
+<img width="1363" height="635" alt="image" src="https://github.com/user-attachments/assets/643090ee-5aa6-4567-8348-19578558eaa7" />
+<img width="1363" height="636" alt="image" src="https://github.com/user-attachments/assets/fccdea46-2788-4d59-bdb9-2e53c6cef666" />
+
+
+
+
+
+
+
 
 ### Capturas de móvil
 Pendiente de agregar las capturas del proyecto en teléfono móvil.
