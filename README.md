@@ -114,19 +114,13 @@ PetTask utiliza una guía de diseño basada en **Material Design**, buscando man
 
 ### Paleta de colores
 
-| Color       | Código    | Uso                               |
-
-| Fondo       | `#E5EAF5` | Fondo principal                   |
-
+| Color       | Código    | Uso |
+| Fondo       | `#E5EAF5` | Fondo principal |
 | Blanco      | `#FFFFFF` | Tarjetas y elementos de contenido |
-
-| Rosa        | `#FF6F82` | Acciones y elementos destacados   |
-
-| Azul claro  | `#8FA3ED` | Bordes y elementos secundarios    |
-
-| Azul        | `#557FFC` | Elementos principales             |
-
-| Azul oscuro | `#1E1E50` | Textos y títulos                  |
+| Rosa        | `#FF6F82` | Acciones y elementos destacados |
+| Azul claro  | `#8FA3ED` | Bordes y elementos secundarios |
+| Azul        | `#557FFC` | Elementos principales |
+| Azul oscuro | `#1E1E50` | Textos y títulos |
 
 ### Tipografías
 
