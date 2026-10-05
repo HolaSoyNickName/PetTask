@@ -2,10 +2,14 @@
 
 ## Integrantes
 
-- **Líder:** [Nombre del líder]
-- [Nombre del integrante 2]
-- [Nombre del integrante 3]
-- [Nombre del integrante 4]
+- **Líder:** Espinoza Cuevas Diego Omar
+- Ordaz Cano Mariana
+- Nolazco Gómez José Daniel
+- Alvarez Del valle Angel
+- Dector Montiel Norma Angelica
+- Hernandez Camargo Bryan Yael
+- Sandoval Resendiz Alexander Emir
+- Zarate Garrido Adolfo Alexander 
 
 ---
 
