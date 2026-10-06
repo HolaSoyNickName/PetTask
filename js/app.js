@@ -113,6 +113,15 @@
         }
     }
 
+    function addFormRedirects() {
+        document.querySelectorAll("form[data-redirect]").forEach((form) => {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                window.location.href = form.dataset.redirect;
+            });
+        });
+    }
+
     window.filtrarTareas = (filter, button) => {
         document.querySelectorAll(".btn-filtro").forEach((item) => {
             item.classList.toggle("activo", item === button);
@@ -140,6 +149,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         addFeaturePageNavigation();
         syncActivityStreak();
+        addFormRedirects();
         refreshTaskList();
 
         const addTaskButton = document.querySelector(".btn-rosa");

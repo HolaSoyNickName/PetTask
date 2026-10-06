@@ -25,56 +25,57 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 24px max(32px, calc((100vw - 1200px) / 2));
-    background: var(--pet-ink);
+    padding: 20px max(32px, calc((100vw - 1200px) / 2));
+    background-color: var(--pet-ink);
     color: var(--pet-white);
 }
 
 .pet-nav__brand {
-    color: var(--pet-white);
-    font-family: "Questrial", sans-serif;
-    font-size: 32px;
-    font-weight: 400;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
     text-decoration: none;
 }
 
 .pet-nav__brand img {
-    display: block;
     width: auto;
-    height: 1em;
+    height: 40px;
+    display: block;
 }
 
 .pet-nav__links {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 24px;
 }
 
 .pet-nav__links a {
-    min-height: 45px;
     display: flex;
     align-items: center;
-    padding: 9px 14px;
+    min-height: 45px;
+    padding: 9px 18px;
     border-radius: 12px;
     color: var(--pet-white);
-    font-family: "Onest", sans-serif;
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
 }
 
 .pet-nav__links a:hover,
-.pet-nav__links a:focus-visible {
+.pet-nav__links a:focus-visible,
+.pet-nav__links a[aria-current="page"] {
     background-color: var(--pet-blue);
     color: var(--pet-white);
 }
 
 .pet-nav__links .pet-nav__login {
     padding: 9px 20px;
+    border-radius: 12px;
     background-color: var(--pet-pink);
     color: var(--pet-white);
+    transition: background-color 160ms ease;
 }
 
 .pet-nav__links .pet-nav__login:hover,
@@ -216,8 +217,15 @@ body {
 }
 
 .site-footer {
-    padding: 20px 24px;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
     border-top: 1px solid var(--pet-line);
+    background-color: #fff;
     color: #555575;
     font-size: 13px;
     text-align: center;
@@ -225,6 +233,7 @@ body {
 
 @media (max-width: 760px) {
     .pet-nav {
+        min-height: auto;
         align-items: flex-start;
         flex-direction: column;
         gap: 12px;
@@ -233,8 +242,15 @@ body {
 
     .pet-nav__links {
         width: 100%;
-        justify-content: flex-start;
-        gap: 8px;
+        gap: 8px 16px;
+    }
+
+    .pet-nav__links a {
+        font-size: 14px;
+    }
+
+    .pet-nav__links .pet-nav__login {
+        padding: 8px 14px;
     }
 
     .site-title {
@@ -246,13 +262,9 @@ body {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 520px) {
     .pet-nav {
         padding: 16px;
-    }
-
-    .pet-nav__brand {
-        font-size: 28px;
     }
 
     .pet-nav__links {
@@ -262,11 +274,12 @@ body {
 
     .pet-nav__links a {
         justify-content: center;
+    }
+
+    .pet-nav__links .pet-nav__login {
         width: 100%;
     }
-}
 
-@media (max-width: 520px) {
     .site-shell {
         width: min(100% - 32px, 1120px);
         padding: 32px 0 48px;
