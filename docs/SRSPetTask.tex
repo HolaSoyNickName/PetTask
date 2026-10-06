@@ -1,0 +1,213 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% --- PAQUETES DE DISEÑO Y TABLAS ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{fourier}
+\usepackage{hyperref}
+\usepackage{sectsty}
+\usepackage{setspace}
+\usepackage{booktabs}   
+\usepackage{xltabular} % Permite que las tablas se corten entre páginas
+\usepackage{array}
+\usepackage{caption}    
+\usepackage{pdfpages} % <--- AGREGAR AQUÍ
+
+% --- CONFIGURACIÓN DE TABLAS Y ESPACIADO ---
+\renewcommand{\arraystretch}{1.5} % Da respiro vertical a las celdas
+
+% --- CONFIGURACIÓN DE CAPTIONS ---
+\DeclareCaptionLabelSeparator{guionpunto}{.- }
+\captionsetup[figure]{name=Ilustración, labelsep=guionpunto}
+\captionsetup[table]{name=Tabla, labelsep=guionpunto}
+
+% --- CONFIGURACIÓN DE COLORES Y ESTILOS ---
+\definecolor{upppurple}{RGB}{82, 35, 152}
+\definecolor{lightpurple}{RGB}{245, 240, 250}
+\newcommand{\HRuleCustom}{\rule{\linewidth}{0.6mm}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=upppurple,
+    urlcolor=blue,
+    citecolor=upppurple
+}
+
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\sectionfont{\scshape}
+
+% ==============================================================================
+% INICIO DEL DOCUMENTO
+% ==============================================================================
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% PORTADA EJECUTIVA INSTITUCIONAL UPP
+% ------------------------------------------------------------------------------
+\begin{titlepage}
+    \pagecolor{white}
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[upppurple] (current page.north west) rectangle ([xshift=1.2cm]current page.south west);
+        \fill[upppurple!30] ([xshift=1.2cm]current page.north west) rectangle ([xshift=1.5cm]current page.south west);
+        
+        \draw[line width=2pt, upppurple] ([xshift=2cm, yshift=-1.5cm]current page.north west) -- ([xshift=2cm, yshift=-2.5cm]current page.north west);
+        \draw[line width=2pt, upppurple] ([xshift=2cm, yshift=-1.5cm]current page.north west) -- ([xshift=3.5cm, yshift=-1.5cm]current page.north west);
+
+        \draw[line width=2pt, upppurple] ([xshift=-1.5cm, yshift=1.5cm]current page.south east) -- ([xshift=-1.5cm, yshift=2.5cm]current page.south east);
+        \draw[line width=2pt, upppurple] ([xshift=-1.5cm, yshift=1.5cm]current page.south east) -- ([xshift=-3cm, yshift=1.5cm]current page.south east);
+    \end{tikzpicture}
+
+    \vspace*{-0.5cm}
+    \begin{adjustwidth}{0.8cm}{0cm}
+        \begin{minipage}[c]{0.28\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{logoupp.png}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}[c]{0.68\textwidth}
+            \centering
+            {\large \textbf{\color{upppurple} UNIVERSIDAD POLITÉCNICA DE PACHUCA}}\\[0.15cm]
+            {\small \textbf{INGENIERÍA EN TECNOLOGÍAS DE LA INFORMACIÓN E INNOVACIÓN DIGITAL}}\\[0.1cm]
+            {\footnotesize \textbf{\color{gray!80!black} PÁGINAS WEB}}
+        \end{minipage}
+
+        \vspace{1.5cm}
+
+        \HRuleCustom \\[0.4cm]
+        
+        \begin{center}
+            {\Large \textbf{\color{upppurple} PetTask - REPORTE DE PÁGINA WEB}}\\[0.3cm]
+            {\small \textbf{\color{gray!90!black} Especificación de Requerimientos de Software (ERS)}}
+        \end{center}
+        
+        \HRuleCustom \\[1.2cm]
+
+        \vfill
+        \begin{center}
+            \fcolorbox{upppurple!40}{lightpurple!50}{%
+                \begin{minipage}{0.9\linewidth}
+                    \vspace{0.2cm}
+                    \scriptsize
+                    \begin{center}
+                        \begin{tabular}{r l}
+                            \textbf{\color{upppurple} INTEGRANTES:} & Espinoza Cuevas Diego Omar \\[0.15cm]
+                            & Nolasco Gómez Jose Daniel \\[0.15cm]
+                            & Hernandez Camargo Brayan Yael \\[0.15cm]
+                            & Ángel Álvarez Del Valle \\[0.15cm]
+                            & Adolfo Alexander Zarate Garrido \\[0.15cm]
+                            & Mariana Ordaz Cano \\[0.15cm]
+                            & Sandoval Resendiz Alexander Emir \\[0.25cm]
+                            \textbf{\color{upppurple} INSTITUCIÓN:} & Universidad Politécnica de Pachuca \\[0.15cm]
+                            \textbf{\color{upppurple} FECHA:} & 6 de Octubre de 2026
+                        \end{tabular}
+                    \end{center}
+                    \vspace{0.2cm}
+                \end{minipage}
+            }
+        \end{center}
+        \vspace*{0.3cm}
+    \end{adjustwidth}
+\end{titlepage}
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% ÍNDICE Y CONTENIDO GENERAL
+% ------------------------------------------------------------------------------
+\tableofcontents
+\newpage
+
+\section{Especificación de requerimientos de software ERS}
+
+\subsection{Introducción}
+La gestión eficaz del tiempo y el cumplimiento de las responsabilidades académicas representan un desafío constante para la comunidad estudiantil. Frecuentemente, la falta de motivación, las dificultades de organización y los olvidos cotidianos impactan de manera negativa en el rendimiento de los alumnos. En respuesta a esta problemática surge PetTask, una aplicación diseñada para transformar la administración de actividades en una experiencia dinámica.
+
+El objetivo principal de este sistema es proporcionar a los estudiantes una herramienta integral que les permita gestionar sus listas de tareas pendientes y completadas, utilizando la gamificación como mecanismo central para incentivar la productividad. Al cumplir con sus deberes diariamente, los usuarios mantienen una racha de actividad y obtienen recompensas que pueden destinar a la adquisición de mejoras para interactuar con una mascota virtual. De esta forma, PetTask fomenta el hábito de la constancia mediante el refuerzo positivo y, de manera simultánea, soluciona el problema de la omisión de responsabilidades a través de la implementación de un sistema de notificaciones y recordatorios programados.
+\newpage
+\subsubsection{Alcance del proyecto}
+\textbf{Corto plazo} \\
+Primero se llevará a cabo la organización del proyecto, en la cual, definiremos los roles de cada integrante del equipo de desarrollo, posteriormente, se llevará a cabo una lluvia de ideas, en la cual, definiremos qué problemática queremos abordar para posteriormente dar una solución mediante el presente proyecto, de igual manera se llevará a cabo la identificación de los requerimientos funcionales, en base al análisis de qué acciones y operaciones realizará nuestro proyecto, además de la identificación de los requerimientos no funcionales, basándonos en el control de calidad para tener un buen producto funcional y que cumpla los objetivos establecidos.
+
+\vspace{0.3cm}
+\noindent\textbf{Mediano plazo} \\
+Una vez bien definidos los objetivos y problemática a resolver, se comenzará a conceptualizar y construir la estructura de la página web en base a los requerimientos funcionales analizados anteriormente, además de la construcción de un prototipo funcional, una vez se tenga la estructura, se podrá proceder con la construcción e implementación de la base de datos, en base a lo anterior, se procederá a la construcción de las interfaces y la programación tanto del Front End como del Back End.
+
+\vspace{0.3cm}
+\noindent\textbf{Largo plazo} \\
+Como último plazo definido, se hará la integración de todos los módulos de la página para tener la página funcional, posteriormente se realizarán pruebas de la página con usuarios reales, para evaluar si existen errores en la página y probar la accesibilidad que brindará la página, y por último, se llevará a cabo su implementación y la publicación de la página mediante un servicio de hosting.
+
+\newpage
+% ------------------------------------------------------------------------------
+% TABLA 1: REQUERIMIENTOS ESPECÍFICOS
+% ------------------------------------------------------------------------------
+\subsection{Requerimientos específicos}
+
+% ------------------------------------------------------------------------------
+% TABLA 2: REQUERIMIENTOS FUNCIONALES
+% ------------------------------------------------------------------------------
+\subsubsection{Requerimientos funcionales}
+
+\begin{xltabular}{\linewidth}{| c | >{\raggedright\arraybackslash}p{3.5cm} | X | c |}
+    \hline
+    \textbf{ID} & \textbf{Nombre} & \textbf{Requerimiento} & \textbf{Prioridad} \\ \hline
+\endfirsthead
+    \hline
+    \textbf{ID} & \textbf{Nombre} & \textbf{Requerimiento} & \textbf{Prioridad} \\ \hline
+\endhead
+    RF-001 & Inicio de sesión & El sistema deberá permitir al usuario iniciar sesión con su usuario y contraseña registrados. & Alta \\ \hline
+    RF-002 & Registrarse & El sistema deberá permitir al usuario proporcionar usuario y contraseña válidos para crear una cuenta nueva. & Alta \\ \hline
+    RF-003 & Carga de datos general & El sistema deberá mostrar al usuario un resumen general de sus tareas, mascota y racha. & Media \\ \hline
+    RF-004 & Ver Tareas & El sistema deberá mostrar al usuario una lista de las tareas pendientes y completadas. & Media \\ \hline
+    RF-005 & Agregar Tareas & El sistema deberá permitir al usuario ingresar materia, tarea, descripción de tarea para crear una nueva tarea. & Alta \\ \hline
+    RF-006 & Actualizar Tarea & El sistema deberá permitir al usuario modificar los datos de una tarea existente. & Alta \\ \hline
+    RF-007 & Eliminar Tareas & El sistema deberá permitir al usuario eliminar una tarea después de confirmar la acción. & Media \\ \hline
+    RF-008 & Interacción con Mascota & El sistema deberá mostrar al usuario la mascota virtual y su estado. & Media \\ \hline
+    RF-009 & Tienda de Mascota & El sistema deberá permitir al usuario adquirir mejoras para la mascota cuando exista saldo suficiente. & Baja \\ \hline
+    RF-010 & Racha de Actividad & El sistema deberá incrementar la racha cuando el usuario complete tareas. & Media \\ \hline
+    
+\end{xltabular}
+
+\newpage
+% ------------------------------------------------------------------------------
+% TABLA 3: REQUERIMIENTOS NO FUNCIONALES
+% ------------------------------------------------------------------------------
+\subsubsection{Requerimientos no funcionales}
+
+\begin{xltabular}{\linewidth}{| c | >{\raggedright\arraybackslash}p{3.5cm} | X | c |}
+    \hline
+    \textbf{ID} & \textbf{Nombre} & \textbf{Requerimiento} & \textbf{Prioridad} \\ \hline
+\endfirsthead
+    \hline
+    \textbf{ID} & \textbf{Nombre} & \textbf{Requerimiento} & \textbf{Prioridad} \\ \hline
+\endhead
+    RNF-001 & Tiempo de respuesta & El sistema deberá procesar las operaciones de creación, lectura, actualización y eliminación de tareas en un tiempo máximo de 2 segundos. & Alta \\ \hline
+    RNF-002 & Tiempo de carga & El sistema deberá cargar sus páginas principales en un tiempo máximo de 3 segundos bajo condiciones normales de conexión a Internet. & Alta \\ \hline
+    RNF-003 & Diseño responsivo & El sistema deberá adaptar su interfaz gráfica automáticamente para su correcta visualización y uso en dispositivos móviles y de escritorio. & Alta \\ \hline
+    RNF-004 & Disponibilidad & El sistema deberá mantener una disponibilidad operativa del 99\% del tiempo para evitar que los alumnos pierdan su racha diaria por caídas del servidor. & Media \\ \hline
+    RNF-005 & Usabilidad & El sistema deberá contar con una interfaz intuitiva que permita a un usuario nuevo comprender la gestión de tareas y la tienda de mascotas sin requerir un manual de usuario. & Alta \\ \hline
+    RNF-006 & Rendimiento multimedia & El sistema deberá optimizar la carga del avatar de la mascota y sus animaciones para consumir menos datos por sesión. & Media \\ \hline
+    RNF-007 & Compatibilidad & El sistema deberá funcionar correctamente y sin pérdida de características en las versiones más recientes de los navegadores web principales (Chrome, Firefox, Safari y Edge). & Alta \\ \hline
+    RNF-008 & Accesibilidad & El sistema deberá incluir opciones de alto contraste y permitir la navegación completa mediante el uso del teclado para facilitar su uso a alumnos con discapacidades visuales o motrices. & Alta \\ \hline
+    RNF-009 & Mantenibilidad & El sistema deberá estar desarrollado bajo una arquitectura modular y contar con código documentado para facilitar la rápida corrección de errores y futuras actualizaciones. & Media \\ \hline
+    RNF-010 & Escalabilidad & El sistema deberá ser capaz de soportar un incremento en la cantidad de alumnos registrados y permitir la agregación de nuevas funcionalidades sin necesidad de reestructurar el código base. & Media \\ \hline
+\end{xltabular}
+
+
+
+
+
+\end{document}
+
+
+
