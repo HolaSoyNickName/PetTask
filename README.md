@@ -66,14 +66,23 @@ PetTask cuenta con las siguientes funcionalidades:
 ## Requerimientos funcionales
 
 | RF-001 | Inicio de sesión         |
+
 | RF-002 | Registrarse              |
+
 | RF-003 | Carga de datos general   |
+
 | RF-004 | Ver tareas               |
+
 | RF-005 | Agregar tareas           |
+
 | RF-006 | Actualizar tarea         |
+
 | RF-007 | Eliminar tareas          |
+
 | RF-008 | Interacción con mascota  |
+
 | RF-009 | Tienda de mascota        |
+
 | RF-010 | Racha de actividad       |
 
 ---
