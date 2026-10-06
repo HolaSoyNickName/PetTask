@@ -70,6 +70,41 @@
         if (emptyState) emptyState.style.display = visibleCount ? "none" : "flex";
     }
 
+    function syncActivityStreak() {
+        const storageKey = "pettask.rachaActividad";
+        const currentValue = document.querySelector(".racha-valor");
+        const completedTasks = document.querySelectorAll(".tareas-racha .tarea-racha.completada");
+        const stats = [...document.querySelectorAll(".tarjeta-estadisticas .estadistica-valor")];
+        const homeValue = document.getElementById("racha-actual-inicio");
+        let streak;
+
+        try {
+            streak = JSON.parse(localStorage.getItem(storageKey) || "null");
+        } catch {
+            streak = null;
+        }
+
+        if (currentValue) {
+            const current = completedTasks.length
+                ? completedTasks.length
+                : Number(currentValue.textContent.trim());
+            const best = Number(stats[1]?.textContent.trim());
+            streak = {
+                current,
+                best: Number.isFinite(streak?.best) ? streak.best : best
+            };
+
+            currentValue.textContent = String(streak.current);
+            if (stats[0]) stats[0].textContent = String(streak.current);
+            if (stats[1]) stats[1].textContent = String(streak.best);
+            localStorage.setItem(storageKey, JSON.stringify(streak));
+        }
+
+        if (homeValue && Number.isFinite(streak?.current)) {
+            homeValue.textContent = String(streak.current);
+        }
+    }
+
     window.filtrarTareas = (filter, button) => {
         document.querySelectorAll(".btn-filtro").forEach((item) => {
             item.classList.toggle("activo", item === button);
@@ -96,6 +131,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         addFeaturePageNavigation();
+        syncActivityStreak();
         refreshTaskList();
 
         const addTaskButton = document.querySelector(".btn-rosa");

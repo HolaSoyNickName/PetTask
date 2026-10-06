@@ -1,11 +1,11 @@
 :root {
-    --pet-ink: #1e1e50;
-    --pet-blue: #557ffc;
-    --pet-blue-soft: #8fa3ed;
-    --pet-pink: #ff6f82;
-    --pet-paper: #e5eaf5;
-    --pet-white: #ffffff;
-    --pet-line: #d7def0;
+    --fondo: #e5eaf5;
+    --rosa: #ff6f82;
+    --azul-claro: #8fa3ed;
+    --azul: #557ffc;
+    --azul-oscuro: #1e1e50;
+    --blanco: #ffffff;
+    --texto: #1e1e50;
 }
 
 * {
@@ -14,66 +14,99 @@
 
 body {
     margin: 0;
-    background-color: var(--pet-paper);
-    color: var(--pet-ink);
+    padding: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
     font-family: "Onest", sans-serif;
 }
 
 /* NAVBAR */
 
 .pet-nav {
-    min-height: 68px;
+    min-height: 106px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 12px max(24px, calc((100vw - 1200px) / 2));
-    background-color: var(--pet-ink);
-    color: var(--pet-white);
+    padding: 24px max(32px, calc((100vw - 1200px) / 2));
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
 }
 
 .pet-nav__brand {
-    color: var(--pet-white);
+    color: var(--blanco);
     font-family: "Questrial", sans-serif;
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 400;
     text-decoration: none;
 }
 
 .pet-nav__links {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 16px;
 }
 
 .pet-nav__links a {
-    color: var(--pet-white);
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 9px 14px;
+    border-radius: 12px;
+    color: var(--blanco);
+    font-family: "Onest", sans-serif;
     font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
 }
 
 .pet-nav__links a:hover,
 .pet-nav__links a:focus-visible {
-    color: var(--pet-blue-soft);
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+
+.pet-nav__links .pet-nav__login {
+    padding: 9px 20px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+}
+
+.pet-nav__links .pet-nav__login:hover,
+.pet-nav__links .pet-nav__login:focus-visible {
+    background-color: var(--azul);
+    color: var(--blanco);
 }
 
 /* CONTENIDO */
 
 .site-shell {
-    width: min(1200px, calc(100% - 48px));
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 0 56px;
+    padding: 24px 32px 48px;
 }
 
 /* ENCABEZADO */
 
 .site-header {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+}
+
+.site-eyebrow {
+    margin: 0 0 8px 0;
+    color: var(--azul);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .site-title {
     margin: 0;
-    color: var(--pet-ink);
+    color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
     font-size: 42px;
     font-weight: 400;
@@ -83,10 +116,11 @@ body {
 .site-lede {
     max-width: 720px;
     margin: 12px 0 0;
-    color: var(--pet-ink);
-    font-size: 17px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.6;
-    opacity: 0.8;
 }
 
 /* DASHBOARD */
@@ -109,19 +143,20 @@ body {
 }
 
 .section-heading h2 {
-    margin: 0 0 6px;
-    color: var(--pet-ink);
+    margin: 0 0 8px;
+    color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
-    font-size: 26px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 500;
 }
 
 .section-heading p {
     margin: 0;
-    color: var(--pet-ink);
-    font-size: 15px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.5;
-    opacity: 0.75;
 }
 
 /* TARJETAS */
@@ -133,48 +168,50 @@ body {
 }
 
 .site-feature {
-    min-height: 142px;
+    min-height: 148px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid var(--pet-line);
-    border-top: 4px solid var(--pet-blue);
+    gap: 16px;
+    padding: 24px;
+    border: 2px solid var(--azul-claro);
+    border-top: 4px solid var(--azul);
     border-radius: 12px;
-    background-color: var(--pet-white);
-    color: var(--pet-ink);
+    background-color: var(--blanco);
+    color: var(--texto);
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.06);
+    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.08);
+    transition: 160ms ease;
 }
 
 .site-feature:nth-child(3n + 2) {
-    border-top-color: var(--pet-pink);
+    border-top-color: var(--rosa);
 }
 
 .site-feature:nth-child(3n) {
-    border-top-color: var(--pet-blue-soft);
+    border-top-color: var(--azul-claro);
 }
 
 .site-feature:hover,
 .site-feature:focus-visible {
-    border-color: var(--pet-blue);
-    box-shadow: 0 6px 18px rgba(30, 30, 80, 0.12);
+    border-color: var(--azul);
+    box-shadow: 0 4px 12px rgba(30, 30, 80, 0.14);
     transform: translateY(-2px);
 }
 
 .site-feature strong {
-    color: var(--pet-ink);
+    color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 500;
 }
 
 .site-feature span {
-    color: var(--pet-ink);
-    font-size: 14px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.5;
-    opacity: 0.75;
 }
 
 /* COLUMNA DERECHA */
@@ -190,8 +227,8 @@ body {
 .pet-card {
     padding: 24px;
     border-radius: 12px;
-    background-color: var(--pet-white);
-    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.1);
+    background-color: var(--blanco);
+    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.12);
 }
 
 .pet-card__header {
@@ -199,44 +236,49 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .pet-card__eyebrow,
 .streak-eyebrow {
     margin: 0 0 4px;
-    color: var(--pet-blue);
-    font-size: 13px;
-    font-weight: 600;
+    color: var(--azul);
+    font-family: "Onest", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
 .pet-card h2,
 .streak-card h2 {
     margin: 0;
-    color: var(--pet-ink);
+    color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 500;
 }
 
 .pet-card__badge {
-    padding: 6px 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
     border-radius: 20px;
-    background-color: var(--pet-blue-soft);
-    color: var(--pet-ink);
-    font-size: 12px;
-    font-weight: 600;
+    background-color: var(--azul-claro);
+    color: var(--azul-oscuro);
+    font-family: "Onest", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .pet-placeholder {
-    min-height: 280px;
+    min-height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px dashed var(--pet-blue-soft);
+    border: 2px dashed var(--azul-claro);
     border-radius: 12px;
-    background-color: var(--pet-paper);
+    background-color: var(--fondo);
 }
 
 .pet-placeholder__content {
@@ -255,42 +297,48 @@ body {
     justify-content: center;
     margin-bottom: 8px;
     border-radius: 50%;
-    background-color: var(--pet-white);
+    background-color: var(--blanco);
     font-size: 36px;
-    box-shadow: 0 4px 12px rgba(30, 30, 80, 0.08);
+    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.12);
 }
 
 .pet-placeholder__content strong {
-    color: var(--pet-ink);
+    color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .pet-placeholder__content span {
-    color: var(--pet-blue);
-    font-size: 14px;
+    color: var(--azul);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .pet-card__text {
     margin: 16px 0 0;
-    color: var(--pet-ink);
-    font-size: 15px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.5;
-    opacity: 0.75;
 }
+
+/* BOTÓN MASCOTA */
 
 .pet-card__link,
 .streak-link {
+    min-height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 45px;
     margin-top: 16px;
     padding: 9px 20px;
     border-radius: 12px;
-    background-color: var(--pet-pink);
-    color: var(--pet-white);
+    background-color: var(--rosa);
+    color: var(--blanco);
+    font-family: "Onest", sans-serif;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
@@ -298,8 +346,8 @@ body {
 
 .pet-card__link:hover,
 .streak-link:hover {
-    background-color: var(--pet-blue);
-    color: var(--pet-white);
+    background-color: var(--azul);
+    color: var(--blanco);
 }
 
 /* RACHA */
@@ -307,8 +355,8 @@ body {
 .streak-card {
     padding: 24px;
     border-radius: 12px;
-    background-color: var(--pet-white);
-    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.1);
+    background-color: var(--blanco);
+    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.12);
 }
 
 .streak-header {
@@ -316,7 +364,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .streak-icon {
@@ -326,17 +374,17 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: var(--pet-paper);
+    background-color: var(--fondo);
     font-size: 22px;
 }
 
 .streak-content {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     padding: 16px;
     border-radius: 12px;
-    background-color: var(--pet-paper);
+    background-color: var(--fondo);
 }
 
 .streak-number {
@@ -348,17 +396,19 @@ body {
 }
 
 .streak-number strong {
-    color: var(--pet-pink);
+    color: var(--rosa);
     font-family: "Questrial", sans-serif;
-    font-size: 46px;
+    font-size: 48px;
     font-weight: 400;
     line-height: 1;
 }
 
 .streak-number span {
     margin-top: 6px;
-    color: var(--pet-ink);
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
     font-size: 14px;
+    font-weight: 400;
 }
 
 .streak-info {
@@ -367,29 +417,32 @@ body {
 
 .streak-info strong {
     display: block;
-    margin-bottom: 6px;
-    color: var(--pet-ink);
+    margin-bottom: 8px;
+    color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 500;
 }
 
 .streak-info p {
     margin: 0;
-    color: var(--pet-ink);
-    font-size: 14px;
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.5;
-    opacity: 0.75;
 }
 
 /* FOOTER */
 
 .site-footer {
     padding: 20px 24px;
-    border-top: 1px solid var(--pet-line);
-    background-color: var(--pet-white);
-    color: var(--pet-ink);
-    font-size: 13px;
+    border-top: 1px solid var(--azul-claro);
+    background-color: var(--blanco);
+    color: var(--texto);
+    font-family: "Onest", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -415,12 +468,13 @@ body {
     }
 
     .pet-nav__links {
-        gap: 10px 16px;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px;
     }
 
     .site-shell {
-        width: min(100% - 32px, 1200px);
-        padding: 32px 0 48px;
+        padding: 24px 24px 48px;
     }
 
     .site-title {
@@ -436,7 +490,29 @@ body {
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 576px) {
+    .pet-nav {
+        padding: 16px;
+    }
+
+    .pet-nav__brand {
+        font-size: 28px;
+    }
+
+    .pet-nav__links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pet-nav__links a {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .site-shell {
+        padding: 16px 16px 40px;
+    }
+
     .site-title {
         font-size: 32px;
     }
@@ -449,13 +525,18 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .site-feature {
+        min-height: 140px;
+        padding: 16px;
+    }
+
     .pet-card,
     .streak-card {
         padding: 16px;
     }
 
     .pet-placeholder {
-        min-height: 230px;
+        min-height: 220px;
     }
 
     .streak-content {
@@ -465,5 +546,9 @@ body {
 
     .streak-info {
         width: 100%;
+    }
+
+    .site-footer {
+        padding: 16px;
     }
 }

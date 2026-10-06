@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1e1e50" />
     <title>PetTask</title>
+
+    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
         rel="stylesheet" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="estilos.css" />
 </head>
 
 <body>
+
+    <!-- NAVBAR -->
 
     <header class="pet-nav">
         <a class="pet-nav__brand" href="index.html">PetTask</a>
@@ -24,12 +30,21 @@
             <a href="nosotros.html">Nosotros</a>
             <a href="servicios.html">Servicios</a>
             <a href="contacto.html">Contacto</a>
+            <a class="pet-nav__login" href="html/iniciar-sesion.html">
+                Iniciar sesión
+            </a>
         </nav>
     </header>
 
+    <!-- CONTENIDO -->
+
     <main class="site-shell">
 
+        <!-- ENCABEZADO -->
+
         <section class="site-header">
+            <p class="site-eyebrow">Tu espacio de estudio</p>
+
             <h1 class="site-title">PetTask</h1>
 
             <p class="site-lede">
@@ -37,12 +52,17 @@
             </p>
         </section>
 
+        <!-- DASHBOARD -->
+
         <section class="dashboard">
+
+            <!-- TAREAS -->
 
             <div class="dashboard-tareas">
 
                 <div class="section-heading">
                     <h2>Mis actividades</h2>
+
                     <p>
                         Administra tus tareas y mantén organizado tu espacio de estudio.
                     </p>
@@ -95,35 +115,37 @@
                         <span>Ten presentes tus próximas entregas.</span>
                     </a>
 
-                    <a class="site-feature" href="html/iniciar-sesion.html">
-                        <strong>Iniciar sesión</strong>
-                        <span>Accede con tu cuenta.</span>
-                    </a>
-
                     <a class="site-feature" href="html/registro.html">
                         <strong>Crear cuenta</strong>
                         <span>Regístrate en PetTask.</span>
                     </a>
 
                 </div>
-
             </div>
 
+            <!-- COLUMNA DERECHA -->
+
             <aside class="dashboard-lateral">
+
+                <!-- MASCOTA -->
 
                 <section class="pet-card">
 
                     <div class="pet-card__header">
+
                         <div>
                             <p class="pet-card__eyebrow">Tu compañera</p>
                             <h2>Mascota virtual</h2>
                         </div>
 
                         <span class="pet-card__badge">PetTask</span>
+
                     </div>
 
                     <div class="pet-placeholder">
+
                         <div class="pet-placeholder__content">
+
                             <div class="pet-placeholder__icon">
                                 🐾
                             </div>
@@ -131,7 +153,9 @@
                             <strong>Mascota virtual</strong>
 
                             <span>Próximamente</span>
+
                         </div>
+
                     </div>
 
                     <p class="pet-card__text">
@@ -144,26 +168,31 @@
 
                 </section>
 
+                <!-- RACHA -->
+
                 <section class="streak-card">
 
                     <div class="streak-header">
+
                         <div>
                             <p class="streak-eyebrow">Constancia</p>
                             <h2>Racha de actividad</h2>
                         </div>
 
                         <span class="streak-icon">🔥</span>
+
                     </div>
 
                     <div class="streak-content">
 
                         <div class="streak-number">
-                            <strong>7</strong>
+                            <strong id="racha-actual-inicio">7</strong>
                             <span>tareas</span>
                         </div>
 
                         <div class="streak-info">
                             <strong>¡Sigue así!</strong>
+
                             <p>
                                 Completa tareas consecutivamente para aumentar tu racha.
                             </p>
@@ -183,9 +212,13 @@
 
     </main>
 
+    <!-- FOOTER -->
+
     <footer class="site-footer">
         PetTask · Aplicaciones Web · Septiembre–Diciembre 2026
     </footer>
+
+    <script src="js/app.js"></script>
 
 </body>
 
