@@ -63,27 +63,30 @@ PetTask cuenta con las siguientes funcionalidades:
 
 ---
 
-## Requerimientos funcionales
+## Requerimientos funcionales  
 
-| RF-001 | Inicio de sesión        |
+|   ID   |        Nombre            |
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
-| RF-002 | Registrarse             |
+| RF-001 | Inicio de sesión         |
 
-| RF-003 | Carga de datos general  |
+| RF-002 | Registrarse              |
 
-| RF-004 | Ver tareas              |
+| RF-003 | Carga de datos general   |
 
-| RF-005 | Agregar tareas          |
+| RF-004 | Ver tareas               |
 
-| RF-006 | Actualizar tarea        |
+| RF-005 | Agregar tareas           |
 
-| RF-007 | Eliminar tareas         |
+| RF-006 | Actualizar tarea         |
 
-| RF-008 | Interacción con mascota |
+| RF-007 | Eliminar tareas          |
 
-| RF-009 | Tienda de mascota       |
+| RF-008 | Interacción con mascota  |
 
-| RF-010 | Racha de actividad      |
+| RF-009 | Tienda de mascota        |
+
+| RF-010 | Racha de actividad       |
 
 ---
 
@@ -115,7 +118,7 @@ PetTask utiliza una guía de diseño basada en **Material Design**, buscando man
 ### Paleta de colores
 
 | Color       | Código    | Uso                               |
-
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 | Fondo       | `#E5EAF5` | Fondo principal                   |
 
 | Blanco      | `#FFFFFF` | Tarjetas y elementos de contenido |
