@@ -101,7 +101,7 @@ body {
     line-height: 1;
 }
 
-.racha-dias {
+.racha-unidad {
     margin-top: 8px;
     color: var(--texto);
     font-family: "Onest", sans-serif;
@@ -132,20 +132,23 @@ body {
     line-height: 1.6;
 }
 
-/* ACTIVIDAD SEMANAL */
+/* TAREAS DE LA RACHA */
 
 .tarjeta-actividad .subtitulo,
 .tarjeta-estadisticas .subtitulo {
     margin-bottom: 24px;
 }
 
-.dias-semana {
+.tareas-racha {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.dia {
+.tarea-racha {
     min-height: 100px;
     padding: 16px 8px;
     display: flex;
@@ -159,44 +162,34 @@ body {
     text-align: center;
 }
 
-.dia-nombre {
+.tarea-numero {
     color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
     font-size: 18px;
     font-weight: 500;
 }
 
-.dia-estado {
+.tarea-estado {
     color: var(--texto);
     font-family: "Onest", sans-serif;
     font-size: 14px;
     font-weight: 400;
 }
 
-.dia.completado {
+.tarea-racha.completada {
     border-color: var(--azul);
     background-color: var(--azul-claro);
 }
 
-.dia.completado .dia-estado {
+.tarea-racha.completada .tarea-estado {
     color: var(--azul-oscuro);
-}
-
-.dia.actual {
-    border-color: var(--rosa);
-    background-color: var(--blanco);
-}
-
-.dia.actual .dia-estado {
-    color: var(--rosa);
-    font-weight: 500;
 }
 
 /* ESTADÍSTICAS */
 
 .estadisticas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
@@ -231,11 +224,6 @@ body {
         gap: 24px;
     }
 
-    .dias-semana {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-    }
-
     .estadisticas {
         grid-template-columns: 1fr;
     }
@@ -254,11 +242,6 @@ body {
 
     .titulo {
         font-size: 32px;
-    }
-
-    .dias-semana {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
     }
 
     .racha-valor {
