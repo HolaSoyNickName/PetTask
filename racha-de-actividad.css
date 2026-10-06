@@ -132,20 +132,20 @@ body {
     line-height: 1.6;
 }
 
-/* ACTIVIDAD SEMANAL */
+/* ACTIVIDAD POR TAREAS */
 
 .tarjeta-actividad .subtitulo,
 .tarjeta-estadisticas .subtitulo {
     margin-bottom: 24px;
 }
 
-.dias-semana {
+.tareas-actividad {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 
-.dia {
+.tarea-actividad {
     min-height: 100px;
     padding: 16px 8px;
     display: flex;
@@ -159,35 +159,35 @@ body {
     text-align: center;
 }
 
-.dia-nombre {
+.tarea-numero {
     color: var(--azul-oscuro);
     font-family: "Questrial", sans-serif;
     font-size: 18px;
     font-weight: 500;
 }
 
-.dia-estado {
+.tarea-estado {
     color: var(--texto);
     font-family: "Onest", sans-serif;
     font-size: 14px;
     font-weight: 400;
 }
 
-.dia.completado {
+.tarea-actividad.completada {
     border-color: var(--azul);
     background-color: var(--azul-claro);
 }
 
-.dia.completado .dia-estado {
+.tarea-actividad.completada .tarea-estado {
     color: var(--azul-oscuro);
 }
 
-.dia.actual {
+.tarea-actividad.pendiente {
     border-color: var(--rosa);
     background-color: var(--blanco);
 }
 
-.dia.actual .dia-estado {
+.tarea-actividad.pendiente .tarea-estado {
     color: var(--rosa);
     font-weight: 500;
 }
@@ -231,8 +231,8 @@ body {
         gap: 24px;
     }
 
-    .dias-semana {
-        grid-template-columns: repeat(4, 1fr);
+    .tareas-actividad {
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
@@ -256,8 +256,8 @@ body {
         font-size: 32px;
     }
 
-    .dias-semana {
-        grid-template-columns: repeat(2, 1fr);
+    .tareas-actividad {
+        grid-template-columns: 1fr;
         gap: 12px;
     }
 
