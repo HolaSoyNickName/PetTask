@@ -22,7 +22,10 @@
         const brand = document.createElement("a");
         brand.className = "pet-nav__brand";
         brand.href = "../index.html";
-        brand.textContent = "PetTask";
+        const brandIcon = document.createElement("img");
+        brandIcon.src = "../img/logoNav.png";
+        brandIcon.alt = "Logotipo de PetTask";
+        brand.append(brandIcon);
         header.append(brand);
 
         const nav = document.createElement("nav");

@@ -41,6 +41,12 @@ body {
     text-decoration: none;
 }
 
+.pet-nav__brand img {
+    display: block;
+    width: auto;
+    height: 1em;
+}
+
 .pet-nav__links {
     display: flex;
     align-items: center;

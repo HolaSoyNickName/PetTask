@@ -14,6 +14,7 @@
 
 body {
     margin: 0;
+    background-color: var(--pet-paper);
     color: var(--pet-ink);
     font-family: "Onest", sans-serif;
 }
@@ -35,6 +36,12 @@ body {
     font-size: 32px;
     font-weight: 400;
     text-decoration: none;
+}
+
+.pet-nav__brand img {
+    display: block;
+    width: auto;
+    height: 1em;
 }
 
 .pet-nav__links {
