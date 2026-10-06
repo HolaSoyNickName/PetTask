@@ -1,48 +1,192 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#1e1e50" />
-	<title>PetTask - Organiza tus tareas</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" href="css/estilos.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e1e50" />
+    <title>PetTask</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="estilos.css" />
 </head>
+
 <body>
-	<header class="pet-nav">
-		<a class="pet-nav__brand" href="index.html">PetTask</a>
-		<nav class="pet-nav__links" aria-label="Navegación principal">
-			<a href="index.html" aria-current="page">Inicio</a>
-			<a href="nosotros.html">Nosotros</a>
-			<a href="servicios.html">Servicios</a>
-			<a href="contacto.html">Contacto</a>
-		</nav>
-	</header>
-	<main class="site-shell">
-		<p class="site-eyebrow">Tu espacio de estudio</p>
-		<h1 class="site-title">Organiza tus tareas. Mantén viva tu racha.</h1>
-		<p class="site-lede">Planifica tus actividades académicas, revisa tu progreso y acompaña a tu mascota mientras avanzas.</p>
-		<div class="site-feature-grid">
-			<a class="site-feature" href="html/carga-de-datos-general.html"><strong>Resumen general</strong><span>Consulta tus tareas, mascota y racha.</span></a>
-			<a class="site-feature" href="html/ver-tareas.html"><strong>Ver tareas</strong><span>Busca actividades pendientes y completadas.</span></a>
-			<a class="site-feature" href="html/agregar-tareas.html"><strong>Agregar tarea</strong><span>Registra la siguiente actividad de estudio.</span></a>
-			<a class="site-feature" href="html/actualizar-tarea.html"><strong>Actualizar tarea</strong><span>Modifica los datos de una actividad.</span></a>
-			<a class="site-feature" href="html/eliminar-tareas.html"><strong>Eliminar tareas</strong><span>Administra tareas que ya no necesitas.</span></a>
-			<a class="site-feature" href="html/interaccion-con-mascota.html"><strong>Mascota virtual</strong><span>Revisa su estado y actividad.</span></a>
-			<a class="site-feature" href="html/tienda-de-mascota.html"><strong>Tienda de mascota</strong><span>Explora mejoras para tu compañera.</span></a>
-			<a class="site-feature" href="html/racha-de-actividad.html"><strong>Racha de actividad</strong><span>Visualiza tu constancia semanal.</span></a>
-			<a class="site-feature" href="html/recordatorios.html"><strong>Recordatorios</strong><span>Ten presentes tus próximas entregas.</span></a>
-			<a class="site-feature" href="html/iniciar-sesion.html"><strong>Iniciar sesión</strong><span>Accede con tu cuenta.</span></a>
-			<a class="site-feature" href="html/registro.html"><strong>Crear cuenta</strong><span>Regístrate en PetTask.</span></a>
-		</div>
-		<section class="site-panel">
-			<h2 class="site-section-title">Empieza por tus tareas</h2>
-			<p>Agrega una actividad, consulta tus pendientes y marca tu avance para mantener al día tu espacio de estudio.</p>
-			<a href="html/ver-tareas.html">Abrir mis tareas</a>
-		</section>
-	</main>
-	<footer class="site-footer">PetTask · Aplicaciones Web · Septiembre–Diciembre 2026</footer>
+
+    <header class="pet-nav">
+        <a class="pet-nav__brand" href="index.html">PetTask</a>
+
+        <nav class="pet-nav__links" aria-label="Navegación principal">
+            <a href="index.html" aria-current="page">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="site-shell">
+
+        <section class="site-header">
+            <h1 class="site-title">PetTask</h1>
+
+            <p class="site-lede">
+                Organiza tus tareas, mantén tu racha y cuida de tu mascota virtual.
+            </p>
+        </section>
+
+        <section class="dashboard">
+
+            <div class="dashboard-tareas">
+
+                <div class="section-heading">
+                    <h2>Mis actividades</h2>
+                    <p>
+                        Administra tus tareas y mantén organizado tu espacio de estudio.
+                    </p>
+                </div>
+
+                <div class="site-feature-grid">
+
+                    <a class="site-feature" href="html/carga-de-datos-general.html">
+                        <strong>Resumen general</strong>
+                        <span>Consulta tus tareas, mascota y racha.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/ver-tareas.html">
+                        <strong>Ver tareas</strong>
+                        <span>Busca actividades pendientes y completadas.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/agregar-tareas.html">
+                        <strong>Agregar tarea</strong>
+                        <span>Registra la siguiente actividad de estudio.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/actualizar-tarea.html">
+                        <strong>Actualizar tarea</strong>
+                        <span>Modifica los datos de una actividad.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/eliminar-tareas.html">
+                        <strong>Eliminar tareas</strong>
+                        <span>Administra tareas que ya no necesitas.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/interaccion-con-mascota.html">
+                        <strong>Mascota virtual</strong>
+                        <span>Revisa su estado y actividad.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/tienda-de-mascota.html">
+                        <strong>Tienda de mascota</strong>
+                        <span>Explora mejoras para tu compañera.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/racha-de-actividad.html">
+                        <strong>Racha de actividad</strong>
+                        <span>Visualiza tu constancia semanal.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/recordatorios.html">
+                        <strong>Recordatorios</strong>
+                        <span>Ten presentes tus próximas entregas.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/iniciar-sesion.html">
+                        <strong>Iniciar sesión</strong>
+                        <span>Accede con tu cuenta.</span>
+                    </a>
+
+                    <a class="site-feature" href="html/registro.html">
+                        <strong>Crear cuenta</strong>
+                        <span>Regístrate en PetTask.</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <aside class="dashboard-lateral">
+
+                <section class="pet-card">
+
+                    <div class="pet-card__header">
+                        <div>
+                            <p class="pet-card__eyebrow">Tu compañera</p>
+                            <h2>Mascota virtual</h2>
+                        </div>
+
+                        <span class="pet-card__badge">PetTask</span>
+                    </div>
+
+                    <div class="pet-placeholder">
+                        <div class="pet-placeholder__content">
+                            <div class="pet-placeholder__icon">
+                                🐾
+                            </div>
+
+                            <strong>Mascota virtual</strong>
+
+                            <span>Próximamente</span>
+                        </div>
+                    </div>
+
+                    <p class="pet-card__text">
+                        Completa tus tareas para mantener a tu mascota feliz y con energía.
+                    </p>
+
+                    <a class="pet-card__link" href="html/interaccion-con-mascota.html">
+                        Ver mi mascota
+                    </a>
+
+                </section>
+
+                <section class="streak-card">
+
+                    <div class="streak-header">
+                        <div>
+                            <p class="streak-eyebrow">Constancia</p>
+                            <h2>Racha de actividad</h2>
+                        </div>
+
+                        <span class="streak-icon">🔥</span>
+                    </div>
+
+                    <div class="streak-content">
+
+                        <div class="streak-number">
+                            <strong>7</strong>
+                            <span>días</span>
+                        </div>
+
+                        <div class="streak-info">
+                            <strong>¡Sigue así!</strong>
+                            <p>
+                                Mantén tu racha completando tus tareas diariamente.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a class="streak-link" href="html/racha-de-actividad.html">
+                        Ver mi racha
+                    </a>
+
+                </section>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        PetTask · Aplicaciones Web · Septiembre–Diciembre 2026
+    </footer>
+
 </body>
+
 </html>
