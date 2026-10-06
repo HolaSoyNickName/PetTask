@@ -195,7 +195,7 @@ body {
     margin-top: 32px;
     padding: 24px;
     border-left: 4px solid var(--pet-pink);
-    background: var(--pet-paper);
+    background: var(--pet-white);
 }
 
 .site-panel p:last-child {
