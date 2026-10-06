@@ -107,6 +107,28 @@ body {
     color: var(--blanco);
 }
 
+.enlaces-login {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.enlaces-login a {
+    color: var(--azul);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.enlaces-login a:hover,
+.enlaces-login a:focus-visible {
+    text-decoration: underline;
+}
+
+.enlaces-login p {
+    margin: 14px 0 0;
+    color: var(--texto);
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 576px) {

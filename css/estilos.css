@@ -19,39 +19,61 @@ body {
 }
 
 .pet-nav {
-    min-height: 68px;
+    min-height: 106px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 12px max(24px, calc((100vw - 1120px) / 2));
+    padding: 24px max(32px, calc((100vw - 1200px) / 2));
     background: var(--pet-ink);
     color: var(--pet-white);
 }
 
 .pet-nav__brand {
-    color: inherit;
+    color: var(--pet-white);
     font-family: "Questrial", sans-serif;
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 400;
     text-decoration: none;
 }
 
 .pet-nav__links {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 18px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .pet-nav__links a {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 9px 14px;
+    border-radius: 12px;
     color: var(--pet-white);
-    font-size: 14px;
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
 }
 
 .pet-nav__links a:hover,
 .pet-nav__links a:focus-visible {
-    color: #ffb8c1;
+    background-color: var(--pet-blue);
+    color: var(--pet-white);
+}
+
+.pet-nav__links .pet-nav__login {
+    padding: 9px 20px;
+    background-color: var(--pet-pink);
+    color: var(--pet-white);
+}
+
+.pet-nav__links .pet-nav__login:hover,
+.pet-nav__links .pet-nav__login:focus-visible {
+    background-color: var(--pet-blue);
+    color: var(--pet-white);
 }
 
 .pet-back-link {
@@ -203,7 +225,9 @@ body {
     }
 
     .pet-nav__links {
-        gap: 10px 16px;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px;
     }
 
     .site-title {
@@ -212,6 +236,26 @@ body {
 
     .site-feature-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .pet-nav {
+        padding: 16px;
+    }
+
+    .pet-nav__brand {
+        font-size: 28px;
+    }
+
+    .pet-nav__links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pet-nav__links a {
+        justify-content: center;
+        width: 100%;
     }
 }
 

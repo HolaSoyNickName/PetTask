@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,15 +7,16 @@
     <title>PetTask</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="estilos.css" />
 </head>
 
 <body>
     <header class="pet-nav">
-        <a class="pet-nav__brand" href="index.html">PetTask</a>
+        <a class="pet-nav__brand d-flex align-items-center gap-3 text-decoration-none" href="index.html">
+            <img src="img/logoNav.png" alt="Logotipo de PetTask" style="height: 1em; width: auto" />
+        </a>
         <nav class="pet-nav__links" aria-label="Navegación principal">
             <a href="index.html" aria-current="page">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
@@ -25,7 +25,6 @@
             <a class="pet-nav__login" href="html/iniciar-sesion.html">Iniciar sesión</a>
         </nav>
     </header>
-
     <main class="site-shell">
         <section class="site-header">
             <h1 class="site-title">
@@ -36,14 +35,12 @@
                 Organiza tus tareas, mantén tu racha y cuida de tu mascota virtual.
             </p>
         </section>
-
         <section class="dashboard">
             <div class="dashboard-tareas">
                 <div class="section-heading">
                     <h2>Mis actividades</h2>
                     <p>Administra tus tareas y mantén organizado tu espacio de estudio.</p>
                 </div>
-
                 <div class="site-feature-grid">
                     <a class="site-feature" href="html/carga-de-datos-general.html">
                         <strong>Resumen general</strong>
@@ -81,13 +78,8 @@
                         <strong>Recordatorios</strong>
                         <span>Ten presentes tus próximas entregas.</span>
                     </a>
-                    <a class="site-feature" href="html/registro.html">
-                        <strong>Crear cuenta</strong>
-                        <span>Regístrate en PetTask.</span>
-                    </a>
                 </div>
             </div>
-
             <aside class="dashboard-lateral">
                 <section class="pet-card">
                     <div class="pet-card__header">
@@ -109,7 +101,6 @@
                     </p>
                     <a class="pet-card__link" href="html/interaccion-con-mascota.html">Ver mi mascota</a>
                 </section>
-
                 <section class="streak-card">
                     <div class="streak-header">
                         <div>
@@ -133,7 +124,6 @@
             </aside>
         </section>
     </main>
-
     <footer class="site-footer">
         PetTask · Aplicaciones Web · Septiembre–Diciembre 2026
     </footer>

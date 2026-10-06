@@ -1,15 +1,18 @@
 (() => {
     const featureLinks = [
-        ["Inicio", "../index.html"],
-        ["Servicios", "../servicios.html"],
-        ["Resumen", "carga-de-datos-general.html"],
-        ["Tareas", "ver-tareas.html"],
-        ["Agregar", "agregar-tareas.html"],
-        ["Mascota", "interaccion-con-mascota.html"]
+        ["Inicio", "../index.html", "index.html"],
+        ["Nosotros", "../nosotros.html", "nosotros.html"],
+        ["Servicios", "../servicios.html", "servicios.html"],
+        ["Contacto", "../contacto.html", "contacto.html"],
+        ["Iniciar sesión", "iniciar-sesion.html", "iniciar-sesion.html", true]
     ];
 
     function addFeaturePageNavigation() {
-        if (!window.location.pathname.toLowerCase().includes("/html/")) {
+        const pathname = window.location.pathname.toLowerCase();
+        const currentPage = pathname.split("/").pop();
+        const pagesWithoutNavigation = ["iniciar-sesion.html", "registro.html"];
+
+        if (!pathname.includes("/html/") || pagesWithoutNavigation.includes(currentPage)) {
             return;
         }
 
@@ -25,10 +28,12 @@
         const nav = document.createElement("nav");
         nav.className = "pet-nav__links";
         nav.setAttribute("aria-label", "Navegación principal");
-        for (const [label, href] of featureLinks) {
+        for (const [label, href, page, isLogin] of featureLinks) {
             const link = document.createElement("a");
-            link.href = href.includes("../") ? href : `./${href}`;
+            link.href = href.startsWith("../") ? href : `./${href}`;
             link.textContent = label;
+            if (isLogin) link.className = "pet-nav__login";
+            if (currentPage === page) link.setAttribute("aria-current", "page");
             nav.append(link);
         }
         header.append(nav);
