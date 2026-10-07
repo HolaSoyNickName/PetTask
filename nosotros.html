@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1e1e50" />
     <title>Nosotros - PetTask</title>
     <!-- Tipografías -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,22 +15,25 @@
     <!-- CSS -->
     <link rel="stylesheet" href="estilos.css" />
 </head>
-
 <body>
     <!-- NAVBAR -->
-    <header class="pet-nav">
+    <header class="pet-nav navbar navbar-expand-md navbar-dark">
         <a class="pet-nav__brand" href="index.html">
             <img src="img/logoNav.png" alt="Logotipo de PetTask" />
         </a>
-        <nav class="pet-nav__links" aria-label="Navegación principal">
-            <a href="index.html">Inicio</a>
-            <a href="nosotros.html" aria-current="page">Nosotros</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="contacto.html">Contacto</a>
-            <a class="pet-nav__login" href="html/iniciar-sesion.html">Iniciar sesión</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html" aria-current="page">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html">Contacto</a>
+                <a class="pet-nav__login" href="html/iniciar-sesion.html">Iniciar sesión</a>
         </nav>
+        </div>
     </header>
-
     <!-- CONTENIDO -->
     <main class="nosotros">
         <!-- HERO -->
@@ -53,7 +56,6 @@
                 </div>
             </div>
         </section>
-
         <!-- OBJETIVO -->
         <section class="objetivo">
             <div class="objetivo__encabezado">
@@ -76,10 +78,9 @@
                 </div>
             </div>
         </section>
-
         <!-- INFORMACIÓN -->
         <section class="nosotros-info">
-            <article class="info-card">
+            <article class="card info-card">
                 <div>
                     <span class="info-card__numero">02</span>
                     <h2>Organización</h2>
@@ -102,7 +103,6 @@
                 </div>
             </article>
         </section>
-
         <!-- EQUIPO -->
         <section class="equipo">
             <div class="equipo__encabezado">
@@ -187,5 +187,6 @@
     </main>
     <!-- FOOTER -->
     <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
