@@ -8,6 +8,10 @@
     ];
 
     function addFeaturePageNavigation() {
+        if (document.querySelector(".pet-nav")) {
+            return;
+        }
+
         const pathname = window.location.pathname.toLowerCase();
         const currentPage = pathname.split("/").pop();
         const pagesWithoutNavigation = ["iniciar-sesion.html", "registro.html"];
@@ -17,7 +21,7 @@
         }
 
         const header = document.createElement("header");
-        header.className = "pet-nav";
+        header.className = "pet-nav navbar navbar-expand-md navbar-dark";
 
         const brand = document.createElement("a");
         brand.className = "pet-nav__brand";
@@ -28,8 +32,25 @@
         brand.append(brandIcon);
         header.append(brand);
 
+        const toggler = document.createElement("button");
+        toggler.className = "navbar-toggler";
+        toggler.type = "button";
+        toggler.setAttribute("data-bs-toggle", "collapse");
+        toggler.setAttribute("data-bs-target", "#menuPrincipal");
+        toggler.setAttribute("aria-controls", "menuPrincipal");
+        toggler.setAttribute("aria-expanded", "false");
+        toggler.setAttribute("aria-label", "Abrir menú de navegación");
+        const togglerIcon = document.createElement("span");
+        togglerIcon.className = "navbar-toggler-icon";
+        toggler.append(togglerIcon);
+        header.append(toggler);
+
+        const collapseDiv = document.createElement("div");
+        collapseDiv.className = "collapse navbar-collapse";
+        collapseDiv.id = "menuPrincipal";
+
         const nav = document.createElement("nav");
-        nav.className = "pet-nav__links";
+        nav.className = "pet-nav__links navbar-nav ms-lg-auto";
         nav.setAttribute("aria-label", "Navegación principal");
         for (const [label, href, page, isLogin] of featureLinks) {
             const link = document.createElement("a");
@@ -39,7 +60,8 @@
             if (currentPage === page) link.setAttribute("aria-current", "page");
             nav.append(link);
         }
-        header.append(nav);
+        collapseDiv.append(nav);
+        header.append(collapseDiv);
         document.body.prepend(header);
     }
 

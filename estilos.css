@@ -90,6 +90,15 @@ body {
     color: var(--pet-white);
 }
 
+.pet-nav .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.25);
+    padding: 6px 10px;
+}
+
+.pet-nav .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(85, 127, 252, 0.35);
+}
+
 /* CONTENIDO */
 
 .site-shell {
@@ -546,12 +555,16 @@ body {
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
     .pet-nav {
         min-height: auto;
         align-items: center;
         gap: 12px;
         padding: 16px 24px;
+    }
+
+    .pet-nav .navbar-collapse {
+        margin-top: 12px;
     }
 
     .pet-nav__links {
