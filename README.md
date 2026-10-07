@@ -94,20 +94,12 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 El proyecto utiliza diferentes componentes y utilidades de Bootstrap para construir la interfaz:
 
-- Containers.
-- Grid mediante `row` y `col`.
-- Cards.
-- Formularios.
-- Inputs.
-- Textareas.
-- Botones.
-- Alerts.
-- Badges.
-- Modales.
-- Navbar.
-- Responsive utilities.
-
-Estos componentes permiten mantener una estructura responsive y consistente entre las diferentes páginas del proyecto.
+Navbar responsive: barra de navegación adaptable a distintos tamaños de pantalla.
+Collapse: permite expandir y contraer el menú de navegación.
+Cards: contenedores para mostrar tareas, formularios, resúmenes y otra información.
+Form Controls: campos de entrada y etiquetas de formularios (form-control y form-label).
+Modal: ventana de confirmación para eliminar tareas.
+Buttons: botones de Bootstrap usados en el modal, incluidos los estilos btn-secondary, btn-danger y btn-close
 
 ---
 
