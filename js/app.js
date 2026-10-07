@@ -1,9 +1,9 @@
 (() => {
     const featureLinks = [
-        ["Inicio", "../index.html", "index.html"],
-        ["Nosotros", "../nosotros.html", "nosotros.html"],
-        ["Servicios", "../servicios.html", "servicios.html"],
-        ["Contacto", "../contacto.html", "contacto.html"],
+        ["Inicio", "index.html", "index.html"],
+        ["Nosotros", "nosotros.html", "nosotros.html"],
+        ["Servicios", "servicios.html", "servicios.html"],
+        ["Contacto", "contacto.html", "contacto.html"],
         ["Iniciar sesión", "iniciar-sesion.html", "iniciar-sesion.html", true]
     ];
 
@@ -12,22 +12,30 @@
             return;
         }
 
-        const pathname = window.location.pathname.toLowerCase();
-        const currentPage = pathname.split("/").pop();
-        const pagesWithoutNavigation = ["iniciar-sesion.html", "registro.html"];
+        const currentPage = window.location.pathname.toLowerCase().split("/").pop();
+        const featurePages = [
+            "carga-de-datos-general.html",
+            "ver-tareas.html",
+            "agregar-tareas.html",
+            "actualizar-tarea.html",
+            "eliminar-tareas.html",
+            "interaccion-con-mascota.html",
+            "tienda-de-mascota.html",
+            "racha-de-actividad.html"
+        ];
 
-        if (!pathname.includes("/html/") || pagesWithoutNavigation.includes(currentPage)) {
+        if (!featurePages.includes(currentPage)) {
             return;
         }
 
         const header = document.createElement("header");
-        header.className = "pet-nav navbar navbar-expand-md navbar-dark";
+        header.className = "pet-nav navbar navbar-expand-lg navbar-dark";
 
         const brand = document.createElement("a");
         brand.className = "pet-nav__brand";
-        brand.href = "../index.html";
+        brand.href = "./index.html";
         const brandIcon = document.createElement("img");
-        brandIcon.src = "../img/logoNav.png";
+        brandIcon.src = "./img/logoNav.png";
         brandIcon.alt = "Logotipo de PetTask";
         brand.append(brandIcon);
         header.append(brand);
@@ -54,7 +62,7 @@
         nav.setAttribute("aria-label", "Navegación principal");
         for (const [label, href, page, isLogin] of featureLinks) {
             const link = document.createElement("a");
-            link.href = href.startsWith("../") ? href : `./${href}`;
+            link.href = `./${href}`;
             link.textContent = label;
             if (isLogin) link.className = "pet-nav__login";
             if (currentPage === page) link.setAttribute("aria-current", "page");

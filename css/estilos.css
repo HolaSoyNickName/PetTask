@@ -274,6 +274,21 @@ body {
     }
 }
 
+@media (max-width: 991.98px) {
+    .pet-nav {
+        flex-wrap: wrap;
+    }
+
+    .pet-nav .navbar-collapse {
+        flex-basis: 100%;
+        margin-top: 12px;
+    }
+
+    .pet-nav__links {
+        width: 100%;
+    }
+}
+
 @media (max-width: 520px) {
     .pet-nav {
         padding: 16px;

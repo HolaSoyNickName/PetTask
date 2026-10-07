@@ -146,19 +146,30 @@ PetTask/
 ├── nosotros.html
 ├── servicios.html
 ├── contacto.html
+├── iniciar-sesion.html
+├── registro.html
+├── carga-de-datos-general.html
+├── ver-tareas.html
+├── agregar-tareas.html
+├── actualizar-tarea.html
+├── eliminar-tareas.html
+├── interaccion-con-mascota.html
+├── tienda-de-mascota.html
+├── racha-de-actividad.html
 ├── README.md
 ├── css/
-│   ├── estilos.css
-│   ├── iniciar-sesion.css
-│   ├── registro.css
-│   ├── carga-de-datos-general.css
-│   ├── ver-tareas.css
-│   ├── agregar-tareas.css
+│   ├── estilos.css (Servicios y páginas de funciones)
+│   ├── estilos-sitio.css (Inicio, Nosotros y Contacto)
 │   ├── actualizar-tarea.css
+│   ├── agregar-tareas.css
+│   ├── carga-de-datos-general.css
 │   ├── eliminar-tareas.css
+│   ├── iniciar-sesion.css
 │   ├── interaccion-con-mascota.css
-│   ├── tienda-de-mascota.css
 │   ├── racha-de-actividad.css
+│   ├── registro.css
+│   ├── tienda-de-mascota.css
+│   └── ver-tareas.css
 ├── js/
 │   └── app.js
 ├── img/
@@ -168,17 +179,6 @@ PetTask/
 │   ├── SRS.tex
 │   ├── Guia_Diseno.pdf
 │   └── Guia_Diseno.tex
-└── html/
-    ├── iniciar-sesion.html
-    ├── registro.html
-    ├── carga-de-datos-general.html
-    ├── ver-tareas.html
-    ├── agregar-tareas.html
-    ├── actualizar-tarea.html
-    ├── eliminar-tareas.html
-    ├── interaccion-con-mascota.html
-    ├── tienda-de-mascota.html
-    ├── racha-de-actividad.html
 ```
 
 ---
