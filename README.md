@@ -92,14 +92,19 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 ## Componentes de Bootstrap utilizados
 
-El proyecto utiliza diferentes componentes y utilidades de Bootstrap para construir la interfaz:
+- El proyecto utiliza diferentes componentes y utilidades de Bootstrap para construir la interfaz:
 
-Navbar responsive: barra de navegación adaptable a distintos tamaños de pantalla.
-Collapse: permite expandir y contraer el menú de navegación.
-Cards: contenedores para mostrar tareas, formularios, resúmenes y otra información.
-Form Controls: campos de entrada y etiquetas de formularios (form-control y form-label).
-Modal: ventana de confirmación para eliminar tareas.
-Buttons: botones de Bootstrap usados en el modal, incluidos los estilos btn-secondary, btn-danger y btn-close
+- Navbar responsive: barra de navegación adaptable a distintos tamaños de pantalla.
+
+- Collapse: permite expandir y contraer el menú de navegación.
+
+- Cards: contenedores para mostrar tareas, formularios, resúmenes y otra información.
+
+- Form Controls: campos de entrada y etiquetas de formularios (form-control y form-label).
+
+- Modal: ventana de confirmación para eliminar tareas.
+
+- Buttons: botones de Bootstrap usados en el modal, incluidos los estilos btn-secondary, btn-danger y btn-close
 
 ---
 
