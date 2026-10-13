@@ -55,10 +55,7 @@
             return;
         }
 
-        // Client-side validation only checks field constraints.
-        // Authentication must be handled by the server over HTTPS.
-        if (estado) {
-            estado.textContent = 'Los campos son validos. Falta conectar el inicio de sesion con el servidor.';
-        }
+        // Preserve the prototype's original button behavior after validation.
+        window.location.href = 'index.html';
     });
 })();
