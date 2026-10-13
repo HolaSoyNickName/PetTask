@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,22 +12,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
         rel="stylesheet" />
     <!-- CSS -->
-    <link rel="stylesheet" href="iniciar-secion.css" />
+    <link rel="stylesheet" href="css/iniciar-secion.css" />
 </head>
 
 <body>
     <main class="contenido">
         <section class="tarjeta-login">
             <h1 class="titulo">Iniciar Sesión</h1>
-            <form>
+            <form id="formulario-login" novalidate autocomplete="on" aria-describedby="estado-login">
                 <div class="campo">
                     <label for="usuario" class="form-label"> Usuario </label>
-                    <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario" required />
+                    <input type="text" class="form-control" id="usuario" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="254" aria-describedby="error-usuario" placeholder="Ingresa tu usuario" required />
+                    <div class="invalid-feedback" id="error-usuario">Escribe tu usuario.</div>
                 </div>
                 <div class="campo">
                     <label for="contrasena" class="form-label"> Contraseña </label>
-                    <input type="password" class="form-control" id="contrasena" placeholder="Tu contraseña" required />
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" autocomplete="current-password" minlength="8" maxlength="1024" pattern="(?=.*[^A-Za-z0-9\s]).{8,}" aria-describedby="error-contrasena" placeholder="Tu contrasena" required />
+                    <div class="invalid-feedback" id="error-contrasena">Usa al menos 8 caracteres y un simbolo especial (sin espacios).</div>
                 </div>
+                <div id="estado-login" class="visually-hidden" role="status" aria-live="polite"></div>
                 <div class="boton">
                     <button type="submit" class="btn-entrar">Entrar</button>
                 </div>
@@ -41,6 +43,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/iniciar-sesion.js"></script>
 </body>
-
 </html>
