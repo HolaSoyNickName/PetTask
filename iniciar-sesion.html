@@ -3,49 +3,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar Sesión - PetTask</title>
-    <!-- Bootstrap -->
+    <title>Iniciar sesión - PetTask</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-        rel="stylesheet" />
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/estilos.css" />
     <link rel="stylesheet" href="css/iniciar-sesion.css" />
 </head>
 <body>
-    <!-- NAVBAR -->
-    <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html" aria-current="page">Iniciar sesión</a>
-            </nav>
-        </div>
-    </header>
     <main class="contenido">
         <section class="card tarjeta-login">
-            <h1 class="titulo">Iniciar Sesión</h1>
-            <form data-redirect="index.html">
+            <h1 class="titulo">Iniciar sesión</h1>
+            <form id="formulario-login" novalidate autocomplete="on" aria-describedby="estado-login">
                 <div class="campo">
-                    <label for="usuario" class="form-label"> Usuario </label>
-                    <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario" required />
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="254" aria-describedby="error-usuario" placeholder="Ingresa tu usuario" required />
+                    <div class="invalid-feedback" id="error-usuario">Escribe tu usuario.</div>
                 </div>
                 <div class="campo">
-                    <label for="contrasena" class="form-label"> Contraseña </label>
-                    <input type="password" class="form-control" id="contrasena" placeholder="Tu contraseña" required />
+                    <label for="contrasena" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" autocomplete="current-password" minlength="8" maxlength="1024" pattern="(?=.*[^A-Za-z0-9\s]).{8,}" aria-describedby="error-contrasena" placeholder="Tu contraseña" required />
+                    <div class="invalid-feedback" id="error-contrasena">Usa al menos 8 caracteres y un símbolo especial (sin espacios).</div>
                 </div>
+                <div id="estado-login" class="visually-hidden" role="status" aria-live="polite"></div>
                 <div class="boton">
                     <button type="submit" class="btn-entrar">Entrar</button>
                 </div>
@@ -56,8 +37,8 @@
         </section>
     </main>
     <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/iniciar-sesion.js"></script>
 </body>
 </html>
