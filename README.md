@@ -263,7 +263,12 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 ###Evidencia de interacciones
 
 <img width="1920" height="973" alt="image" src="https://github.com/user-attachments/assets/530afa9a-db00-4443-860a-a852b32e8cf7" />
-Barra de progreso
+Barra de progreso.
+
+
+
+<img width="1600" height="739" alt="ba3a0a30-e7b9-4182-8b46-76f57ef41162" src="https://github.com/user-attachments/assets/1ee04ae0-2f38-4fa4-9bef-ff46bdde916e" />
+Notificacion tras una acción.
 
 
 ## Proyecto académico
