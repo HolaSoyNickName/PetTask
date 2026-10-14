@@ -256,8 +256,9 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 
 | Interacción | Integrante Responsable | Selectores Usados | Eventos Usados | Componente Bootstrap |
 |---|---|---|---|---|
-| Ejemplo: Abrir menú de navegación | Diego | `#btn-menu`, `.navbar` | `click` | Navbar |
-| Ejemplo: Validar formulario de contacto | Ana | `.form-control`, `#form` | `submit`, `input` | Forms / Validation |
+| Barra de progreso que avanza según acciones del usuario. | Diego Omar Espinoza Cuevas | Por ID: #subir-nivel, #barra-progreso, #nivel-mascota, #xp-usuario, #texto-progreso, #texto-restantes.
+Por clase: .barra-progreso.| click: detecta cuando se pulsa el botón “Subir nivel”. | Barra de progreso (Progress): usa las clases progress y progress-bar. |
+
 | | | | | |
 
 
