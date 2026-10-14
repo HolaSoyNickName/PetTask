@@ -260,6 +260,12 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 | Modo oscuro con localStorage | Angel Alvarez Del Valle | Por ID: `#btnTema`, `#iconoTema`. | `click`: detecta cuando se pulsa el botón del tema (sol/luna) para alternar entre modo claro y oscuro. | Bootstrap Icons: usa las clases `bi-sun-fill` y `bi-moon-stars-fill`.<br>Atributo `data-bs-theme`: aplica el tema oscuro/claro al `body`. |
 
 
+###Evidencia de interacciones
+
+<img width="1920" height="973" alt="image" src="https://github.com/user-attachments/assets/530afa9a-db00-4443-860a-a852b32e8cf7" />
+Barra de progreso
+
+
 ## Proyecto académico
 **PetTask**
 Aplicaciones Web
