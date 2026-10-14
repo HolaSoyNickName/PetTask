@@ -283,7 +283,7 @@ Modo Obscuro
 ###Reflexiones
 Espinoza Cuevas Diego Omar
 
-La interacción que me tocó fue la barra de progreso. Lo más difícil fue hacer que avanzara cada vez que presionaba el botón y que el nivel cambiara cuando se llenaba. También tuve que actualizar los XP disponibles para que se reflejaran en la página. Usé el evento click para detectar cuándo se presionaba el botón. Con JavaScript hice que el progreso y los datos cambiaran sin tener que recargar la página. Bootstrap me ayudó a mostrar la barra y a darle una estructura visual. Aprendí que JavaScript permite que la página responda a mis acciones y que Bootstrap facilita la presentación de algunos elementos. Al combinar los dos, pude mostrar de forma clara cómo avanzaba el progreso.
+La interacción que me tocó fue la barra de progreso, se me difuculto hacer que avanzara cada vez que presionaba el botón y que el nivel cambiara cuando se llenaba, también tuve que actualizar los XP disponibles para que se reflejaran en la página, usé el evento click para detectar cuándo se presionaba el botóny con JavaScript hice que el progreso y los datos cambiaran sin tener que recargar la página ademas ekl uso de la herramienta de Bootstrap me ayudó a mostrar la barra y a darle una estructura visual, aprendí que JavaScript permite que la página responda a mis acciones y que Bootstrap facilita la presentación de algunos elementos, y al combinar los dos, pude mostrar de forma clara cómo avanzaba el progreso.
 
 
 Angel Alvarez Del Valle
