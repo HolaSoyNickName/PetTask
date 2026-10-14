@@ -279,6 +279,7 @@ Modo Obscuro.
 
 
 <img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/ecf54daf-23e3-453a-9958-40d1395bbfa9" />
+
 Tablero.
 
 
