@@ -66,44 +66,12 @@ function manejarBusqueda() {
 }
 
 
-function manejarClickEstado(evento) {
-  const boton = evento.target.closest(".btn-estado");
-  if (!boton) return;
-
-  const tarea = boton.closest(".tarea-item");
-  if (!tarea) return;
-
-  const estaCompletada = tarea.classList.contains("completada");
-
-  if (estaCompletada) {
-    // Deshacer: vuelve a "pendiente"
-    tarea.classList.remove("completada");
-    tarea.dataset.estado = "pendiente";
-    boton.classList.remove("btn-deshacer");
-    boton.classList.add("btn-completar");
-    boton.innerHTML = '<i class="bi bi-check2"></i> Marcar completada';
-  } else {
-    // Completar: pasa a "completada"
-    tarea.classList.add("completada");
-    tarea.dataset.estado = "completada";
-    boton.classList.remove("btn-completar");
-    boton.classList.add("btn-deshacer");
-    boton.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i> Deshacer';
-  }
-
-  // Refrescar la vista según filtro y búsqueda actuales
-  aplicarFiltroYBuscado();
-}
-
 function manejarClickAgregar() {
   console.log("Botón 'Agregar nueva tarea' presionado");
 }
 
 // Delegación: un solo listener para todos los botones de filtro.
 grupoFiltros.addEventListener("click", manejarClickFiltro);
-
-// Delegación: un solo listener para todos los botones de estado.
-listaTareas.addEventListener("click", manejarClickEstado);
 
 // Búsqueda en tiempo real (input).
 inputBusqueda.addEventListener("input", manejarBusqueda);
