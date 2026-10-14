@@ -260,6 +260,7 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 | Modo oscuro con localStorage | Angel Alvarez Del Valle | Por ID: `#btnTema`, `#iconoTema`. | `click`: detecta cuando se pulsa el botón del tema (sol/luna) para alternar entre modo claro y oscuro. | Bootstrap Icons: usa las clases `bi-sun-fill` y `bi-moon-stars-fill`.<br>Atributo `data-bs-theme`: aplica el tema oscuro/claro al `body`. |
 | Notificación tras una acción | Sandoval Resendiz Alexander Emir | Por ID: `#producto`, `#btn-comprar`, `#notificacion`.<br>Por clase: `.btn-comprar`. | `click`: detecta cuando se pulsa el botón de compra. | Toast: muestra una notificación de confirmación de compra. |
 | Filtrado y búsqueda de elementos | Dector Montiel Norma Angelica | Por ID: `#listaTareas`, `#inputBusqueda`, `#estadoVacio`, `#btnAgregarTarea`. <br>Por clase: `.grupo-filtros`, `.btn-filtro`, `.tarea-item`. <br>Relativos: `.btn-estado`, `.tarea-item` (con `.closest()`). | `click`: detecta cuando se pulsa un botón de filtro o un botón de estado. <br>`input`: detecta la escritura en tiempo real en el campo de búsqueda. | Clases utilitarias: `d-none` (oculta/muestra tareas) y `activo` (resalta el filtro). <br>Cards: contenedor principal y tarjetas de tareas. |
+| Validación del formulario de inicio de sesión | Nolasco Gómez José Daniel | Por ID: `#formulario-login`, `#usuario`, `#contrasena`, `#estado-login`, `#error-usuario`, `#error-contrasena`.<br>Por atributo: `input[required]`. | `input`: actualiza la validación mientras se escribe.<br>`blur`: valida el campo al salir de él.<br>`submit`: valida los campos, enfoca el primero inválido y redirige a `index.html` cuando ambos son válidos. | Form Controls: `form-control` y `form-label`.<br>Estados visuales: `is-invalid`, `is-valid` e `invalid-feedback`.<br>Accesibilidad: `visually-hidden` y `aria-live`. |
 | Modal con información dinámica | Ordaz Cano Mariana | Por ID: `#buscador`, `#btnBuscar`, `#modalEliminar`, `#btnConfirmar`. <br>Por clase: `.btn-eliminar`. | `input`: detecta la escritura en tiempo real para filtrar por materia. <br>`click`: detecta cuando se pulsa Buscar, Eliminar, Cancelar o cerrar modal. <br>`submit`: detecta cuando se confirma la eliminación de la tarea. | Modal: muestra la materia y descripción de la tarea. <br>Form Controls & Buttons: campo de búsqueda y botones de acción. |
 
 
@@ -280,56 +281,56 @@ Modo Obscuro.
 
 
 <img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/ecf54daf-23e3-453a-9958-40d1395bbfa9" />
-
 Tablero.
 
 
 <img width="716" height="485" alt="image" src="https://github.com/user-attachments/assets/5248425d-dd89-4608-9cbc-ed941a17bd60" />
-
-
 <img width="1468" height="910" alt="image" src="https://github.com/user-attachments/assets/679d1658-d9e7-4f24-88cd-e1cd9a923af2" />
-
-
 Filtrado y Busqueda de Elementos.
+
+<img src="img/inicio-sesion.png" width="350" alt="Formulario de inicio de sesión en vista web" />
+formulario vacío al intentar entrar y de los mensajes de validación al corregir los campos.
 
 
 
 
 ### Reflexiones
-Espinoza Cuevas Diego Omar
 
+Nolasco Gómez José Daniel:
+La interacción que trabajé fue la validación del formulario de inicio de sesión.
+Lo más difícil fue mostrar errores en el momento adecuado sin interrumpir al usuario.
+Usé el evento `input` para actualizar los mensajes mientras se escriben los datos.
+Con `blur`, valido cada campo cuando el usuario termina de enfocarlo.
+Al enviar el formulario, `submit` revisa que el usuario y la contraseña sean válidos.
+Si hay un error, el sistema enfoca el primer campo que necesita corrección.
+También agregué una regla para pedir una contraseña de al menos ocho caracteres y un símbolo.
+Bootstrap me ayudó a mostrar los campos y sus estados de error de forma consistente.
+Aprendí que JavaScript puede combinarse con las clases de Bootstrap para dar respuesta inmediata.
+La delegación de eventos permite manejar eventos de varios campos desde un contenedor común, aunque en esta implementación asocié los eventos directamente a cada campo.
+
+
+
+Espinoza Cuevas Diego Omar:
 La interacción que me tocó fue la barra de progreso, se me difuculto hacer que avanzara cada vez que presionaba el botón y que el nivel cambiara cuando se llenaba, también tuve que actualizar los XP disponibles para que se reflejaran en la página, usé el evento click para detectar cuándo se presionaba el botóny con JavaScript hice que el progreso y los datos cambiaran sin tener que recargar la página ademas ekl uso de la herramienta de Bootstrap me ayudó a mostrar la barra y a darle una estructura visual, aprendí que JavaScript permite que la página responda a mis acciones y que Bootstrap facilita la presentación de algunos elementos, y al combinar los dos, pude mostrar de forma clara cómo avanzaba el progreso.
 
 
-Angel Alvarez Del Valle
-
+Angel Alvarez Del Valle:
 Para la interacción del modo oscuro implementé el uso de selectores por ID para acceder a los elementos del botón y el ícono del tema, además de eventos de tipo click para alternar entre modo claro y oscuro. Utilicé Bootstrap Icons para cambiar el ícono de sol a luna, y el atributo data-bs-theme para aplicar los estilos del tema. También guardé la preferencia del usuario en localStorage para que se mantenga al recargar la página. Considero que esta interacción fue útil para entender cómo manipular clases y atributos con JavaScript sin necesidad de modificar el CSS directamente. Aprendí que los selectores por ID son ideales cuando se trabaja con elementos únicos, y que combinar JavaScript con componentes de Bootstrap facilita mucho el desarrollo de funcionalidades dinámicas. Me parece importante documentar cada interacción con claridad para que el resto del equipo pueda entender el flujo y dar mantenimiento al código sin problemas.
 
 
 
-
-
-
-Sandoval Resendiz Alexander Emir
-
+Sandoval Resendiz Alexander Emir:
 Durante el desarrollo de la tienda, una de las partes que más se nos complicó fue hacer las notificaciones que aparecen cuando se compra un producto. Tuvimos que lograr que el sistema identificara el nombre del producto seleccionado y que el mensaje apareciera con una animación, permaneciera unos segundos en pantalla y después desapareciera automáticamente.
-
 Con esta actividad aprendimos que usar correctamente los eventos de JavaScript facilita el manejo de los botones y permite agregar más productos sin tener que repetir el mismo código. También aprendimos a combinar JavaScript con Bootstrap y a organizar el código en un archivo independiente llamado tienda-de-mascota.js. Esto nos ayudó a tener una mejor organización y a hacer que la tienda respondiera rápidamente a las acciones del usuario, mejorando así su experiencia al utilizarla.
 
 
 
-
-
-Dector Montiel Norma Angelica
-
+Dector Montiel Norma Angelica:
 La interacción que hice fue la de filtrado y búsqueda de tareas. Lo que más se me complicó fue hacer que el filtro por estado y la búsqueda por texto funcionaran al mismo tiempo. Aprendí a usar una sola función para combinar ambos y también a detectar qué botón se presiona sin tener que poner un evento en cada uno. Además, entendí cómo usar clases de Bootstrap, como "d-none", para ocultar elementos. Con esta actividad aprendí a combinar JavaScript con Bootstrap y a hacer mi código más claro y ordenado.
 
 
 
-
-
-Ordaz Cano Mariana
-
+Ordaz Cano Mariana:
 La implementación de este modal dinamiza la interfaz al permitir filtrar y gestionar tareas de forma fluida y sin recargar la página. Al solicitar una confirmación clara antes de eliminar una tarea mostrando su materia y descripción, se mejora la experiencia del usuario y se evitan borrados accidentales, haciendo la aplicación más segura, clara e intuitiva
 
 ## Proyecto académico
