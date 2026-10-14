@@ -24,7 +24,6 @@ body {
 }
 
 /* NAVBAR */
-
 .pet-nav {
     min-height: 106px;
     display: flex;
@@ -69,6 +68,7 @@ body {
     transition: background-color 160ms ease, color 160ms ease;
 }
 
+/* CORREGIDO: enlaces del navbar regresan a AZUL en el hover */
 .pet-nav__links a:hover,
 .pet-nav__links a:focus-visible,
 .pet-nav__links a[aria-current="page"] {
@@ -84,9 +84,10 @@ body {
     transition: background-color 160ms ease;
 }
 
+/* Botón "Iniciar sesión" se queda ROSA en el hover */
 .pet-nav__links .pet-nav__login:hover,
 .pet-nav__links .pet-nav__login:focus-visible {
-    background-color: var(--pet-blue);
+    background-color: var(--pet-pink);
     color: var(--pet-white);
 }
 
@@ -100,7 +101,6 @@ body {
 }
 
 /* CONTENIDO */
-
 .site-shell {
     width: min(1200px, calc(100% - 64px));
     margin: 0 auto;
@@ -108,7 +108,6 @@ body {
 }
 
 /* ENCABEZADO */
-
 .site-header {
     margin-bottom: 24px;
     padding: 32px;
@@ -159,7 +158,6 @@ body {
 }
 
 /* DASHBOARD */
-
 .dashboard {
     display: grid;
     grid-template-columns: minmax(0, 1.65fr) minmax(320px, 0.8fr);
@@ -168,7 +166,6 @@ body {
 }
 
 /* SECCIÓN DE TAREAS */
-
 .dashboard-tareas {
     min-width: 0;
     padding: 24px;
@@ -211,7 +208,6 @@ body {
 }
 
 /* TARJETAS DE ACTIVIDADES */
-
 .site-feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -251,13 +247,16 @@ body {
     background-color: var(--pet-paper);
 }
 
-.site-feature:nth-child(3n + 2) {
-    border-top: 4px solid var(--pet-pink);
-}
-
-.site-feature:nth-child(3n) {
-    border-top: 4px solid var(--pet-blue-soft);
-}
+/* Borde superior para todas las tarjetas */
+.site-feature:nth-child(1) { border-top: 4px solid var(--pet-blue); }
+.site-feature:nth-child(2) { border-top: 4px solid var(--pet-pink); }
+.site-feature:nth-child(3) { border-top: 4px solid var(--pet-blue); }
+.site-feature:nth-child(4) { border-top: 4px solid var(--pet-pink); }
+.site-feature:nth-child(5) { border-top: 4px solid var(--pet-blue); }
+.site-feature:nth-child(6) { border-top: 4px solid var(--pet-pink); }
+.site-feature:nth-child(7) { border-top: 4px solid var(--pet-blue); }
+.site-feature:nth-child(8) { border-top: 4px solid var(--pet-pink); }
+.site-feature:nth-child(9) { border-top: 4px solid var(--pet-blue); }
 
 .site-feature--principal {
     border-top: 4px solid var(--pet-blue);
@@ -298,7 +297,6 @@ body {
 }
 
 /* COLUMNA DERECHA */
-
 .dashboard-lateral {
     display: flex;
     flex-direction: column;
@@ -306,7 +304,6 @@ body {
 }
 
 /* MASCOTA */
-
 .pet-card {
     padding: 24px;
     border-radius: 12px;
@@ -350,7 +347,6 @@ body {
 }
 
 /* ESPACIO DE MASCOTA */
-
 .pet-placeholder {
     min-height: 300px;
     display: flex;
@@ -425,16 +421,16 @@ body {
     transition: background-color 160ms ease;
 }
 
+/* Botones de cards se quedan ROSA en el hover */
 .pet-card__link:hover,
 .streak-link:hover,
 .pet-card__link:focus-visible,
 .streak-link:focus-visible {
-    background-color: var(--pet-blue);
+    background-color: var(--pet-pink);
     color: var(--pet-white);
 }
 
 /* RACHA */
-
 .streak-card {
     padding: 24px;
     border-radius: 12px;
@@ -516,7 +512,6 @@ body {
 }
 
 /* FOOTER */
-
 .site-footer {
     display: flex;
     width: 100%;
@@ -539,7 +534,6 @@ body {
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 992px) {
     .dashboard {
         grid-template-columns: 1fr;
@@ -689,19 +683,12 @@ body {
     }
 }
 
-/* =========================================================
-   NOSOTROS
-   ========================================================= */
-
-/* CONTENEDOR */
-
+/* NOSOTROS */
 .nosotros {
     width: min(1200px, calc(100% - 64px));
     margin: 0 auto;
     padding: 32px 0 48px;
 }
-
-/* HERO */
 
 .nosotros-hero {
     min-height: 360px;
@@ -771,8 +758,6 @@ body {
     display: block;
 }
 
-/* TÍTULOS */
-
 .nosotros-section-title {
     margin: 0;
     color: var(--pet-ink);
@@ -780,8 +765,6 @@ body {
     font-size: 30px;
     font-weight: 400;
 }
-
-/* OBJETIVO */
 
 .objetivo {
     margin-bottom: 24px;
@@ -836,8 +819,6 @@ body {
     opacity: 0.78;
 }
 
-/* INFORMACIÓN */
-
 .nosotros-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -889,8 +870,6 @@ body {
     line-height: 1.6;
     opacity: 0.75;
 }
-
-/* EQUIPO */
 
 .equipo {
     padding: 32px;
@@ -954,8 +933,6 @@ body {
     color: var(--pet-white);
 }
 
-/* SUBLÍDER */
-
 .miembro--sublider {
     border-color: var(--pet-blue);
     background-color: #f5f7ff;
@@ -1006,8 +983,6 @@ body {
     font-weight: 500;
     line-height: 1.4;
 }
-
-/* RESPONSIVE */
 
 @media (max-width: 992px) {
     .nosotros-hero {
@@ -1074,19 +1049,12 @@ body {
     }
 }
 
-/* =========================================================
-   CONTACTO
-   ========================================================= */
-
-/* CONTENEDOR */
-
+/* CONTACTO */
 .contacto {
     width: min(1200px, calc(100% - 64px));
     margin: 0 auto;
     padding: 32px 0 48px;
 }
-
-/* HERO */
 
 .contacto-hero {
     min-height: 330px;
@@ -1156,16 +1124,12 @@ body {
     display: block;
 }
 
-/* CONTENIDO */
-
 .contacto-contenido {
     display: grid;
     grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.7fr);
     gap: 24px;
     align-items: start;
 }
-
-/* EQUIPO */
 
 .contacto-equipo {
     position: sticky;
@@ -1206,8 +1170,6 @@ body {
     line-height: 1.6;
     opacity: 0.72;
 }
-
-/* LISTA DE CONTACTOS */
 
 .contacto-lista {
     display: grid;
@@ -1308,8 +1270,6 @@ body {
     overflow-wrap: anywhere;
 }
 
-/* INFORMACIÓN */
-
 .contacto-info {
     position: sticky;
     top: 24px;
@@ -1376,14 +1336,13 @@ body {
         transform 160ms ease;
 }
 
+/* Botón de contacto se queda ROSA en el hover */
 .contacto-info__link:hover,
 .contacto-info__link:focus-visible {
-    background-color: var(--pet-blue);
+    background-color: var(--pet-pink);
     color: var(--pet-white);
     transform: translateY(-2px);
 }
-
-/* RESPONSIVE */
 
 @media (max-width: 992px) {
     .contacto-hero {
@@ -1457,5 +1416,150 @@ body {
 
     .contacto-card__contenido h3 {
         font-size: 17px;
+    }
+}
+
+/* MODO OSCURO */
+/* Icono dentro de las tarjetas de actividades */
+.site-feature__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: var(--pet-blue);
+    color: var(--pet-white);
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+/* Colores específicos por tarjeta (solo rosa y azul) */
+.site-feature:nth-child(1) .site-feature__icon { background-color: var(--pet-blue); }
+.site-feature:nth-child(2) .site-feature__icon { background-color: var(--pet-blue); }
+.site-feature:nth-child(3) .site-feature__icon { background-color: var(--pet-pink); }
+.site-feature:nth-child(4) .site-feature__icon { background-color: var(--pet-blue); }
+.site-feature:nth-child(5) .site-feature__icon { background-color: var(--pet-pink); }
+.site-feature:nth-child(6) .site-feature__icon { background-color: var(--pet-blue); }
+.site-feature:nth-child(7) .site-feature__icon { background-color: var(--pet-pink); }
+.site-feature:nth-child(8) .site-feature__icon { background-color: var(--pet-blue); }
+.site-feature:nth-child(9) .site-feature__icon { background-color: var(--pet-pink); }
+
+/* Botón de tema en el navbar */
+.pet-nav__tema-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin-left: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--pet-paper);
+    color: var(--pet-ink);
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+/* Hover del botón de tema (ROSA) */
+.pet-nav__tema-btn:hover,
+.pet-nav__tema-btn:focus-visible {
+    background-color: var(--pet-pink);
+    color: var(--pet-white);
+    transform: scale(1.05);
+}
+
+/* Variables del modo oscuro */
+body[data-bs-theme="dark"] {
+    --pet-ink: #e5eaf5;
+    --pet-blue: #8fa3ed;
+    --pet-blue-soft: #557ffc;
+    --pet-pink: #ff6f82;
+    --pet-paper: #12123a;
+    --pet-white: #1e1e50;
+    --pet-line: #3a3a6a;
+    background-color: var(--pet-paper);
+    color: var(--pet-ink);
+}
+
+/* Navbar en modo oscuro */
+body[data-bs-theme="dark"] .pet-nav {
+    background-color: #0d0d2e;
+}
+
+/* Enlaces del navbar en modo oscuro */
+body[data-bs-theme="dark"] .pet-nav__links a {
+    color: #ffffff;
+}
+
+/* Hover de los enlaces en modo oscuro (AZUL) */
+body[data-bs-theme="dark"] .pet-nav__links a:hover,
+body[data-bs-theme="dark"] .pet-nav__links a:focus-visible,
+body[data-bs-theme="dark"] .pet-nav__links a[aria-current="page"] {
+    background-color: var(--pet-blue);
+    color: #ffffff;
+}
+
+/* Enlace de "Iniciar sesión" en modo oscuro (ROSA) */
+body[data-bs-theme="dark"] .pet-nav__links .pet-nav__login {
+    background-color: var(--pet-pink);
+    color: #ffffff;
+}
+
+/* Superficies en modo oscuro */
+body[data-bs-theme="dark"] .site-header,
+body[data-bs-theme="dark"] .dashboard-tareas,
+body[data-bs-theme="dark"] .pet-card,
+body[data-bs-theme="dark"] .streak-card,
+body[data-bs-theme="dark"] .site-feature,
+body[data-bs-theme="dark"] .info-card,
+body[data-bs-theme="dark"] .miembro,
+body[data-bs-theme="dark"] .objetivo,
+body[data-bs-theme="dark"] .equipo,
+body[data-bs-theme="dark"] .contacto-equipo,
+body[data-bs-theme="dark"] .contacto-card,
+body[data-bs-theme="dark"] .nosotros-hero,
+body[data-bs-theme="dark"] .contacto-hero {
+    background-color: var(--pet-white);
+    border-color: var(--pet-line);
+}
+
+/* Fondos internos en modo oscuro */
+body[data-bs-theme="dark"] .streak-content,
+body[data-bs-theme="dark"] .pet-placeholder,
+body[data-bs-theme="dark"] .section-count,
+body[data-bs-theme="dark"] .streak-icon,
+body[data-bs-theme="dark"] .objetivo__contenido,
+body[data-bs-theme="dark"] .nosotros-logo-box,
+body[data-bs-theme="dark"] .contacto-logo-box {
+    background-color: var(--pet-paper);
+}
+
+/* Footer en modo oscuro */
+body[data-bs-theme="dark"] .site-footer {
+    background-color: #0d0d2e;
+    border-top-color: var(--pet-line);
+    color: var(--pet-ink);
+}
+
+/* Botón de tema en modo oscuro */
+body[data-bs-theme="dark"] .pet-nav__tema-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffd966;
+}
+
+/* Hover del botón de tema en modo oscuro (ROSA) */
+body[data-bs-theme="dark"] .pet-nav__tema-btn:hover,
+body[data-bs-theme="dark"] .pet-nav__tema-btn:focus-visible {
+    background-color: var(--pet-pink);
+    color: #ffffff;
+}
+
+/* Responsive del botón de tema */
+@media (max-width: 991px) {
+    .pet-nav__tema-btn {
+        margin-left: 0;
+        margin-top: 12px;
     }
 }
