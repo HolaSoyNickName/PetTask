@@ -258,6 +258,7 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 |---|---|---|---|---|
 | Barra de progreso que avanza según acciones del usuario. | Diego Omar Espinoza Cuevas | Por ID: `#subir-nivel`, `#barra-progreso`, `#nivel-mascota`, `#xp-usuario`, `#texto-progreso`, `#texto-restantes`.<br>Por clase: `.barra-progreso`. | `click`: detecta cuando se pulsa el botón “Subir nivel”. | Barra de progreso (Progress): usa las clases `progress` y `progress-bar`. |
 | Modo oscuro con localStorage | Angel Alvarez Del Valle | Por ID: `#btnTema`, `#iconoTema`. | `click`: detecta cuando se pulsa el botón del tema (sol/luna) para alternar entre modo claro y oscuro. | Bootstrap Icons: usa las clases `bi-sun-fill` y `bi-moon-stars-fill`.<br>Atributo `data-bs-theme`: aplica el tema oscuro/claro al `body`. |
+| Notificación tras una acción | Sandoval Resendiz Alexander Emir | Por ID: `#producto`, `#btn-comprar`, `#notificacion`.<br>Por clase: `.btn-comprar`. | `click`: detecta cuando se pulsa el botón de compra. | Toast: muestra una notificación de confirmación de compra. |
 
 
 ###Evidencia de interacciones
@@ -269,6 +270,44 @@ Barra de progreso.
 
 <img width="1600" height="739" alt="ba3a0a30-e7b9-4182-8b46-76f57ef41162" src="https://github.com/user-attachments/assets/1ee04ae0-2f38-4fa4-9bef-ff46bdde916e" />
 Notificacion tras una acción.
+
+
+<img width="1366" height="768" alt="72828d32-696f-43a9-8cc9-d597a3e31d09" src="https://github.com/user-attachments/assets/7bab1ccb-5d9e-470a-b60e-ee2b0c5b3921" />
+<img width="1366" height="768" alt="b86631bf-c4ef-43de-b0c2-58864e86cd68" src="https://github.com/user-attachments/assets/f8aeedba-e59c-4072-90d4-d1113a6f077f" />
+Modo Obscuro
+
+
+
+
+
+###Reflexiones
+Espinoza Cuevas Diego Omar
+
+La interacción que me tocó fue la barra de progreso. Lo más difícil fue hacer que avanzara cada vez que presionaba el botón y que el nivel cambiara cuando se llenaba. También tuve que actualizar los XP disponibles para que se reflejaran en la página. Usé el evento click para detectar cuándo se presionaba el botón. Con JavaScript hice que el progreso y los datos cambiaran sin tener que recargar la página. Bootstrap me ayudó a mostrar la barra y a darle una estructura visual. Aprendí que JavaScript permite que la página responda a mis acciones y que Bootstrap facilita la presentación de algunos elementos. Al combinar los dos, pude mostrar de forma clara cómo avanzaba el progreso.
+
+
+Angel Alvarez Del Valle
+
+Para la interacción del modo oscuro implementé el uso de selectores por ID para acceder a los elementos del botón y el ícono del tema, además de eventos de tipo click para alternar entre modo claro y oscuro. Utilicé Bootstrap Icons para cambiar el ícono de sol a luna, y el atributo data-bs-theme para aplicar los estilos del tema. También guardé la preferencia del usuario en localStorage para que se mantenga al recargar la página. Considero que esta interacción fue útil para entender cómo manipular clases y atributos con JavaScript sin necesidad de modificar el CSS directamente. Aprendí que los selectores por ID son ideales cuando se trabaja con elementos únicos, y que combinar JavaScript con componentes de Bootstrap facilita mucho el desarrollo de funcionalidades dinámicas. Me parece importante documentar cada interacción con claridad para que el resto del equipo pueda entender el flujo y dar mantenimiento al código sin problemas.
+
+
+
+
+
+
+Sandoval Resendiz Alexander Emir
+
+Durante el desarrollo de la tienda, una de las partes que más se nos complicó fue hacer las notificaciones que aparecen cuando se compra un producto. Tuvimos que lograr que el sistema identificara el nombre del producto seleccionado y que el mensaje apareciera con una animación, permaneciera unos segundos en pantalla y después desapareciera automáticamente.
+
+Con esta actividad aprendimos que usar correctamente los eventos de JavaScript facilita el manejo de los botones y permite agregar más productos sin tener que repetir el mismo código. También aprendimos a combinar JavaScript con Bootstrap y a organizar el código en un archivo independiente llamado tienda-de-mascota.js. Esto nos ayudó a tener una mejor organización y a hacer que la tienda respondiera rápidamente a las acciones del usuario, mejorando así su experiencia al utilizarla.
+
+
+
+
+
+Dector Montiel Norma Angelica
+
+La interacción que hice fue la de filtrado y búsqueda de tareas. Lo que más se me complicó fue hacer que el filtro por estado y la búsqueda por texto funcionaran al mismo tiempo. Aprendí a usar una sola función para combinar ambos y también a detectar qué botón se presiona sin tener que poner un evento en cada uno. Además, entendí cómo usar clases de Bootstrap, como "d-none", para ocultar elementos. Con esta actividad aprendí a combinar JavaScript con Bootstrap y a hacer mi código más claro y ordenado.
 
 
 ## Proyecto académico
