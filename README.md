@@ -257,6 +257,7 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 | Interacción | Integrante Responsable | Selectores Usados | Eventos Usados | Componente Bootstrap |
 |---|---|---|---|---|
 | Barra de progreso que avanza según acciones del usuario. | Diego Omar Espinoza Cuevas | Por ID: `#subir-nivel`, `#barra-progreso`, `#nivel-mascota`, `#xp-usuario`, `#texto-progreso`, `#texto-restantes`.<br>Por clase: `.barra-progreso`. | `click`: detecta cuando se pulsa el botón “Subir nivel”. | Barra de progreso (Progress): usa las clases `progress` y `progress-bar`. |
+| Modo oscuro con localStorage | Angel Alvarez Del Valle | Por ID: `#btnTema`, `#iconoTema`. | `click`: detecta cuando se pulsa el botón del tema (sol/luna) para alternar entre modo claro y oscuro. | Bootstrap Icons: usa las clases `bi-sun-fill` y `bi-moon-stars-fill`.<br>Atributo `data-bs-theme`: aplica el tema oscuro/claro al `body`. |
 
 
 ## Proyecto académico
