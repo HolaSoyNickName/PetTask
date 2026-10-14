@@ -324,6 +324,13 @@ Dector Montiel Norma Angelica
 La interacción que hice fue la de filtrado y búsqueda de tareas. Lo que más se me complicó fue hacer que el filtro por estado y la búsqueda por texto funcionaran al mismo tiempo. Aprendí a usar una sola función para combinar ambos y también a detectar qué botón se presiona sin tener que poner un evento en cada uno. Además, entendí cómo usar clases de Bootstrap, como "d-none", para ocultar elementos. Con esta actividad aprendí a combinar JavaScript con Bootstrap y a hacer mi código más claro y ordenado.
 
 
+
+
+
+Ordaz Cano Mariana
+
+
+
 ## Proyecto académico
 **PetTask**
 Aplicaciones Web
