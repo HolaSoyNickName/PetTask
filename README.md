@@ -219,16 +219,6 @@ Las tarjetas, formularios, botones, listas y demás elementos de la interfaz se 
 
 
 
-
-
-
-
-
-
-
-
-
-
 ### Capturas de móvil
 <p align="center">
   <img src="./img/movil-mascota-virtual.png" width="250"/> 
@@ -258,6 +248,8 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 - **SRS.pdf / SRS.tex:** Especificación de Requisitos de Software.
 - **Guia_Diseno.pdf / Guia_Diseno.tex:** Guía de diseño de PetTask.
 ---
+
+##
 
 ## Proyecto académico
 **PetTask**

@@ -1074,6 +1074,90 @@ body {
     }
 }
 
+/* INICIO: tablero inspirado en la referencia */
+.site-header,
+.dashboard-tareas,
+.pet-card,
+.streak-card {
+    border: 1px solid var(--pet-line);
+    border-radius: 14px;
+}
+
+.site-header {
+    padding: 28px 32px;
+}
+
+.site-feature-grid {
+    gap: 12px;
+}
+
+.site-feature {
+    position: relative;
+    min-height: 152px;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 18px 48px 16px 17px;
+    border: 1px solid var(--pet-line);
+    border-top: 2px solid var(--pet-blue) !important;
+    border-radius: 13px;
+}
+
+.site-feature:nth-child(3n + 2) { border-top-color: var(--pet-pink) !important; }
+.site-feature:nth-child(3n) { border-top-color: var(--pet-blue) !important; }
+.site-feature:nth-child(4n) { border-top-color: #9b4dff !important; }
+
+.site-feature__icon {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 23px;
+}
+
+.site-feature__icon.bg-primary { background-color: var(--pet-blue) !important; }
+.site-feature__icon.bg-danger { background-color: var(--pet-pink) !important; }
+.site-feature__icon.bg-purple { background-color: #8744ee; }
+.site-feature strong { font-family: "Onest", sans-serif; font-size: 16px; font-weight: 700; }
+.site-feature > span:not(.site-feature__icon) { font-size: 13px; line-height: 1.35; }
+.site-feature__arrow {
+    position: absolute;
+    right: 12px;
+    bottom: 24px;
+    color: var(--pet-ink);
+    font-size: 23px;
+}
+
+.pet-placeholder { min-height: 230px; }
+.pet-placeholder__icon { color: var(--pet-ink); background-color: var(--pet-paper); }
+.pet-placeholder__icon .bi { font-size: 38px; }
+.pet-card__link, .streak-link { border-radius: 12px; font-weight: 700; }
+.theme-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1050;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--pet-line);
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    box-shadow: 0 4px 14px #1e1e5030;
+}
+.theme-fab:hover, .theme-fab:focus-visible { background: #f2f2f2; color: #000; }
+
+@media (max-width: 520px) {
+    .site-feature { min-height: 138px; }
+    .theme-fab { right: 14px; bottom: 14px; }
+}
+
 /* =========================================================
    CONTACTO
    ========================================================= */

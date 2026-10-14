@@ -3,7 +3,6 @@
 (() => {
     const formulario = document.querySelector('#formulario-login');
     if (!formulario) return;
-
     const campos = Array.from(formulario.querySelectorAll('input[required]'));
     const estado = formulario.querySelector('#estado-login');
     let intentoDeEnvio = false;
@@ -20,7 +19,6 @@
     function validarCampo(campo, mostrar = false) {
         const valido = campo.validity.valid;
         const error = formulario.querySelector(`#error-${campo.id}`);
-
         campo.classList.toggle('is-invalid', mostrar && !valido);
         campo.classList.toggle('is-valid', mostrar && valido);
         campo.setAttribute('aria-invalid', String(mostrar && !valido));
@@ -36,7 +34,6 @@
             validarCampo(campo, mostrar);
             if (estado) estado.textContent = '';
         });
-
         campo.addEventListener('blur', () => {
             campo.dataset.tocado = 'true';
             validarCampo(campo, true);
@@ -46,7 +43,6 @@
     formulario.addEventListener('submit', (evento) => {
         evento.preventDefault();
         intentoDeEnvio = true;
-
         campos.forEach((campo) => validarCampo(campo, true));
         const primerCampoInvalido = campos.find((campo) => !campo.validity.valid);
         if (primerCampoInvalido) {
@@ -54,7 +50,6 @@
             if (estado) estado.textContent = 'Hay campos que necesitan correccion.';
             return;
         }
-
         // Preserve the prototype's original button behavior after validation.
         window.location.href = 'index.html';
     });
