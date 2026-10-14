@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PetTask - Mi Mascota</title>
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="interaccion-con-mascota.css" />
   </head>
@@ -27,12 +33,9 @@
         <div class="tarjeta-mascota">
           <div class="contenido-mascota">
             <div class="mascota-placeholder">
-              <div class="mascota">
-                <span class="placeholder-texto">Mascota virtual</span>
-                <span class="placeholder-subtexto">Próximamente</span>
-              </div>
+              <img class="imagen-mascota" src="PetTaskMascota.png" alt="Mascota virtual Gatonto" />
             </div>
-            <h2 class="nombre-mascota">Firulais</h2>
+            <h2 class="nombre-mascota">Gatonto</h2>
             <span class="badge-estado">Feliz</span>
             <p class="texto-mascota">
               Tu mascota está contenta. ¡Sigue completando tareas para
@@ -44,7 +47,7 @@
           <div class="contenido-progreso">
             <div class="encabezado-estado">
               <div>
-                <p class="etiqueta-progreso">Experiencia de Firulais</p>
+                <p class="etiqueta-progreso">Gatonto</p>
                 <h2 class="subtitulo">Progreso para el siguiente nivel</h2>
               </div>
               <span class="badge-nivel" id="nivel-mascota">Nivel 5</span>
@@ -53,17 +56,34 @@
               <span>XP del usuario disponibles</span>
               <strong id="xp-usuario">50000 XP</strong>
             </div>
-            <div class="progress barra-progreso" role="progressbar" aria-label="Experiencia de Firulais para el siguiente nivel" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="500">
-              <div class="progress-bar barra-progreso-valor" id="barra-progreso" style="width: 100%"></div>
+            <div
+              class="progress barra-progreso"
+              role="progressbar"
+              aria-label="Experiencia de Gatonto para el siguiente nivel"
+              aria-valuemin="0"
+              aria-valuemax="1000"
+              aria-valuenow="500"
+            >
+              <div
+                class="progress-bar barra-progreso-valor"
+                id="barra-progreso"
+                style="width: 100%"
+              ></div>
             </div>
             <div class="detalle-progreso">
-              <span id="texto-progreso">500 / 1000 XP de Firulais</span>
-              <span id="texto-restantes">Faltan 500 XP para el siguiente nivel</span>
+              <span id="texto-progreso">500 / 1000 XP de Gatonto</span>
+              <span id="texto-restantes"
+                >Faltan 500 XP para el siguiente nivel</span
+              >
             </div>
             <p class="texto-progreso">
               ¡Usa tu XP para subir de nivel a tu mascota!
             </p>
-            <button class="btn btn-primary boton-tarea" id="subir-nivel" type="button">
+            <button
+              class="btn btn-primary boton-tarea"
+              id="subir-nivel"
+              type="button"
+            >
               Subir nivel (100 XP)
             </button>
           </div>
@@ -96,7 +116,10 @@
         </div>
       </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="mascota.js" defer></script>
   </body>
 </html>
