@@ -285,7 +285,8 @@ Tablero.
 <img width="716" height="485" alt="image" src="https://github.com/user-attachments/assets/5248425d-dd89-4608-9cbc-ed941a17bd60" />
 
 
-<img width="944" height="520" alt="Captura de pantalla 2026-10-14 001433" src="https://github.com/user-attachments/assets/a03805d7-5635-4da0-b281-c7c4a0b31796" />
+<img width="693" height="494" alt="image" src="https://github.com/user-attachments/assets/97e7fcb2-3fd9-4459-9a25-7166df767724" />
+
 
 <img width="683" height="473" alt="image" src="https://github.com/user-attachments/assets/2d20b884-f15c-422c-b992-9776e7144de1" />
 
