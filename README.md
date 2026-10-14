@@ -256,10 +256,7 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 
 | Interacción | Integrante Responsable | Selectores Usados | Eventos Usados | Componente Bootstrap |
 |---|---|---|---|---|
-| Barra de progreso que avanza según acciones del usuario. | Diego Omar Espinoza Cuevas | Por ID: #subir-nivel, #barra-progreso, #nivel-mascota, #xp-usuario, #texto-progreso, #texto-restantes.
-Por clase: .barra-progreso.| click: detecta cuando se pulsa el botón “Subir nivel”. | Barra de progreso (Progress): usa las clases progress y progress-bar. |
-
-| | | | | |
+| Barra de progreso que avanza según acciones del usuario. | Diego Omar Espinoza Cuevas | Por ID: `#subir-nivel`, `#barra-progreso`, `#nivel-mascota`, `#xp-usuario`, `#texto-progreso`, `#texto-restantes`.<br>Por clase: `.barra-progreso`. | `click`: detecta cuando se pulsa el botón “Subir nivel”. | Barra de progreso (Progress): usa las clases `progress` y `progress-bar`. |
 
 
 ## Proyecto académico
