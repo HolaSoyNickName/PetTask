@@ -261,7 +261,7 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 | Notificación tras una acción | Sandoval Resendiz Alexander Emir | Por ID: `#producto`, `#btn-comprar`, `#notificacion`.<br>Por clase: `.btn-comprar`. | `click`: detecta cuando se pulsa el botón de compra. | Toast: muestra una notificación de confirmación de compra. |
 
 
-###Evidencia de interacciones
+### Evidencia de interacciones
 
 <img width="1920" height="973" alt="image" src="https://github.com/user-attachments/assets/530afa9a-db00-4443-860a-a852b32e8cf7" />
 Barra de progreso.
@@ -277,10 +277,12 @@ Notificacion tras una acción.
 Modo Obscuro
 
 
+<img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/ecf54daf-23e3-453a-9958-40d1395bbfa9" />
+Tablero
 
 
 
-###Reflexiones
+### Reflexiones
 Espinoza Cuevas Diego Omar
 
 La interacción que me tocó fue la barra de progreso, se me difuculto hacer que avanzara cada vez que presionaba el botón y que el nivel cambiara cuando se llenaba, también tuve que actualizar los XP disponibles para que se reflejaran en la página, usé el evento click para detectar cuándo se presionaba el botóny con JavaScript hice que el progreso y los datos cambiaran sin tener que recargar la página ademas ekl uso de la herramienta de Bootstrap me ayudó a mostrar la barra y a darle una estructura visual, aprendí que JavaScript permite que la página responda a mis acciones y que Bootstrap facilita la presentación de algunos elementos, y al combinar los dos, pude mostrar de forma clara cómo avanzaba el progreso.
