@@ -251,6 +251,16 @@ La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
 
 ##
 
+
+### Registro de Interacciones
+
+| Interacción | Integrante Responsable | Selectores Usados | Eventos Usados | Componente Bootstrap |
+|---|---|---|---|---|
+| Ejemplo: Abrir menú de navegación | Diego | `#btn-menu`, `.navbar` | `click` | Navbar |
+| Ejemplo: Validar formulario de contacto | Ana | `.form-control`, `#form` | `submit`, `input` | Forms / Validation |
+| | | | | |
+
+
 ## Proyecto académico
 **PetTask**
 Aplicaciones Web
