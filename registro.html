@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrarse - PetTask</title>
-    <!-- Bootstrap -->
+   <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,20 +22,29 @@
     <main class="contenido">
         <section class="tarjeta-registro">
             <h1 class="titulo">Registrarse</h1>
-            <form>
+            <form id="formulario-registro">
                 <div class="campo">
                     <label for="usuario" class="form-label"> Usuario </label>
                     <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario" required />
-                </div>
-                <div class="campo">
+                </div><div class="campo">
                     <label for="contrasena" class="form-label"> Contraseña </label>
-                    <input type="password" class="form-control" id="contrasena" placeholder="Crea una contraseña"
-                        required />
+                    <div class="wrapper-password">
+                        <input type="password" class="form-control" id="contrasena" placeholder="Crea una contraseña" required aria-describedby="error-contrasena" />
+                        <button type="button" class="btn-mostrar" id="toggle-contrasena">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                    <small class="mensaje-error" id="error-contrasena" aria-live="polite"></small>
                 </div>
                 <div class="campo">
                     <label for="confirmar-contrasena" class="form-label"> Confirmar contraseña </label>
-                    <input type="password" class="form-control" id="confirmar-contrasena"
-                        placeholder="Confirma tu contraseña" required />
+                    <div class="wrapper-password">
+                        <input type="password" class="form-control" id="confirmar-contrasena" placeholder="Confirma tu contraseña" required aria-describedby="error-confirmar" />
+                        <button type="button" class="btn-mostrar" id="toggle-confirmar">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                    <small class="mensaje-error" id="error-confirmar" aria-live="polite"></small>
                 </div>
                 <div class="boton">
                     <button type="submit" class="btn-registrarse">Crear cuenta</button>
@@ -41,9 +52,9 @@
             </form>
         </section>
     </main>
-
-    <!-- Bootstrap JS -->
+        <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="registro.js"></script>
 </body>
 
 </html>
