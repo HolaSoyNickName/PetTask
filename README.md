@@ -275,17 +275,21 @@ Notificacion tras una acción.
 
 <img width="1366" height="768" alt="72828d32-696f-43a9-8cc9-d597a3e31d09" src="https://github.com/user-attachments/assets/7bab1ccb-5d9e-470a-b60e-ee2b0c5b3921" />
 <img width="1366" height="768" alt="b86631bf-c4ef-43de-b0c2-58864e86cd68" src="https://github.com/user-attachments/assets/f8aeedba-e59c-4072-90d4-d1113a6f077f" />
-Modo Obscuro
+Modo Obscuro.
 
 
 <img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/ecf54daf-23e3-453a-9958-40d1395bbfa9" />
-Tablero
+Tablero.
 
 
 <img width="716" height="485" alt="image" src="https://github.com/user-attachments/assets/5248425d-dd89-4608-9cbc-ed941a17bd60" />
+
+
 <img width="944" height="520" alt="Captura de pantalla 2026-10-14 001433" src="https://github.com/user-attachments/assets/a03805d7-5635-4da0-b281-c7c4a0b31796" />
+
 <img width="683" height="473" alt="image" src="https://github.com/user-attachments/assets/2d20b884-f15c-422c-b992-9776e7144de1" />
-Filtrado y Busqueda de Elementos
+
+Filtrado y Busqueda de Elementos.
 
 
 
