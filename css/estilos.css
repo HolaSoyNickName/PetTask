@@ -20,68 +20,59 @@ body {
 }
 
 .pet-nav {
-    min-height: 106px;
     display: flex;
-    align-items: center;
+    width: 100%;
+    min-height: 85px;
     justify-content: space-between;
-    gap: 24px;
-    padding: 20px max(32px, calc((100vw - 1200px) / 2));
-    background-color: var(--pet-ink);
+    padding: 15px 5%;
+    background-color: #1f1e50;
     color: var(--pet-white);
 }
 
 .pet-nav__brand {
     display: flex;
     align-items: center;
-    min-height: 45px;
     text-decoration: none;
 }
 
 .pet-nav__brand img {
-    width: auto;
-    height: 40px;
     display: block;
+    width: 180px;
+    max-width: 100%;
+    max-height: 55px;
+    object-fit: contain;
 }
 
 .pet-nav__links {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
+    gap: 25px;
 }
 
 .pet-nav__links a {
-    display: flex;
-    align-items: center;
-    min-height: 45px;
-    padding: 9px 18px;
-    border-radius: 12px;
-    color: var(--pet-white);
-    font-size: 16px;
-    font-weight: 500;
+    color: #ffffff;
+    font-family: "Onest", sans-serif;
+    font-size: 15px;
     text-decoration: none;
-    transition: background-color 160ms ease, color 160ms ease;
+    transition: color 0.2s ease;
 }
 
 .pet-nav__links a:hover,
 .pet-nav__links a:focus-visible,
 .pet-nav__links a[aria-current="page"] {
-    background-color: var(--pet-blue);
-    color: var(--pet-white);
+    color: #8fa3ed;
 }
 
 .pet-nav__links .pet-nav__login {
-    padding: 9px 20px;
-    border-radius: 12px;
-    background-color: var(--pet-pink);
-    color: var(--pet-white);
-    transition: background-color 160ms ease;
+    padding: 10px 18px;
+    border-radius: 9px;
+    background-color: #557ef7;
+    color: #ffffff;
 }
 
 .pet-nav__links .pet-nav__login:hover,
 .pet-nav__links .pet-nav__login:focus-visible {
-    background-color: var(--pet-blue);
-    color: var(--pet-white);
+    background-color: #8fa3ed;
 }
 
 .pet-nav .navbar-toggler {
@@ -241,36 +232,14 @@ body {
 }
 
 @media (max-width: 768px) {
-    .pet-nav {
-        min-height: auto;
-        align-items: center;
-        gap: 12px;
-        padding: 16px 24px;
-    }
-
-    .pet-nav .navbar-collapse {
-        margin-top: 12px;
-    }
-
     .pet-nav__links {
-        width: 100%;
-        gap: 8px 16px;
+        align-items: flex-start;
+        gap: 16px;
+        padding-top: 20px;
     }
 
     .pet-nav__links a {
-        font-size: 14px;
-    }
-
-    .pet-nav__links .pet-nav__login {
-        padding: 8px 14px;
-    }
-
-    .site-title {
-        font-size: 34px;
-    }
-
-    .site-feature-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: fit-content;
     }
 }
 
@@ -291,20 +260,16 @@ body {
 
 @media (max-width: 520px) {
     .pet-nav {
-        padding: 16px;
+        padding: 14px 18px;
+    }
+
+    .pet-nav__brand img {
+        width: 145px;
     }
 
     .pet-nav__links {
         flex-direction: column;
         align-items: stretch;
-    }
-
-    .pet-nav__links a {
-        justify-content: center;
-    }
-
-    .pet-nav__links .pet-nav__login {
-        width: 100%;
     }
 
     .site-shell {
