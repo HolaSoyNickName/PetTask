@@ -25,61 +25,70 @@ body {
 
 /* NAVBAR */
 .pet-nav {
+    min-height: 106px;
     display: flex;
-    width: 100%;
-    min-height: 85px;
+    align-items: center;
     justify-content: space-between;
-    padding: 15px 5%;
-    background-color: #1f1e50;
+    gap: 24px;
+    padding: 20px max(32px, calc((100vw - 1200px) / 2));
+    background-color: var(--pet-ink);
     color: var(--pet-white);
 }
 
 .pet-nav__brand {
     display: flex;
     align-items: center;
+    min-height: 45px;
     text-decoration: none;
 }
 
 .pet-nav__brand img {
+    width: auto;
+    height: 40px;
     display: block;
-    width: 180px;
-    max-width: 100%;
-    max-height: 55px;
-    object-fit: contain;
 }
 
 .pet-nav__links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
 .pet-nav__links a {
-    color: #ffffff;
-    font-family: "Onest", sans-serif;
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+    padding: 9px 18px;
+    border-radius: 12px;
+    color: var(--pet-white);
+    font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: background-color 160ms ease, color 160ms ease;
 }
 
 /* CORREGIDO: enlaces del navbar regresan a AZUL en el hover */
 .pet-nav__links a:hover,
 .pet-nav__links a:focus-visible,
 .pet-nav__links a[aria-current="page"] {
-    color: #8fa3ed;
+    background-color: var(--pet-blue);
+    color: var(--pet-white);
 }
 
 .pet-nav__links .pet-nav__login {
-    padding: 10px 18px;
-    border-radius: 9px;
-    background-color: #557ef7;
-    color: #ffffff;
+    padding: 9px 20px;
+    border-radius: 12px;
+    background-color: var(--pet-pink);
+    color: var(--pet-white);
+    transition: background-color 160ms ease;
 }
 
 /* Botón "Iniciar sesión" se queda ROSA en el hover */
 .pet-nav__links .pet-nav__login:hover,
 .pet-nav__links .pet-nav__login:focus-visible {
-    background-color: #8fa3ed;
+    background-color: var(--pet-pink);
+    color: var(--pet-white);
 }
 
 .pet-nav .navbar-toggler {
@@ -541,14 +550,28 @@ body {
 }
 
 @media (max-width: 768px) {
+    .pet-nav {
+        min-height: auto;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 24px;
+    }
+
+    .pet-nav .navbar-collapse {
+        margin-top: 12px;
+    }
+
     .pet-nav__links {
-        align-items: flex-start;
-        gap: 16px;
-        padding-top: 20px;
+        width: 100%;
+        gap: 8px 16px;
     }
 
     .pet-nav__links a {
-        width: fit-content;
+        font-size: 14px;
+    }
+
+    .pet-nav__links .pet-nav__login {
+        padding: 8px 14px;
     }
 
     .site-shell {
@@ -586,11 +609,7 @@ body {
 
 @media (max-width: 520px) {
     .pet-nav {
-        padding: 14px 18px;
-    }
-
-    .pet-nav__brand img {
-        width: 145px;
+        padding: 16px;
     }
 
     .pet-nav__links {
