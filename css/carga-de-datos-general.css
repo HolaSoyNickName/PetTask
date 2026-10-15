@@ -1,12 +1,7 @@
-:root {
-    --fondo: #e5eaf5;
-    --rosa: #ff6f82;
-    --azul-claro: #8fa3ed;
-    --azul: #557ffc;
-    --azul-oscuro: #1e1e50;
-    --blanco: #ffffff;
-    --texto: #1e1e50;
-}
+```css
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
 
 * {
     box-sizing: border-box;
@@ -14,177 +9,419 @@
 
 body {
     margin: 0;
-    padding: 0;
-    background-color: var(--fondo);
-    color: var(--texto);
-    font-family: "Onest", sans-serif;
+    background-color: #e5eaf5;
+    color: #1f1e50;
+    font-family: "Questrial", sans-serif;
+    font-size: 16px;
 }
 
-/* CONTENIDO */
+a {
+    text-decoration: none;
+}
 
-.contenido {
-    min-height: 100vh;
+/* ========================================
+   NAVEGACIÓN
+======================================== */
+
+.pet-nav {
+    display: flex;
+    width: 100%;
+    min-height: 85px;
+    padding: 15px 5%;
+    background-color: #1f1e50;
+}
+
+.pet-nav__brand {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 24px;
+    flex-shrink: 0;
 }
 
-/* TARJETA */
+.pet-nav__brand img {
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    max-height: 55px;
+    object-fit: contain;
+}
+
+.pet-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.pet-nav__links a {
+    color: #ffffff;
+    font-family: "Onest", sans-serif;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.pet-nav__links a:hover {
+    color: #8fa3ed;
+}
+
+.pet-nav__links .pet-nav__login {
+    padding: 10px 18px;
+    border-radius: 9px;
+    background-color: #557ef7;
+    color: #ffffff;
+}
+
+.pet-nav__login:hover {
+    background-color: #8fa3ed;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.contenido {
+    width: 100%;
+    max-width: 1250px;
+    min-height: 65vh;
+    margin: 40px auto;
+    padding: 0 25px;
+}
 
 .tarjeta-resumen {
     width: 100%;
-    max-width: 900px;
-    padding: 24px;
-    background-color: var(--blanco);
-    border-radius: 24px;
-    box-shadow: 0 2px 8px rgba(30, 30, 80, 0.12);
+    padding: 32px;
+    border: none;
+    border-radius: 22px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 14px rgba(31, 30, 80, 0.12);
 }
 
-/* TÍTULO */
+/* ========================================
+   TÍTULOS
+======================================== */
 
 .titulo {
-    margin: 0 0 8px 0;
-    color: var(--azul-oscuro);
-    font-family: "Questrial", sans-serif;
-    font-size: 32px;
-    font-weight: 400;
+    margin: 0 0 12px;
+    color: #1f1e50;
+    font-family: "Onest", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     text-align: center;
 }
-
-/* DESCRIPCIÓN */
 
 .descripcion {
-    margin: 0 0 24px 0;
-    color: var(--texto);
-    font-size: 16px;
-    font-weight: 400;
+    margin: 0 0 20px;
+    color: #4f4b70;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.tarjeta-resumen > .descripcion {
     text-align: center;
 }
 
-/* RESUMEN */
+/* ========================================
+   TARJETAS DEL RESUMEN
+======================================== */
 
 .resumen {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 26px;
 }
-
-/* DATOS */
 
 .dato {
-    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    min-width: 0;
+    padding: 23px;
+    border: 1px solid #8fa3ed;
     border-radius: 16px;
-    background-color: var(--fondo);
-    border: 2px solid var(--azul-claro);
+    background-color: #e5eaf5;
+    box-shadow: none;
 }
 
-/* ICONO */
-
 .icono {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    background-color: var(--azul);
-    color: var(--blanco);
-    font-size: 24px;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background-color: #557ef7;
+    color: #ffffff;
+    font-size: 23px;
 }
-
-/* INFORMACIÓN */
 
 .informacion {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
 }
-
-/* SUBTÍTULO */
 
 .subtitulo {
-    margin: 0 0 16px 0;
-    color: var(--azul-oscuro);
-    font-family: "Questrial", sans-serif;
-    font-size: 22px;
-    font-weight: 500;
+    margin: 0 0 17px;
+    color: #1f1e50;
+    font-family: "Onest", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
 }
-
-/* ESTADÍSTICAS */
 
 .estadisticas {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0;
 }
-
-/* ESTADÍSTICA */
 
 .estadistica {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--azul-claro);
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #c8d2ed;
 }
 
 .estadistica:last-child {
-    padding-bottom: 0;
     border-bottom: none;
 }
 
-/* VALOR */
-
 .valor {
-    margin: 0;
-    color: var(--azul);
-    font-size: 20px;
+    color: #557ef7;
+    font-family: "Onest", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.texto {
+    color: #1f1e50;
+    font-size: 14px;
+}
+
+/* ========================================
+   SECCIÓN MIS TAREAS
+======================================== */
+
+.seccion-tareas {
+    width: 100%;
+    margin-top: 38px;
+    padding-top: 28px;
+    border-top: 1px solid #e5eaf5;
+}
+
+.seccion-tareas > .subtitulo {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.seccion-tareas > .descripcion {
+    margin-bottom: 22px;
+}
+
+/* ========================================
+   LISTA DE TAREAS
+======================================== */
+
+.lista-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    width: 100%;
+}
+
+.tarea-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+    padding: 18px 20px;
+    border: 1px solid #dce3f5;
+    border-radius: 13px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 7px rgba(31, 30, 80, 0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.tarea-item:hover {
+    box-shadow: 0 5px 13px rgba(31, 30, 80, 0.09);
+    transform: translateY(-2px);
+}
+
+.tarea-contenido {
+    min-width: 0;
+}
+
+.tarea-item h3 {
+    margin: 0 0 7px;
+    color: #1f1e50;
+    font-family: "Onest", sans-serif;
+    font-size: 16px;
     font-weight: 600;
 }
 
-/* TEXTO */
-
-.texto {
+.tarea-item p {
     margin: 0;
-    color: var(--texto);
-    font-size: 16px;
-    font-weight: 400;
-    text-align: right;
+    color: #66627e;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-/* RESPONSIVE */
+/* Estados */
 
-@media (max-width: 768px) {
+.estado {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: "Onest", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.estado.completada {
+    background-color: #d8f3df;
+    color: #216b37;
+}
+
+.estado.pendiente {
+    background-color: #fff0c2;
+    color: #765500;
+}
+
+/* ========================================
+   VER MÁS / VER MENOS
+======================================== */
+
+/* Las tareas adicionales empiezan ocultas */
+.tarea-extra {
+    display: none;
+}
+
+/* Se muestran cuando JavaScript agrega visible */
+.tarea-extra.visible {
+    display: flex;
+}
+
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.boton-ver-mas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 130px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #557ef7;
+    color: #ffffff;
+    font-family: "Onest", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-ver-mas:hover {
+    background-color: #1f1e50;
+    transform: translateY(-2px);
+}
+
+.boton-ver-mas:focus-visible {
+    outline: 3px solid #8fa3ed;
+    outline-offset: 3px;
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+.site-footer {
+    width: 100%;
+    margin-top: 35px;
+    padding: 22px 15px;
+    border-top: 1px solid #dce3f5;
+    background-color: #ffffff;
+    color: #66627e;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 992px) {
     .resumen {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .tarjeta-resumen {
-        padding: 20px;
+    .pet-nav__links {
+        align-items: flex-start;
+        gap: 16px;
+        padding-top: 20px;
+    }
+
+    .pet-nav__links a {
+        width: fit-content;
     }
 }
+
+/* ========================================
+   CELULAR
+======================================== */
 
 @media (max-width: 576px) {
+    .pet-nav {
+        padding: 14px 18px;
+    }
+
+    .pet-nav__brand img {
+        width: 145px;
+    }
+
     .contenido {
-        padding: 16px;
+        margin: 20px auto;
+        padding: 0 12px;
     }
 
     .tarjeta-resumen {
-        padding: 16px;
-        border-radius: 16px;
+        padding: 20px 15px;
+        border-radius: 15px;
     }
 
     .titulo {
-        font-size: 28px;
+        font-size: 25px;
     }
 
-    .descripcion {
-        margin-bottom: 16px;
+    .resumen {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .dato {
+        padding: 17px;
+    }
+
+    .seccion-tareas > .subtitulo {
+        font-size: 22px;
+    }
+
+    .tarea-item {
+        align-items: flex-start;
+        flex-direction: column;
         padding: 16px;
     }
+
+    .boton-ver-mas {
+        width: 100%;
+    }
 }
+```
