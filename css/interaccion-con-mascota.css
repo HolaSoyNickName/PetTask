@@ -105,9 +105,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px dashed var(--azul-claro);
-    border-radius: 12px;
-    background-color: var(--fondo);
+}
+
+.imagen-mascota {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: contain;
+    transition: transform 250ms ease;
+}
+
+.imagen-mascota:hover {
+    transform: scale(1.2);
 }
 
 .mascota {
@@ -169,18 +179,11 @@ body {
     font-weight: 400;
 }
 
-/* ESTADO */
+/* PROGRESO DE NIVEL */
 
-.contenido-estado {
-    padding: 32px;
-}
-
-.encabezado-estado {
+.tarjeta-progreso {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 32px;
 }
 
 .subtitulo {
@@ -191,74 +194,95 @@ body {
     font-weight: 500;
 }
 
-.estados {
+.contenido-progreso {
+    width: 100%;
+    padding: 32px;
+}
+
+.encabezado-estado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.etiqueta-progreso {
+    margin: 0 0 8px;
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.barra-progreso {
+    height: 22px;
+    overflow: hidden;
+    border: 3px solid var(--fondo);
+    border-radius: 999px;
+    background: var(--fondo);
+}
+
+.xp-resumen {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: var(--texto);
+    font-size: 15px;
+}
+
+.xp-resumen strong {
+    color: var(--azul-oscuro);
+    font-size: 20px;
+}
+
+.barra-progreso-valor {
+    width: calc(var(--progreso) * 10%);
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(
+        90deg,
+        var(--rosa) 0%,
+        var(--azul-claro) 50%,
+        var(--azul) 100%
+    );
+    transition: width 300ms ease;
+}
+
+.detalle-progreso {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.texto-progreso {
+    margin: 28px 0 20px;
+    color: var(--texto);
+    font-size: 16px;
+}
+
+.marcas-progreso {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    padding: 8px 16px;
+    grid-template-columns: repeat(10, 1fr);
+    color: var(--azul-oscuro);
+    font-size: 12px;
     text-align: center;
 }
-
-.estado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+.boton-tarea {
+    margin-top: 24px;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--azul);
 }
 
-/* CÍRCULOS DE PROGRESO */
-
-.circulo-progreso {
-    width: 130px;
-    height: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 50%;
-    background: conic-gradient(
-        var(--azul) calc(var(--porcentaje) * 1%),
-        var(--fondo) 0
-    );
-}
-
-.circulo-rosa {
-    background: conic-gradient(
-        var(--rosa) calc(var(--porcentaje) * 1%),
-        var(--fondo) 0
-    );
-}
-
-.circulo-oscuro {
-    background: conic-gradient(
-        var(--azul-oscuro) calc(var(--porcentaje) * 1%),
-        var(--fondo) 0
-    );
-}
-
-.circulo-interno {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: var(--blanco);
-}
-
-.circulo-valor {
-    color: var(--azul-oscuro);
-    font-family: "Questrial", sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-}
-
-.circulo-etiqueta {
-    margin: 16px 0 0 0;
-    color: var(--texto);
-    font-family: "Onest", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+.boton-tarea:hover {
+    background-color: var(--azul-oscuro);
 }
 
 /* ACTIVIDAD SEMANAL */
@@ -310,32 +334,6 @@ body {
 }
 
 /* ACCIONES */
-
-.acciones {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 24px;
-}
-
-.btn-accion {
-    min-width: 45px;
-    min-height: 45px;
-    padding: 9px 20px;
-    border: none;
-    border-radius: 12px;
-    background-color: var(--rosa);
-    color: var(--blanco);
-    font-family: "Onest", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.btn-accion:hover {
-    background-color: var(--azul);
-    color: var(--blanco);
-}
 
 /* LOGROS Y RESUMEN */
 
@@ -399,27 +397,21 @@ body {
     text-align: center;
 }
 
+#aviso-nivel {
+    color: var(--azul);
+    background-color: transparent;
+    border-color: var(--azul);
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 992px) {
     .seccion-principal {
         grid-template-columns: 1fr;
     }
-
-    .acciones {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .estados {
-        gap: 24px;
-    }
 }
 
 @media (max-width: 768px) {
-    .estados {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
 
     .seccion-secundaria {
         grid-template-columns: 1fr;
@@ -440,29 +432,22 @@ body {
     }
 
     .tarjeta,
-    .tarjeta-acciones,
     .contenido-mascota,
-    .contenido-estado {
+    .contenido-progreso {
         padding: 16px;
     }
 
     .encabezado-estado {
         align-items: flex-start;
+        margin-bottom: 28px;
+    }
+
+    .contenido-progreso {
+        padding: 20px;
+    }
+
+    .detalle-progreso {
         flex-direction: column;
-        margin-bottom: 24px;
-    }
-
-    .estados {
-        padding: 0;
-    }
-
-    .acciones {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .btn-accion {
-        width: 100%;
     }
 
     .resumen {

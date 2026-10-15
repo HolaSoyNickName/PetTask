@@ -1,178 +1,134 @@
 <!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PetTask - Mi Mascota</title>
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-        rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilos.css" />
     <link rel="stylesheet" href="css/interaccion-con-mascota.css" />
-</head>
-<body>
-    <!-- NAVBAR -->
+  </head>
+
+  <body>
     <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesión</a>
-            </nav>
-        </div>
+        <a class="pet-nav__brand" href="index.html"><img src="img/logoNav.png" alt="Logotipo de PetTask" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir men&#250; de navegaci&#243;n"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="menuPrincipal"><nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegaci&#243;n principal">
+            <a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a><a href="servicios.html">Servicios</a><a href="contacto.html">Contacto</a><a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesi&#243;n</a>
+        </nav></div>
     </header>
     <main class="contenido">
-        <section class="encabezado">
-            <h1 class="titulo">Mi Mascota Virtual</h1>
-            <p class="descripcion">
-                Cuida de tu mascota completando tareas. Mantenla feliz y con energía para que crezca.
+      <section class="encabezado">
+        <h1 class="titulo">Mi Mascota Virtual</h1>
+        <p class="descripcion">
+          Cuida de tu mascota completando tareas. Mantenla feliz y con energía
+          para que crezca.
+        </p>
+      </section>
+      <section class="seccion-principal">
+        <div class="tarjeta-mascota">
+          <div class="contenido-mascota">
+            <div class="mascota-placeholder">
+              <img class="imagen-mascota" src="img/PetTaskMascota.png" alt="Mascota virtual Gatonto" />
+            </div>
+            <h2 class="nombre-mascota">Gatonto</h2>
+            <span class="badge-estado">Feliz</span>
+            <p class="texto-mascota">
+              Tu mascota está contenta. ¡Sigue completando tareas para
+              mantenerla así!
             </p>
-        </section>
-        <section class="seccion-principal">
-            <div class="card tarjeta-mascota">
-                <div class="contenido-mascota">
-                    <div class="mascota-placeholder">
-                        <div class="mascota">
-                            <span class="placeholder-texto">Mascota virtual</span>
-                            <span class="placeholder-subtexto">Próximamente</span>
-                        </div>
-                    </div>
-                    <h2 class="nombre-mascota">Firulais</h2>
-                    <span class="badge-estado">Feliz</span>
-                    <p class="texto-mascota">
-                        Tu mascota está contenta y con mucha energía. ¡Sigue completando tareas para mantenerla así!
-                    </p>
-                </div>
+          </div>
+        </div>
+        <div class="tarjeta-mascota tarjeta-progreso">
+          <div class="contenido-progreso">
+            <div class="encabezado-estado">
+              <div>
+                <p class="etiqueta-progreso">Gatonto</p>
+                <h2 class="subtitulo">Progreso para el siguiente nivel</h2>
+              </div>
+              <span class="badge-nivel" id="nivel-mascota">Nivel 5</span>
             </div>
-            <div class="card tarjeta-mascota">
-                <div class="contenido-estado">
-                    <div class="encabezado-estado">
-                        <h2 class="subtitulo">Estado de la mascota</h2>
-                        <span class="badge-nivel">Nivel 5</span>
-                    </div>
-                    <div class="estados">
-                        <div class="estado">
-                            <div class="circulo-progreso" style="--porcentaje: 80;">
-                                <div class="circulo-interno">
-                                    <span class="circulo-valor">80%</span>
-                                </div>
-                            </div>
-                            <p class="circulo-etiqueta">Energía</p>
-                        </div>
-                        <div class="estado">
-                            <div class="circulo-progreso circulo-rosa" style="--porcentaje: 90;">
-                                <div class="circulo-interno">
-                                    <span class="circulo-valor">90%</span>
-                                </div>
-                            </div>
-                            <p class="circulo-etiqueta">Felicidad</p>
-                        </div>
-                        <div class="estado">
-                            <div class="circulo-progreso circulo-oscuro" style="--porcentaje: 30;">
-                                <div class="circulo-interno">
-                                    <span class="circulo-valor">30%</span>
-                                </div>
-                            </div>
-                            <p class="circulo-etiqueta">Hambre</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="xp-resumen">
+              <span>XP del usuario disponibles</span>
+              <strong id="xp-usuario">50000 XP</strong>
             </div>
-        </section>
-        <section class="tarjeta">
-            <h2 class="subtitulo">Actividad semanal</h2>
-            <div class="grafica">
-                <div class="grafica-columna">
-                    <div class="grafica-barra" style="--altura: 40;"></div>
-                    <span class="grafica-dia">Lun</span>
-                </div>
-                <div class="grafica-columna">
-                    <div class="grafica-barra" style="--altura: 65;"></div>
-                    <span class="grafica-dia">Mar</span>
-                </div>
-                <div class="grafica-columna">
-                    <div class="grafica-barra" style="--altura: 50;"></div>
-                    <span class="grafica-dia">Mié</span>
-                </div>
-                <div class="grafica-columna">
-                    <div class="grafica-barra" style="--altura: 85;"></div>
-                    <span class="grafica-dia">Jue</span>
-                </div>
-                <div class="grafica-columna">
-                    <div class="grafica-barra" style="--altura: 70;"></div>
-                    <span class="grafica-dia">Vie</span>
-                </div>
-                <div class="grafica-columna">
-                    <div class="grafica-barra grafica-barra-rosa" style="--altura: 95;"></div>
-                    <span class="grafica-dia">Sáb</span>
-                </div>
-                <div class="grafica-columna">
-                    <div class="grafica-barra grafica-barra-rosa" style="--altura: 60;"></div>
-                    <span class="grafica-dia">Dom</span>
-                </div>
+            <div
+              class="progress barra-progreso"
+              role="progressbar"
+              aria-label="Experiencia de Gatonto para el siguiente nivel"
+              aria-valuemin="0"
+              aria-valuemax="1000"
+              aria-valuenow="500"
+            >
+              <div
+                class="progress-bar barra-progreso-valor"
+                id="barra-progreso"
+                style="width: 100%"
+              ></div>
             </div>
-        </section>
-        <section class="tarjeta-acciones">
-            <h2 class="subtitulo">Acciones disponibles</h2>
-            <div class="acciones">
-                <button type="button" class="btn-accion">
-                    Alimentar
-                </button>
-                <button type="button" class="btn-accion">
-                    Jugar
-                </button>
-                <button type="button" class="btn-accion">
-                    Descansar
-                </button>
-                <button type="button" class="btn-accion">
-                    Bañar
-                </button>
+            <div class="detalle-progreso">
+              <span id="texto-progreso">500 / 1000 XP de Gatonto</span>
+              <span id="texto-restantes"
+                >Faltan 500 XP para el siguiente nivel</span
+              >
             </div>
-        </section>
-        <section class="seccion-secundaria">
-            <div class="tarjeta">
-                <h2 class="subtitulo">Logros</h2>
-                <ul class="lista-logros">
-                    <li>Primera tarea completada</li>
-                    <li>Racha de 7 tareas</li>
-                    <li>10 tareas completadas</li>
-                    <li>Mascota nivel 5</li>
-                </ul>
+            <p class="texto-progreso">
+              ¡Usa tu XP para subir de nivel a tu mascota!
+            </p>
+            <button
+              class="btn btn-primary boton-tarea"
+              id="subir-nivel"
+              type="button"
+            >
+              Subir nivel (100 XP)
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="seccion-secundaria">
+        <div class="tarjeta">
+          <h2 class="subtitulo">Logros</h2>
+          <ul class="lista-logros">
+            <li>10 tareas completadas</li>
+            <li>Mascota nivel 5</li>
+          </ul>
+        </div>
+        <div class="tarjeta">
+          <h2 class="subtitulo">Resumen</h2>
+          <div class="resumen">
+            <div class="dato-extra">
+              <span class="dato-valor">12</span>
+              <span class="dato-etiqueta">Tareas completadas</span>
             </div>
-            <div class="tarjeta">
-                <h2 class="subtitulo">Resumen</h2>
-                <div class="resumen">
-                    <div class="dato-extra">
-                        <span class="dato-valor">12</span>
-                        <span class="dato-etiqueta">Tareas completadas</span>
-                    </div>
-                    <div class="dato-extra">
-                        <span class="dato-valor">7</span>
-                        <span class="dato-etiqueta">Tareas consecutivas</span>
-                    </div>
-                    <div class="dato-extra">
-                        <span class="dato-valor">4</span>
-                        <span class="dato-etiqueta">Logros</span>
-                    </div>
-                </div>
+            <div class="dato-extra">
+              <span class="dato-valor">7</span>
+              <span class="dato-etiqueta">Racha de tareas</span>
             </div>
-        </section>
+            <div class="dato-extra">
+              <span class="dato-valor">4</span>
+              <span class="dato-etiqueta">Logros</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-</body>
+    <footer class="site-footer">PetTask &middot; Aplicaciones Web &middot; 2026</footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="js/mascota.js" defer></script>
+  </body>
 </html>
