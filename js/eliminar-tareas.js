@@ -4,9 +4,7 @@ let formularioPendiente = null;
 modalEliminacion.addEventListener("show.bs.modal", (event) => {
     formularioPendiente = null;
     const botonEliminar = event.relatedTarget;
-
     if (!(botonEliminar instanceof HTMLElement)) return;
-
     const tarea = botonEliminar.closest(".tarea-item");
     document.getElementById("materiaTareaModal").textContent =
         tarea?.querySelector(".tarea-titulo")?.textContent.trim() ?? "Tarea";
@@ -29,7 +27,6 @@ const tareas = document.querySelectorAll(".tarea-item");
 
 function filtrarTareas() {
     const materiaBuscada = campoMateria.value.trim().toLocaleLowerCase("es");
-
     tareas.forEach((tarea) => {
         const materia = tarea.querySelector(".tarea-titulo")?.textContent
             .trim()
