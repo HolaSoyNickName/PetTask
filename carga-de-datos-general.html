@@ -1,127 +1,21 @@
-
-```html
 <!doctype html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Resumen General - PetTask</title>
-
     <!-- Bootstrap -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-          rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
     <!-- Iconos -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/carga-de-datos-general.css">
 
-    <style>
-        .lista-tareas {
-            display: flex;
-            flex-direction: column;
-            gap: 13px;
-        }
-
-        .tarea-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 18px 20px;
-            border: 1px solid #dce3f5;
-            border-radius: 13px;
-            background: #fff;
-        }
-
-        .tarea-item h3 {
-            margin: 0 0 7px;
-            color: #1f1e50;
-            font-family: "Onest", sans-serif;
-            font-size: 16px;
-        }
-
-        .tarea-item p {
-            margin: 0;
-            color: #66627e;
-            font-size: 14px;
-        }
-
-        /* Ocultar tareas adicionales */
-        .tarea-extra {
-            display: none;
-        }
-
-        /* Mostrar tareas cuando se activa el botón */
-        .tarea-extra.visible {
-            display: flex;
-        }
-
-        .estado {
-            flex-shrink: 0;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .completada {
-            background: #d8f3df;
-            color: #216b37;
-        }
-
-        .pendiente {
-            background: #fff0c2;
-            color: #765500;
-        }
-
-        .contenedor-boton {
-            display: flex;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-        .boton-ver-mas {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            min-width: 130px;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 10px;
-            background: #557ef7;
-            color: #fff;
-            font-family: "Onest", sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .boton-ver-mas:hover {
-            background: #1f1e50;
-        }
-
-        @media (max-width: 576px) {
-            .tarea-item {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .boton-ver-mas {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -248,83 +142,14 @@
 
             </div>
 
-            <!-- MIS TAREAS -->
+            <!-- Botón hacia contacto -->
             <section class="seccion-tareas">
-
-                <h2 class="subtitulo">
-                    <i class="bi bi-list-check"></i>
-                    Mis tareas
-                </h2>
-
-                <p class="descripcion">
-                    Organiza las actividades para cuidar a tu mascota.
-                </p>
-
-                <div id="lista-tareas" class="lista-tareas">
-
-                    <article class="tarea-item">
-                        <div>
-                            <h3>Dar de comer</h3>
-                            <p>Alimentar a mi mascota por la mañana.</p>
-                        </div>
-                        <span class="estado completada">Completada</span>
-                    </article>
-
-                    <article class="tarea-item">
-                        <div>
-                            <h3>Pasear a mi mascota</h3>
-                            <p>Salir a caminar durante 20 minutos.</p>
-                        </div>
-                        <span class="estado pendiente">Pendiente</span>
-                    </article>
-
-                    <article class="tarea-item">
-                        <div>
-                            <h3>Cambiar el agua</h3>
-                            <p>Revisar que tenga agua limpia.</p>
-                        </div>
-                        <span class="estado completada">Completada</span>
-                    </article>
-
-                    <article class="tarea-item tarea-extra">
-                        <div>
-                            <h3>Limpiar su espacio</h3>
-                            <p>Mantener limpia su área de descanso.</p>
-                        </div>
-                        <span class="estado pendiente">Pendiente</span>
-                    </article>
-
-                    <article class="tarea-item tarea-extra">
-                        <div>
-                            <h3>Jugar un rato</h3>
-                            <p>Dedicar tiempo para jugar con mi mascota.</p>
-                        </div>
-                        <span class="estado pendiente">Pendiente</span>
-                    </article>
-
-                    <article class="tarea-item tarea-extra">
-                        <div>
-                            <h3>Revisar su salud</h3>
-                            <p>Observar que mi mascota esté saludable.</p>
-                        </div>
-                        <span class="estado pendiente">Pendiente</span>
-                    </article>
-
-                </div>
-
-                <!-- BOTÓN VER MÁS -->
                 <div class="contenedor-boton">
-                    <button type="button"
-                            id="btn-ver-mas"
-                            class="boton-ver-mas"
-                            aria-expanded="false"
-                            aria-controls="lista-tareas"
-                            onclick="verMasTareas()">
-                        Ver más
-                        <i class="bi bi-chevron-down"></i>
+                    <button type="button" id="btn-ver-mas" class="boton-ver-mas" aria-label="Ver m&#225;s e ir a contacto">
+                        Ver m&#225;s
+                        <i class="bi bi-chevron-right" aria-hidden="true"></i>
                     </button>
                 </div>
-
             </section>
 
         </section>
@@ -338,26 +163,6 @@
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- FUNCIONAMIENTO DEL BOTÓN -->
-    <script>
-        function verMasTareas() {
-            const boton = document.getElementById("btn-ver-mas");
-            const tareas = document.querySelectorAll(".tarea-extra");
-
-            const mostrar = boton.getAttribute("aria-expanded") !== "true";
-
-            tareas.forEach(function (tarea) {
-                tarea.classList.toggle("visible", mostrar);
-            });
-
-            boton.setAttribute("aria-expanded", String(mostrar));
-
-            boton.innerHTML = mostrar
-                ? 'Ver menos <i class="bi bi-chevron-up"></i>'
-                : 'Ver más <i class="bi bi-chevron-down"></i>';
-        }
-    </script>
-
+    <script src="js/carga-de-datos.js"></script>
 </body>
 </html>
-```
