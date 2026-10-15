@@ -242,7 +242,7 @@ body {
     opacity: 0.65;
 }
 
-/* BOTONES DE ESTADO */
+/* BOTONES DE ESTADO (solo decorativos, siempre rosa) */
 
 .btn-estado {
     min-width: 45px;
@@ -254,25 +254,13 @@ body {
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-}
-
-.btn-completar {
     background-color: var(--rosa);
     color: var(--blanco);
 }
 
-.btn-completar:hover {
-    background-color: var(--azul);
-    color: var(--blanco);
-}
-
-.btn-deshacer {
-    background-color: var(--azul-claro);
-    color: var(--azul-oscuro);
-}
-
-.btn-deshacer:hover {
-    background-color: var(--azul);
+/* Sin hover: se queda igual de rosa al pasar el cursor */
+.btn-estado:hover {
+    background-color: var(--rosa);
     color: var(--blanco);
 }
 
