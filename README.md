@@ -331,7 +331,11 @@ La interacción que hice fue la de filtrado y búsqueda de tareas. Lo que más s
 
 
 Ordaz Cano Mariana:
-La implementación de este modal dinamiza la interfaz al permitir filtrar y gestionar tareas de forma fluida y sin recargar la página. Al solicitar una confirmación clara antes de eliminar una tarea mostrando su materia y descripción, se mejora la experiencia del usuario y se evitan borrados accidentales, haciendo la aplicación más segura, clara e intuitiva
+La implementación de este modal dinamiza la interfaz al permitir filtrar y gestionar tareas de forma fluida y sin recargar la página. Al solicitar una confirmación clara antes de eliminar una tarea mostrando su materia y descripción, se mejora la experiencia del usuario y se evitan borrados accidentales, haciendo la aplicación más segura, clara e intuitiva.
+
+
+## Link del proyeco
+https://holasoynickname.github.io/PetTask/
 
 ## Proyecto académico
 **PetTask**
