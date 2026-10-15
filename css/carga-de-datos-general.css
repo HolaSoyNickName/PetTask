@@ -22,56 +22,6 @@ a {
    NAVEGACIÓN
 ======================================== */
 
-.pet-nav {
-    display: flex;
-    width: 100%;
-    min-height: 85px;
-    padding: 15px 5%;
-    background-color: #1f1e50;
-}
-
-.pet-nav__brand {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.pet-nav__brand img {
-    display: block;
-    width: 180px;
-    max-width: 100%;
-    max-height: 55px;
-    object-fit: contain;
-}
-
-.pet-nav__links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.pet-nav__links a {
-    color: #ffffff;
-    font-family: "Onest", sans-serif;
-    font-size: 15px;
-    transition: color 0.2s ease;
-}
-
-.pet-nav__links a:hover {
-    color: #8fa3ed;
-}
-
-.pet-nav__links .pet-nav__login {
-    padding: 10px 18px;
-    border-radius: 9px;
-    background-color: #557ef7;
-    color: #ffffff;
-}
-
-.pet-nav__login:hover {
-    background-color: #8fa3ed;
-}
-
 /* ========================================
    CONTENIDO PRINCIPAL
 ======================================== */
@@ -268,15 +218,6 @@ a {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .pet-nav__links {
-        align-items: flex-start;
-        gap: 16px;
-        padding-top: 20px;
-    }
-
-    .pet-nav__links a {
-        width: fit-content;
-    }
 }
 
 /* ========================================
@@ -284,14 +225,6 @@ a {
 ======================================== */
 
 @media (max-width: 576px) {
-    .pet-nav {
-        padding: 14px 18px;
-    }
-
-    .pet-nav__brand img {
-        width: 145px;
-    }
-
     .contenido {
         margin: 20px auto;
         padding: 0 12px;

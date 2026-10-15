@@ -4,6 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!botonVerMas) return;
 
     botonVerMas.addEventListener("click", () => {
-        window.location.href = "contacto.html";
+        window.location.href = "ver-tareas.html";
     });
 });

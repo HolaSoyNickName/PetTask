@@ -25,9 +25,9 @@ body {
 
 /* NAVBAR */
 .pet-nav {
-    min-height: 106px;
     display: flex;
     align-items: center;
+    min-height: 106px;
     justify-content: space-between;
     gap: 24px;
     padding: 20px max(32px, calc((100vw - 1200px) / 2));
@@ -87,7 +87,7 @@ body {
 /* Botón "Iniciar sesión" se queda ROSA en el hover */
 .pet-nav__links .pet-nav__login:hover,
 .pet-nav__links .pet-nav__login:focus-visible {
-    background-color: var(--pet-pink);
+    background-color: var(--pet-blue);
     color: var(--pet-white);
 }
 
