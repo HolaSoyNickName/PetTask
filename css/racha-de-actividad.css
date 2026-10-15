@@ -101,7 +101,7 @@ body {
     line-height: 1;
 }
 
-.racha-unidad {
+.racha-dias {
     margin-top: 8px;
     color: var(--texto);
     font-family: "Onest", sans-serif;
@@ -132,23 +132,20 @@ body {
     line-height: 1.6;
 }
 
-/* TAREAS DE LA RACHA */
+/* ACTIVIDAD POR TAREAS */
 
 .tarjeta-actividad .subtitulo,
 .tarjeta-estadisticas .subtitulo {
     margin-bottom: 24px;
 }
 
-.tareas-racha {
+.tareas-actividad {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
-.tarea-racha {
+.tarea-actividad {
     min-height: 100px;
     padding: 16px 8px;
     display: flex;
@@ -176,20 +173,30 @@ body {
     font-weight: 400;
 }
 
-.tarea-racha.completada {
+.tarea-actividad.completada {
     border-color: var(--azul);
     background-color: var(--azul-claro);
 }
 
-.tarea-racha.completada .tarea-estado {
+.tarea-actividad.completada .tarea-estado {
     color: var(--azul-oscuro);
+}
+
+.tarea-actividad.pendiente {
+    border-color: var(--rosa);
+    background-color: var(--blanco);
+}
+
+.tarea-actividad.pendiente .tarea-estado {
+    color: var(--rosa);
+    font-weight: 500;
 }
 
 /* ESTADÍSTICAS */
 
 .estadisticas {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
@@ -224,6 +231,11 @@ body {
         gap: 24px;
     }
 
+    .tareas-actividad {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
     .estadisticas {
         grid-template-columns: 1fr;
     }
@@ -242,6 +254,11 @@ body {
 
     .titulo {
         font-size: 32px;
+    }
+
+    .tareas-actividad {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .racha-valor {
