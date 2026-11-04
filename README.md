@@ -1,265 +1,58 @@
-# PetTask
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## Integrantes
-
-- **Líder:** Espinoza Cuevas Diego Omar
-- Alvarez Del valle Angel
-- Dector Montiel Norma Angelica
-- Hernandez Camargo Bryan Yael
-- Nolasco Gómez Jose Daniel
-- Ordaz Cano Mariana
-- Sandoval Resendiz Alexander Emir
-- Zarate Garrido Adolfo Alexander 
-
----
-
-## Descripción
-
-**PetTask** es una aplicación web orientada a estudiantes que permite organizar y gestionar sus tareas académicas de una manera sencilla y visual.
-
-La aplicación permite registrar, consultar, actualizar y eliminar tareas, además de incorporar elementos de gamificación mediante una mascota virtual, una tienda, una racha de actividad y recordatorios.
-
----
-
-## Objetivo
-
-El objetivo de PetTask es facilitar la organización de las actividades académicas del usuario mediante una aplicación web responsive que combine la gestión de tareas con elementos de gamificación.
-
-La aplicación busca motivar al usuario a mantener una actividad constante mediante una mascota virtual, niveles, rachas y otras funciones relacionadas con el cumplimiento de tareas.
-
----
-
-## Tecnologías utilizadas
-
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5.3.8
-- Bootstrap Icons
-- Google Fonts
-  - Questrial
-  - Onest
-- Git
-- GitHub
-
----
-
-## Características principales
-
-PetTask cuenta con las siguientes funcionalidades:
-
-- Inicio de sesión.
-- Registro de usuario.
-- Carga de datos generales.
-- Consulta de tareas.
-- Agregar tareas.
-- Actualizar tareas.
-- Eliminar tareas.
-- Interacción con mascota virtual.
-- Tienda de mascota.
-- Racha de actividad.
-- Recordatorios.
-- Diseño responsive para computadora y dispositivos móviles.
-
----
-
-## Requerimientos funcionales  
-
-|   ID   |        Nombre            |
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-| RF-001 | Inicio de sesión         |
-
-| RF-002 | Registrarse              |
-
-| RF-003 | Carga de datos general   |
-
-| RF-004 | Ver tareas               |
-
-| RF-005 | Agregar tareas           |
-
-| RF-006 | Actualizar tarea         |
-
-| RF-007 | Eliminar tareas          |
-
-| RF-008 | Interacción con mascota  |
-
-| RF-009 | Tienda de mascota        |
-
-| RF-010 | Racha de actividad       |
-
----
-
-## Componentes de Bootstrap utilizados
-
-- El proyecto utiliza diferentes componentes y utilidades de Bootstrap para construir la interfaz:
-
-- Navbar responsive: barra de navegación adaptable a distintos tamaños de pantalla.
-
-- Collapse: permite expandir y contraer el menú de navegación.
-
-- Cards: contenedores para mostrar tareas, formularios, resúmenes y otra información.
-
-- Form Controls: campos de entrada y etiquetas de formularios (form-control y form-label).
-
-- Modal: ventana de confirmación para eliminar tareas.
-
-- Buttons: botones de Bootstrap usados en el modal, incluidos los estilos btn-secondary, btn-danger y btn-close
-
----
-
-## Diseño
-
-PetTask utiliza una guía de diseño basada en **Material Design**, buscando mantener una interfaz coherente, accesible y adaptable a diferentes tamaños de pantalla.
-
-### Paleta de colores
-
-| Color       | Código    | Uso                               |
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-| Fondo       | `#E5EAF5` | Fondo principal                   |
-
-| Blanco      | `#FFFFFF` | Tarjetas y elementos de contenido |
-
-| Rosa        | `#FF6F82` | Acciones y elementos destacados   |
-
-| Azul claro  | `#8FA3ED` | Bordes y elementos secundarios    |
-
-| Azul        | `#557FFC` | Elementos principales             |
-
-| Azul oscuro | `#1E1E50` | Textos y títulos                  |
-
-### Tipografías
-
-- **Questrial:** títulos y encabezados.
-- **Onest:** contenido, formularios, botones y elementos de navegación.
-
----
-
-## Estructura del proyecto
-
-```text
-PetTask/
-├── index.html
-├── nosotros.html
-├── servicios.html
-├── contacto.html
-├── iniciar-sesion.html
-├── registro.html
-├── carga-de-datos-general.html
-├── ver-tareas.html
-├── agregar-tareas.html
-├── actualizar-tarea.html
-├── eliminar-tareas.html
-├── interaccion-con-mascota.html
-├── tienda-de-mascota.html
-├── racha-de-actividad.html
-├── README.md
-├── css/
-│   ├── estilos.css (Servicios y páginas de funciones)
-│   ├── estilos-sitio.css (Inicio, Nosotros y Contacto)
-│   ├── actualizar-tarea.css
-│   ├── agregar-tareas.css
-│   ├── carga-de-datos-general.css
-│   ├── eliminar-tareas.css
-│   ├── iniciar-sesion.css
-│   ├── interaccion-con-mascota.css
-│   ├── racha-de-actividad.css
-│   ├── registro.css
-│   ├── tienda-de-mascota.css
-│   └── ver-tareas.css
-├── js/
-│   └── app.js
-├── img/
-│   └── (imágenes del proyecto)
-├── docs/
-│   ├── SRS.pdf
-│   ├── SRS.tex
-│   ├── Guia_Diseno.pdf
-│   └── Guia_Diseno.tex
-```
-
----
-
-## Instrucciones para visualizar el proyecto
-### Opción 1: Abrir directamente
-1. Descargar o clonar el repositorio.
-2. Abrir la carpeta del proyecto.
-3. Abrir `index.html` en un navegador web.
-
-### Opción 2: Visual Studio Code
-1. Clonar o descargar el repositorio.
-2. Abrir la carpeta `PetTask` en Visual Studio Code.
-3. Abrir `index.html`.
-4. Ejecutar el proyecto utilizando una extensión como **Live Server**.
-5. Visualizar la aplicación desde el navegador.
-
----
-
-## Diseño responsive
-PetTask está diseñado para adaptarse a diferentes tamaños de pantalla.
-Se realizaron ajustes para:
-- Computadoras de escritorio.
-- Tablets.
-- Teléfonos móviles.
-Las tarjetas, formularios, botones, listas y demás elementos de la interfaz se reorganizan dependiendo del tamaño disponible.
-
-### Capturas de escritorio
-<img width="1363" height="632" alt="image" src="https://github.com/user-attachments/assets/f917bf48-de19-4302-ba6d-9965d23fc5af" />
-<img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/0e53f5d1-714e-4102-bad3-dbc0a4dd256f" />
-<img width="1365" height="636" alt="image" src="https://github.com/user-attachments/assets/929b4111-a0ed-40de-8a91-5436d28c4d81" />
-<img width="1365" height="640" alt="image" src="https://github.com/user-attachments/assets/6a03041a-6d94-422b-aa63-5f7971c4420b" />
-<img width="1364" height="639" alt="image" src="https://github.com/user-attachments/assets/bb53b0fb-c844-44b7-a6e5-30ae5669f8a4" />
-<img width="1362" height="631" alt="image" src="https://github.com/user-attachments/assets/8b5c88c3-16e2-4cf5-b631-b6e43e16739d" />
-<img width="1363" height="635" alt="image" src="https://github.com/user-attachments/assets/643090ee-5aa6-4567-8348-19578558eaa7" />
-<img width="1363" height="636" alt="image" src="https://github.com/user-attachments/assets/fccdea46-2788-4d59-bdb9-2e53c6cef666" />
-<img width="1365" height="691" alt="image" src="https://github.com/user-attachments/assets/cb4ceedd-d0f7-4dc4-9d32-ad38dc1364c6" />
-<img width="1365" height="638" alt="image" src="https://github.com/user-attachments/assets/bfd13b97-8042-44ca-bf5e-ad1994b3b275" />
-<img width="1365" height="644" alt="image" src="https://github.com/user-attachments/assets/086322b7-434c-450e-85ac-46adfac29ed6" />
-<img width="1364" height="643" alt="image" src="https://github.com/user-attachments/assets/016a0cf4-3e64-41fe-bf46-cb0e94973ce8" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Capturas de móvil
 <p align="center">
-  <img src="./img/movil-mascota-virtual.png" width="250"/> 
-  <img src="./img/movil-inicio.png" width="250"/>
-  <img src="./img/movil-racha-actividad.png" width="250"/>
-  <img src="./img/movil-tienda-mascota.png" width="250"/>
-  <img src="./img/movil-recordatorios.png" width="250"/>
-  <img src="./img/movil-eliminar-tarea.png" width="250"/>
-  <img src="./img/movil-resumen.png" width="250"/>
-  <img src="./img/movil-actualizar-tarea.png" width="250"/>
-  <img src="./img/movil-contacto.png" width="250"/>
-  <img src="./img/movil-registro.png" width="250"/>
-  <img src="./img/movil-login.png" width="250"/>
-  <img src="./img/movil-agregar-tarea.png" width="250"/>
-  <img src="./img/movil-nosotros.png" width="250"/>
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Repositorio
-El proyecto se encuentra desarrollado utilizando Git y GitHub para llevar un control progresivo del desarrollo.
-El repositorio contiene las diferentes versiones y avances realizados durante la construcción de PetTask.
-**Repositorio:** [PetTask en GitHub](https://github.com/HolaSoyNickName/PetTask)
+## About Laravel
 
----
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Documentación
-La carpeta `docs/` contiene los documentos PDF y sus fuentes LaTeX:
-- **SRS.pdf / SRS.tex:** Especificación de Requisitos de Software.
-- **Guia_Diseno.pdf / Guia_Diseno.tex:** Guía de diseño de PetTask.
----
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## Proyecto académico
-**PetTask**
-Aplicaciones Web
-Septiembre – Diciembre 2026
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
+
+## Learning Laravel
+
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+
+In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+
+You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+
+## Agentic Development
+
+Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+
+```bash
+composer require laravel/boost --dev
+
+php artisan boost:install
+```
+
+Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
