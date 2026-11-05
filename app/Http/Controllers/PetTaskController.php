@@ -6,100 +6,114 @@ use Illuminate\Http\Request;
 
 class PetTaskController extends Controller
 {
-    private function getTasks()
-    {
-        return session()->get('pet_tasks', [
-            1 => ['id' => 1, 'title' => 'Entregar ensayo de Historia', 'subject' => 'Historia', 'status' => 'Pendiente', 'description' => 'Redactar 3 páginas sobre la Revolución Mexicana.'],
-            2 => ['id' => 2, 'title' => 'Estudiar para examen de Matemáticas', 'subject' => 'Matemáticas', 'status' => 'Completada', 'description' => 'Repasar ejercicios de derivadas e integrales.']
-        ]);
-    }
-
+    // Mostrar todas las tareas
     public function index()
     {
-        $tasks = $this->getTasks();
+        $tasks = session('tasks', []);
+
         return view('tasks.index', compact('tasks'));
     }
 
+    // Mostrar formulario para crear tarea
     public function create()
     {
         return view('tasks.create');
     }
 
+    // Guardar nueva tarea
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required|string|max:255',
             'subject' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'status' => 'required|string'
         ]);
 
-        $tasks = $this->getTasks();
-        $id = count($tasks) > 0 ? max(array_keys($tasks)) + 1 : 1;
+        $tasks = session('tasks', []);
 
-        $tasks[$id] = [
+        $id = count($tasks) > 0
+            ? max(array_column($tasks, 'id')) + 1
+            : 1;
+
+        $tasks[] = [
             'id' => $id,
             'title' => $request->title,
             'subject' => $request->subject,
-            'status' => 'Pendiente',
-            'description' => $request->description,
+            'status' => $request->status
         ];
 
-        session()->put('pet_tasks', $tasks);
+        session(['tasks' => $tasks]);
 
-        return redirect()->route('tasks.index')->with('success', '¡Tarea escolar creada!');
+        return redirect()->route('tasks.index')
+            ->with('success', '¡Tarea registrada correctamente!');
     }
 
+    // Mostrar tarea
     public function show($id)
     {
-        $tasks = $this->getTasks();
-        abort_if(!isset($tasks[$id]), 404);
-        $task = $tasks[$id];
+        $tasks = session('tasks', []);
+        $task = collect($tasks)->firstWhere('id', $id);
+
+        if (!$task) {
+            abort(404);
+        }
 
         return view('tasks.show', compact('task'));
     }
 
+    // Editar tarea
     public function edit($id)
     {
-        $tasks = $this->getTasks();
-        abort_if(!isset($tasks[$id]), 404);
-        $task = $tasks[$id];
+        $tasks = session('tasks', []);
+        $task = collect($tasks)->firstWhere('id', $id);
+
+        if (!$task) {
+            abort(404);
+        }
 
         return view('tasks.edit', compact('task'));
     }
 
+    // Actualizar tarea
     public function update(Request $request, $id)
     {
-        $tasks = $this->getTasks();
-        abort_if(!isset($tasks[$id]), 404);
-
         $request->validate([
             'title' => 'required|string|max:255',
             'subject' => 'required|string|max:255',
-            'status' => 'required|in:Pendiente,Completada',
-            'description' => 'nullable|string',
+            'status' => 'required|string'
         ]);
 
-        $tasks[$id] = [
-            'id' => (int)$id,
-            'title' => $request->title,
-            'subject' => $request->subject,
-            'status' => $request->status,
-            'description' => $request->description,
-        ];
+        $tasks = session('tasks', []);
 
-        session()->put('pet_tasks', $tasks);
-
-        return redirect()->route('tasks.index')->with('success', 'Tarea actualizada exitosamente.');
-    }
-
-    public function destroy($id)
-    {
-        $tasks = $this->getTasks();
-        if (isset($tasks[$id])) {
-            unset($tasks[$id]);
-            session()->put('pet_tasks', $tasks);
+        foreach ($tasks as &$task) {
+            if ($task['id'] == $id) {
+                $task['title'] = $request->title;
+                $task['subject'] = $request->subject;
+                $task['status'] = $request->status;
+                break;
+            }
         }
 
-        return redirect()->route('tasks.index')->with('success', 'Tarea eliminada exitosamente.');
+        unset($task);
+
+        session(['tasks' => $tasks]);
+
+        return redirect()->route('tasks.index')
+            ->with('success', '¡Tarea actualizada correctamente!');
+    }
+
+    // Eliminar tarea
+    public function destroy($id)
+    {
+        $tasks = session('tasks', []);
+
+        $tasks = array_values(array_filter($tasks, function ($task) use ($id) {
+            return $task['id'] != $id;
+        }));
+
+        session(['tasks' => $tasks]);
+
+        return redirect()->route('tasks.index')
+            ->with('success', '¡Tarea eliminada correctamente!');
     }
 }
