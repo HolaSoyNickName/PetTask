@@ -192,7 +192,12 @@ PetTask/
 
 ## 👥 Equipo de desarrollo
 
-Proyecto académico desarrollado de manera colaborativa.
+Ordaz Cano Mariana - Lider
+Dector Montiel Norma Angelica - FrontEnd
+Hernandez Camargo Bryan Yael - FrontEnd
+Alvarez Del valle Angel - BackEnd
+Zarate Garrido Adolfo Alexander - BackEnd
+Sandoval Resendiz Alexander Emir - QA
 
 ## 📌 Estado del proyecto
 
