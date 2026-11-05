@@ -1,58 +1,205 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🐾 PetTask
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Organiza tus tareas escolares y avanza junto a tu mascota virtual.**
 
-## About Laravel
+## 📖 Descripción
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+PetTask es una aplicación web diseñada para ayudar a los estudiantes a organizar y administrar sus actividades escolares de una manera sencilla, visual y divertida.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Su propósito es fomentar la responsabilidad y la constancia mediante elementos de gamificación, como mascotas virtuales, rachas de actividad y recompensas.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🎯 Objetivo del proyecto
 
-## Learning Laravel
+Desarrollar una herramienta que facilite la organización de tareas escolares y motive a los estudiantes a cumplir con sus actividades académicas.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Funcionalidades
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Implementadas
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- Visualización de tareas escolares.
+- Registro de nuevas tareas.
+- Edición de tareas existentes.
+- Consulta de detalles de cada tarea.
+- Eliminación de tareas con confirmación personalizada.
+- Clasificación de tareas por materia.
+- Estados de tareas: pendientes y completadas.
+- Estadísticas de tareas registradas, completadas y pendientes.
 
-## Agentic Development
+### Funcionalidades contempladas para el proyecto
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- Sistema de rachas de actividad diaria.
+- Mascotas virtuales que acompañan al estudiante.
+- Recompensas por completar actividades.
+- Tienda de artículos para personalizar las mascotas.
+- Recordatorios y notificaciones.
+
+## 🛠️ Tecnologías utilizadas
+
+- **Laravel:** framework para el desarrollo del backend.
+- **PHP:** lenguaje de programación.
+- **Blade:** motor de plantillas para las vistas.
+- **Bootstrap 5:** diseño de interfaces responsivas.
+- **Bootstrap Icons:** iconografía.
+- **HTML y CSS:** estructura y estilos de la aplicación.
+- **JavaScript:** interactividad de la interfaz.
+
+## 🎨 Diseño
+
+La interfaz de PetTask está basada en los principios de Material Design y utiliza la siguiente paleta de colores:
+
+| Color            | Código    |
+| ---------------- | --------- |
+| Fondo azul claro | `#E5EAF5` |
+| Rosa             | `#FF6F82` |
+| Azul claro       | `#8FA3ED` |
+| Azul             | `#557FFC` |
+| Azul marino      | `#1E1E50` |
+| Blanco           | `#FFFFFF` |
+
+## 📸 Capturas de pantalla
+
+En esta sección se muestran las principales interfaces de PetTask.
+
+### 1. Página principal
+
+Vista general de la aplicación, estadísticas y listado de tareas.
+
+![Página principal de PetTask](docs/capturas/inicio.png)
+
+### 2. Crear tarea
+
+Formulario para registrar una nueva tarea escolar.
+
+![Crear tarea](docs/capturas/crear-tarea.png)
+
+### 3. Editar tarea
+
+Formulario para modificar la información de una tarea.
+
+![Editar tarea](docs/capturas/editar-tarea.png)
+
+### 4. Detalles de la tarea
+
+Visualización de la información de una tarea seleccionada.
+
+![Detalles de la tarea](docs/capturas/detalles-tarea.png)
+
+### 5. Confirmación de eliminación
+
+Ventana personalizada para confirmar la eliminación de una tarea.
+
+![Confirmación de eliminación](docs/capturas/eliminar-tarea.png)
+
+## ⚙️ Instalación y ejecución
+
+### Requisitos previos
+
+- PHP.
+- Composer.
+- Node.js y npm.
+- Git.
+
+### 1. Clonar el repositorio
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/HolaSoyNickName/PetTask.git
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Entrar a la carpeta
 
-## Contributing
+```bash
+cd PetTask
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Instalar dependencias
 
-## Code of Conduct
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Crear el archivo de configuración
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+En Windows también puedes copiar `.env.example` y renombrar la copia como `.env`.
 
-## License
+### 5. Generar la clave de la aplicación
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan key:generate
+```
+
+### 6. Instalar dependencias del frontend
+
+```bash
+npm install
+```
+
+### 7. Iniciar la aplicación
+
+En una terminal ejecuta:
+
+```bash
+php artisan serve
+```
+
+En otra terminal ejecuta:
+
+```bash
+npm run dev
+```
+
+Abre en tu navegador:
+
+`http://127.0.0.1:8000`
+
+## 📂 Estructura del proyecto
+
+```text
+PetTask/
+│
+├── app/
+│   └── Http/
+│       └── Controllers/
+│           └── PetTaskController.php
+│
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   └── app.blade.php
+│       │
+│       └── tasks/
+│           ├── index.blade.php
+│           ├── create.blade.php
+│           ├── edit.blade.php
+│           └── show.blade.php
+│
+├── routes/
+│   └── web.php
+│
+├── docs/
+│   └── Capturas/
+│       ├── inicio.png
+│       ├── crear-tarea.png
+│       ├── editar-tarea.png
+│       ├── detalles-tarea.png
+│       └── eliminar-tarea.png
+│
+└── README.md
+```
+
+## 👥 Equipo de desarrollo
+
+Proyecto académico desarrollado de manera colaborativa.
+
+## 📌 Estado del proyecto
+
+PetTask se encuentra en desarrollo. Actualmente cuenta con las funcionalidades principales para la administración de tareas escolares y una interfaz visual personalizada.
+
+Las características de gamificación se contemplan como parte de las siguientes etapas de desarrollo.
+
+---
+
+**PetTask — ¡Organiza tus tareas, cuida tu mascota y alcanza tus metas! 🐾**
