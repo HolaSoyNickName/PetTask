@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class PetTaskController extends Controller
 {
-    // Mostrar todas las tareas
     public function index()
     {
         $tasks = session('tasks', []);
@@ -14,13 +13,11 @@ class PetTaskController extends Controller
         return view('tasks.index', compact('tasks'));
     }
 
-    // Mostrar formulario para crear tarea
     public function create()
     {
         return view('tasks.create');
     }
 
-    // Guardar nueva tarea
     public function store(Request $request)
     {
         $request->validate([
@@ -48,7 +45,6 @@ class PetTaskController extends Controller
             ->with('success', '¡Tarea registrada correctamente!');
     }
 
-    // Mostrar tarea
     public function show($id)
     {
         $tasks = session('tasks', []);
@@ -61,7 +57,6 @@ class PetTaskController extends Controller
         return view('tasks.show', compact('task'));
     }
 
-    // Editar tarea
     public function edit($id)
     {
         $tasks = session('tasks', []);
@@ -74,7 +69,6 @@ class PetTaskController extends Controller
         return view('tasks.edit', compact('task'));
     }
 
-    // Actualizar tarea
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -102,7 +96,6 @@ class PetTaskController extends Controller
             ->with('success', '¡Tarea actualizada correctamente!');
     }
 
-    // Eliminar tarea
     public function destroy($id)
     {
         $tasks = session('tasks', []);
