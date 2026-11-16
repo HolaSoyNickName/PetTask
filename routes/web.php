@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetTaskController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PetTaskController::class, 'index'])->name('tasks.index');
 Route::get('/tasks/create', [PetTaskController::class, 'create'])->name('tasks.create');

@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('title', 'Editar tarea | PetTask')
@@ -21,51 +20,52 @@
             </p>
         </div>
 
-        <form action="{{ route('tasks.update', $task['id']) }}" method="POST">
+        <form action="{{ route('tasks.update', $task['id']) }}" method="POST" novalidate>
             @csrf
             @method('PUT')
 
+            <!-- Título -->
             <div class="mb-3">
                 <label for="title" class="form-label fw-semibold">
-                    Nombre de la tarea
+                    Nombre o título de la tarea <span class="text-danger">*</span>
                 </label>
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control @error('title') is-invalid @enderror"
                     id="title"
                     name="title"
                     value="{{ old('title', $task['title']) }}"
                     placeholder="Ej. Investigar sobre la fotosíntesis"
-                    required
                 >
                 @error('title')
-                    <div class="text-danger small mt-1">{{ $message }}</div>
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
                 @enderror
             </div>
 
+            <!-- Materia -->
             <div class="mb-3">
                 <label for="subject" class="form-label fw-semibold">
-                    Materia
+                    Materia <span class="text-danger">*</span>
                 </label>
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control @error('subject') is-invalid @enderror"
                     id="subject"
                     name="subject"
                     value="{{ old('subject', $task['subject']) }}"
                     placeholder="Ej. Biología"
-                    required
                 >
                 @error('subject')
-                    <div class="text-danger small mt-1">{{ $message }}</div>
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
                 @enderror
             </div>
 
+            <!-- Estado -->
             <div class="mb-4">
                 <label for="status" class="form-label fw-semibold">
-                    Estado de la tarea
+                    Estado de la tarea <span class="text-danger">*</span>
                 </label>
-                <select class="form-select" id="status" name="status" required>
+                <select class="form-select @error('status') is-invalid @enderror" id="status" name="status">
                     <option value="Pendiente"
                         {{ old('status', $task['status']) == 'Pendiente' ? 'selected' : '' }}>
                         Pendiente
@@ -76,7 +76,24 @@
                     </option>
                 </select>
                 @error('status')
-                    <div class="text-danger small mt-1">{{ $message }}</div>
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Descripción (opcional) -->
+            <div class="mb-4">
+                <label for="description" class="form-label fw-semibold">
+                    Descripción de la tarea (opcional)
+                </label>
+                <textarea
+                    class="form-control @error('description') is-invalid @enderror"
+                    id="description"
+                    name="description"
+                    rows="3"
+                    placeholder="Escribe una descripción o detalles adicionales sobre la tarea..."
+                >{{ old('description', $task['description'] ?? '') }}</textarea>
+                @error('description')
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
                 @enderror
             </div>
 

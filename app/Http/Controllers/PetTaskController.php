@@ -2,32 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StorePetTaskRequest;
+use App\Http\Requests\UpdatePetTaskRequest;
+use App\Models\Tarea;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\View\View;
 
 class PetTaskController extends Controller
 {
-    // Mostrar todas las tareas
-    public function index()
+    /**
+     * Mostrar todas las tareas registradas.
+     */
+    public function index(): View
     {
         $tasks = session('tasks', []);
 
         return view('tasks.index', compact('tasks'));
     }
 
-    // Mostrar formulario para crear tarea
-    public function create()
+    /**
+     * Mostrar formulario para registrar una nueva tarea.
+     */
+    public function create(): View
     {
         return view('tasks.create');
     }
 
-    // Guardar nueva tarea
-    public function store(Request $request)
+    /**
+     * Guardar una nueva tarea validando los datos con StorePetTaskRequest.
+     */
+    public function store(StorePetTaskRequest $request): RedirectResponse
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'subject' => 'required|string|max:255',
-            'status' => 'required|string'
-        ]);
+        // 6. Validar datos utilizando $request->validated()
+        $validated = $request->validated();
 
         $tasks = session('tasks', []);
 
@@ -35,66 +43,89 @@ class PetTaskController extends Controller
             ? max(array_column($tasks, 'id')) + 1
             : 1;
 
-        $tasks[] = [
+        $taskData = [
             'id' => $id,
-            'title' => $request->title,
-            'subject' => $request->subject,
-            'status' => $request->status
+            'title' => $validated['title'],
+            'subject' => $validated['subject'],
+            'status' => $validated['status'] ?? 'Pendiente',
+            'description' => $validated['description'] ?? null,
         ];
 
+        $tasks[] = $taskData;
+
         session(['tasks' => $tasks]);
+
+        // Si existe la tabla y hay un usuario autenticado, también persistir en BD
+        if (auth()->check() && class_exists(Tarea::class) && Schema::hasTable('tareas')) {
+            Tarea::create([
+                'titulo' => $validated['title'],
+                'materia' => $validated['subject'],
+                'descripcion' => $validated['description'] ?? null,
+                'estado' => $validated['status'] ?? 'Pendiente',
+                'user_id' => auth()->id(),
+            ]);
+        }
 
         return redirect()->route('tasks.index')
             ->with('success', '¡Tarea registrada correctamente!');
     }
 
-    // Mostrar tarea
-    public function show($id)
+    /**
+     * Mostrar los detalles de una tarea específica.
+     */
+    public function show(int|string $id): View
     {
         $tasks = session('tasks', []);
-        $task = collect($tasks)->firstWhere('id', $id);
+        $task = collect($tasks)->firstWhere('id', (int) $id);
 
-        if (!$task) {
-            abort(404);
+        if (! $task) {
+            abort(404, 'Tarea no encontrada.');
         }
 
         return view('tasks.show', compact('task'));
     }
 
-    // Editar tarea
-    public function edit($id)
+    /**
+     * Mostrar formulario para editar una tarea existente.
+     */
+    public function edit(int|string $id): View
     {
         $tasks = session('tasks', []);
-        $task = collect($tasks)->firstWhere('id', $id);
+        $task = collect($tasks)->firstWhere('id', (int) $id);
 
-        if (!$task) {
-            abort(404);
+        if (! $task) {
+            abort(404, 'Tarea no encontrada.');
         }
 
         return view('tasks.edit', compact('task'));
     }
 
-    // Actualizar tarea
-    public function update(Request $request, $id)
+    /**
+     * Actualizar una tarea existente validando los datos con UpdatePetTaskRequest.
+     */
+    public function update(UpdatePetTaskRequest $request, int|string $id): RedirectResponse
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'subject' => 'required|string|max:255',
-            'status' => 'required|string'
-        ]);
+        // 6. Validar datos utilizando $request->validated()
+        $validated = $request->validated();
 
         $tasks = session('tasks', []);
+        $found = false;
 
         foreach ($tasks as &$task) {
-            if ($task['id'] == $id) {
-                $task['title'] = $request->title;
-                $task['subject'] = $request->subject;
-                $task['status'] = $request->status;
+            if ($task['id'] == (int) $id) {
+                $task['title'] = $validated['title'];
+                $task['subject'] = $validated['subject'];
+                $task['status'] = $validated['status'];
+                $task['description'] = $validated['description'] ?? null;
+                $found = true;
                 break;
             }
         }
-
         unset($task);
+
+        if (! $found) {
+            abort(404, 'Tarea no encontrada.');
+        }
 
         session(['tasks' => $tasks]);
 
@@ -102,13 +133,15 @@ class PetTaskController extends Controller
             ->with('success', '¡Tarea actualizada correctamente!');
     }
 
-    // Eliminar tarea
-    public function destroy($id)
+    /**
+     * Eliminar una tarea del sistema.
+     */
+    public function destroy(int|string $id): RedirectResponse
     {
         $tasks = session('tasks', []);
 
         $tasks = array_values(array_filter($tasks, function ($task) use ($id) {
-            return $task['id'] != $id;
+            return $task['id'] != (int) $id;
         }));
 
         session(['tasks' => $tasks]);

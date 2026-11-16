@@ -14,10 +14,10 @@ return new class extends Migration
             $table->string('materia');
             $table->text('descripcion')->nullable();
             $table->string('estado')->default('Pendiente');
-            
+
             // RELACIÓN: La llave foránea que conecta con el usuario
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            
+
             $table->timestamps();
         });
     }
