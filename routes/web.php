@@ -4,24 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareaController;
 use App\Http\Controllers\PageController;
 
-// Páginas principales
-Route::get('/', [PageController::class, 'inicio'])->name('inicio');
-Route::get('/nosotros', [PageController::class, 'nosotros'])->name('nosotros');
-Route::get('/servicios', [PageController::class, 'servicios'])->name('servicios');
-Route::get('/contacto', [PageController::class, 'contacto'])->name('contacto');
-Route::get('/iniciar-sesion', [PageController::class, 'login'])->name('login');
-Route::get('/registro', [PageController::class, 'registro'])->name('registro');
-
-// Rutas RESTful con Route::resource() y Route Model Binding (Rúbrica)
-Route::resource('tareas', TareaController::class);
-
-// Pantallas adicionales del dashboard
-Route::get('/resumen-general', [PageController::class, 'resumen'])->name('resumen');
-Route::get('/actualizar-tarea', [PageController::class, 'actualizarTarea'])->name('tareas.actualizar.vista');
-Route::get('/eliminar-tareas', [PageController::class, 'eliminarTareas'])->name('tareas.eliminar.vista');
-Route::get('/recordatorios', [PageController::class, 'recordatorios'])->name('recordatorios');
-
-// Mascota y racha
-Route::get('/interaccion-con-mascota', [PageController::class, 'interaccion'])->name('mascota.interaccion');
-Route::get('/tienda-de-mascota', [PageController::class, 'tienda'])->name('mascota.tienda');
-Route::get('/racha-de-actividad', [PageController::class, 'racha'])->name('mascota.racha');
+Route::get('/', [PetTaskController::class, 'index'])->name('tasks.index');
+Route::get('/tasks/create', [PetTaskController::class, 'create'])->name('tasks.create');
+Route::post('/tasks', [PetTaskController::class, 'store'])->name('tasks.store');
+Route::get('/tasks/{id}', [PetTaskController::class, 'show'])->name('tasks.show');
+Route::get('/tasks/{id}/edit', [PetTaskController::class, 'edit'])->name('tasks.edit');
+Route::put('/tasks/{id}', [PetTaskController::class, 'update'])->name('tasks.update');
+Route::delete('/tasks/{id}', [PetTaskController::class, 'destroy'])->name('tasks.destroy');
