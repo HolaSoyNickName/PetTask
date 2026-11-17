@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('title', 'Detalle de tarea | PetTask')
@@ -43,7 +42,7 @@
             </h5>
         </div>
 
-        <div class="p-3 rounded-4 mb-4" style="background-color: #E5EAF5;">
+        <div class="p-3 rounded-4 mb-3" style="background-color: #E5EAF5;">
             <small class="text-muted fw-semibold">ESTADO</small>
             <div class="mt-2">
                 @if($task['status'] == 'Completada')
@@ -58,6 +57,15 @@
                 @endif
             </div>
         </div>
+
+        @if(!empty($task['description']))
+        <div class="p-3 rounded-4 mb-4" style="background-color: #E5EAF5;">
+            <small class="text-muted fw-semibold">DESCRIPCIÓN</small>
+            <p class="mt-2 mb-0" style="color: #1E1E50; white-space: pre-line;">
+                {{ $task['description'] }}
+            </p>
+        </div>
+        @endif
 
         <div class="d-flex flex-wrap justify-content-center gap-2">
             <a href="{{ route('tasks.edit', $task['id']) }}"

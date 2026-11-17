@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetTaskController;
-use App\Http\Controllers\StreakController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,6 +14,3 @@ Route::post('/tasks', [PetTaskController::class, 'store'])->name('tasks.store');
 Route::get('/tasks/{id}/edit', [PetTaskController::class, 'edit'])->name('tasks.edit');
 Route::put('/tasks/{id}', [PetTaskController::class, 'update'])->name('tasks.update');
 Route::delete('/tasks/{id}', [PetTaskController::class, 'destroy'])->name('tasks.destroy');
-
-// Tus rutas del CRUD de Streaks
-Route::resource('streaks', StreakController::class);
