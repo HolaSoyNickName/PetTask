@@ -12,9 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('streaks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    $table->id();
+    // Agrega estas líneas:
+    $table->string('titulo', 100);
+    $table->text('descripcion')->nullable();
+    $table->boolean('completada')->default(false);
+    $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
+    // Fin de las líneas nuevas
+    $table->timestamps();
+    });
     }
 
     /**
