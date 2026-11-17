@@ -1,41 +1,16 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resumen General - PetTask</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-        rel="stylesheet" />
-    <!-- Iconos -->
+@extends('layouts.app')
+
+@section('title', 'Resumen General - PetTask')
+
+@section('styles')
+    <!-- Iconos de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos.css" />
-    <link rel="stylesheet" href="css/carga-de-datos-general.css" />
-</head>
-<body>
-    <!-- NAVBAR -->
-    <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesión</a>
-            </nav>
-        </div>
-    </header>
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/carga-de-datos-general.css') }}" />
+@endsection
+
+@section('content')
     <main class="contenido">
         <section class="card tarjeta-resumen">
             <h1 class="titulo">Resumen general</h1>
@@ -49,15 +24,16 @@
                         <h2 class="subtitulo">Tareas</h2>
                         <div class="estadisticas">
                             <div class="estadistica">
-                                <span class="valor" id="total-tareas">0</span>
+                                <span class="valor" id="total-tareas">{{ $resumen['total_tareas'] ?? 0 }}</span>
                                 <span class="texto">Total</span>
                             </div>
                             <div class="estadistica">
-                                <span class="valor" id="tareas-pendientes">0</span>
+                                <span class="valor" id="tareas-pendientes">{{ $resumen['tareas_pendientes'] ?? 0 }}</span>
                                 <span class="texto">Pendientes</span>
                             </div>
                             <div class="estadistica">
-                                <span class="valor" id="tareas-completadas">0</span>
+                                <span class="valor"
+                                    id="tareas-completadas">{{ $resumen['tareas_completadas'] ?? 0 }}</span>
                                 <span class="texto">Completadas</span>
                             </div>
                         </div>
@@ -71,15 +47,17 @@
                         <h2 class="subtitulo">Mascota</h2>
                         <div class="estadisticas">
                             <div class="estadistica">
-                                <span class="valor" id="nombre-mascota">Sin datos</span>
+                                <span class="valor"
+                                    id="nombre-mascota">{{ $resumen['nombre_mascota'] ?? 'Sin datos' }}</span>
                                 <span class="texto">Nombre</span>
                             </div>
                             <div class="estadistica">
-                                <span class="valor" id="estado-mascota">Sin datos</span>
+                                <span class="valor"
+                                    id="estado-mascota">{{ $resumen['estado_mascota'] ?? 'Sin datos' }}</span>
                                 <span class="texto">Estado</span>
                             </div>
                             <div class="estadistica">
-                                <span class="valor" id="nivel-mascota">0</span>
+                                <span class="valor" id="nivel-mascota">{{ $resumen['nivel_mascota'] ?? 0 }}</span>
                                 <span class="texto">Nivel</span>
                             </div>
                         </div>
@@ -93,11 +71,11 @@
                         <h2 class="subtitulo">Racha</h2>
                         <div class="estadisticas">
                             <div class="estadistica">
-                                <span class="valor" id="racha-actual">0</span>
+                                <span class="valor" id="racha-actual">{{ $resumen['racha_actual'] ?? 0 }}</span>
                                 <span class="texto">Tareas consecutivas</span>
                             </div>
                             <div class="estadistica">
-                                <span class="valor" id="mejor-racha">0</span>
+                                <span class="valor" id="mejor-racha">{{ $resumen['mejor_racha'] ?? 0 }}</span>
                                 <span class="texto">Mejor racha (tareas)</span>
                             </div>
                         </div>
@@ -106,10 +84,4 @@
             </div>
         </section>
     </main>
-    <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
-</body>
-</html>
+@endsection

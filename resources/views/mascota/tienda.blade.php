@@ -1,39 +1,13 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetTask - Tienda de Mascota</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-        rel="stylesheet" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos.css" />
-    <link rel="stylesheet" href="css/tienda-de-mascota.css" />
-</head>
-<body>
-    <!-- NAVBAR -->
-    <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesión</a>
-            </nav>
-        </div>
-    </header>
+@extends('layouts.app')
+
+@section('title', 'PetTask - Tienda de Mascota')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/tienda-de-mascota.css') }}" />
+@endsection
+
+@section('content')
     <main class="contenido">
         <section class="encabezado">
             <h1 class="titulo">Tienda de Mascota</h1>
@@ -44,7 +18,7 @@
         <section class="card saldo">
             <div>
                 <span class="saldo-etiqueta">Saldo disponible</span>
-                <span class="saldo-valor">250</span>
+                <span class="saldo-valor">{{ $saldo ?? 250 }}</span>
                 <span class="saldo-puntos">puntos</span>
             </div>
         </section>
@@ -119,8 +93,4 @@
             </div>
         </section>
     </main>
-    <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+@endsection

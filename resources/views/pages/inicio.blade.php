@@ -1,38 +1,17 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1e1e50" />
-    <title>PetTask</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/estilos-sitio.css" />
-</head>
-<body>
-    <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html" aria-current="page">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesión</a>
-            </nav>
-        </div>
-    </header>
+@extends('layouts.app')
+
+@section('title', 'PetTask')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/estilos-sitio.css') }}" />
+@endsection
+
+@section('content')
     <main class="site-shell">
         <section class="site-header">
             <h1 class="site-title">
-                <img src="img/logoInd.png" alt="" style="height: 1em; width: auto; vertical-align: -0.1em" />
+                <img src="{{ asset('img/logoInd.png') }}" alt=""
+                    style="height: 1em; width: auto; vertical-align: -0.1em" />
                 PetTask
             </h1>
             <p class="site-lede">
@@ -46,39 +25,39 @@
                     <p>Administra tus tareas y mantén organizado tu espacio de estudio.</p>
                 </div>
                 <div class="site-feature-grid">
-                    <a class="card site-feature" href="carga-de-datos-general.html">
+                    <a class="card site-feature" href="{{ route('resumen') }}">
                         <strong>Resumen general</strong>
                         <span>Consulta tus tareas, mascota y racha.</span>
                     </a>
-                    <a class="card site-feature" href="ver-tareas.html">
+                    <a class="card site-feature" href="{{ route('tareas.index') }}">
                         <strong>Ver tareas</strong>
                         <span>Busca actividades pendientes y completadas.</span>
                     </a>
-                    <a class="card site-feature" href="agregar-tareas.html">
+                    <a class="card site-feature" href="{{ route('tareas.create') }}">
                         <strong>Agregar tarea</strong>
                         <span>Registra la siguiente actividad de estudio.</span>
                     </a>
-                    <a class="card site-feature" href="actualizar-tarea.html">
+                    <a class="card site-feature" href="{{ route('tareas.actualizar.vista') }}">
                         <strong>Actualizar tarea</strong>
                         <span>Modifica los datos de una actividad.</span>
                     </a>
-                    <a class="card site-feature" href="eliminar-tareas.html">
+                    <a class="card site-feature" href="{{ route('tareas.eliminar.vista') }}">
                         <strong>Eliminar tareas</strong>
                         <span>Administra tareas que ya no necesitas.</span>
                     </a>
-                    <a class="card site-feature" href="interaccion-con-mascota.html">
+                    <a class="card site-feature" href="{{ route('mascota.interaccion') }}">
                         <strong>Mascota virtual</strong>
                         <span>Revisa su estado y actividad.</span>
                     </a>
-                    <a class="card site-feature" href="tienda-de-mascota.html">
+                    <a class="card site-feature" href="{{ route('mascota.tienda') }}">
                         <strong>Tienda de mascota</strong>
                         <span>Explora mejoras para tu compañera.</span>
                     </a>
-                    <a class="card site-feature" href="racha-de-actividad.html">
+                    <a class="card site-feature" href="{{ route('mascota.racha') }}">
                         <strong>Racha de actividad</strong>
                         <span>Visualiza tus tareas completadas consecutivamente.</span>
                     </a>
-                    <a class="card site-feature" href="recordatorios.html">
+                    <a class="card site-feature" href="{{ route('recordatorios') }}">
                         <strong>Recordatorios</strong>
                         <span>Ten presentes tus próximas entregas.</span>
                     </a>
@@ -103,7 +82,7 @@
                     <p class="pet-card__text">
                         Completa tus tareas para mantener a tu mascota feliz y con energía.
                     </p>
-                    <a class="pet-card__link" href="interaccion-con-mascota.html">Ver mi mascota</a>
+                    <a class="pet-card__link" href="{{ route('mascota.interaccion') }}">Ver mi mascota</a>
                 </section>
                 <section class="card streak-card">
                     <div class="streak-header">
@@ -123,15 +102,9 @@
                             <p>Completa tareas consecutivamente para aumentar tu racha.</p>
                         </div>
                     </div>
-                    <a class="streak-link" href="racha-de-actividad.html">Ver mi racha</a>
+                    <a class="streak-link" href="{{ route('mascota.racha') }}">Ver mi racha</a>
                 </section>
             </aside>
         </section>
     </main>
-    <footer class="site-footer">
-        PetTask · Aplicaciones Web · Septiembre–Diciembre 2026
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+@endsection

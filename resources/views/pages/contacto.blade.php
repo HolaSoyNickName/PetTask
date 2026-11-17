@@ -1,39 +1,12 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1e1e50" />
-    <title>Contacto - PetTask</title>
-    <!-- Tipografías -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-        rel="stylesheet" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos-sitio.css" />
-</head>
-<body>
-    <!-- NAVBAR -->
-    <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html" aria-current="page">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesión</a>
-        </nav>
-        </div>
-    </header>
+@extends('layouts.app')
+
+@section('title', 'Contacto - PetTask')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/estilos-sitio.css') }}" />
+@endsection
+
+@section('content')
     <!-- CONTENIDO -->
     <main class="contacto">
         <!-- HERO -->
@@ -54,7 +27,7 @@
             </div>
             <div class="contacto-hero__marca">
                 <div class="contacto-logo-box">
-                    <img src="img/logoInd.png" alt="Logotipo de PetTask" />
+                    <img src="{{ asset('img/logoInd.png') }}" alt="Logotipo de PetTask" />
                 </div>
             </div>
         </section>
@@ -74,8 +47,7 @@
                     </p>
                 </div>
                 <div class="contacto-lista">
-                    <a class="contacto-card contacto-card--rosa"
-                        href="mailto:dec2007@micorreo.upp.edu.mx">
+                    <a class="contacto-card contacto-card--rosa" href="mailto:dec2007@micorreo.upp.edu.mx">
                         <div class="contacto-card__numero">
                             01
                         </div>
@@ -89,8 +61,7 @@
                             </p>
                         </div>
                     </a>
-                    <a class="contacto-card contacto-card--azul"
-                        href="mailto:josedanielnolascogomezpro3646@gmail.com">
+                    <a class="contacto-card contacto-card--azul" href="mailto:josedanielnolascogomezpro3646@gmail.com">
                         <div class="contacto-card__numero">
                             02
                         </div>
@@ -104,8 +75,7 @@
                             </p>
                         </div>
                     </a>
-                    <a class="contacto-card contacto-card--rosa"
-                        href="mailto:angelalvarezdelvalle@micorreo.upp.edu.mx">
+                    <a class="contacto-card contacto-card--rosa" href="mailto:angelalvarezdelvalle@micorreo.upp.edu.mx">
                         <div class="contacto-card__numero">
                             03
                         </div>
@@ -119,8 +89,7 @@
                             </p>
                         </div>
                     </a>
-                    <a class="contacto-card contacto-card--azul"
-                        href="mailto:angiedector01@micorreo.upp.edu.mx">
+                    <a class="contacto-card contacto-card--azul" href="mailto:angiedector01@micorreo.upp.edu.mx">
                         <div class="contacto-card__numero">
                             04
                         </div>
@@ -134,8 +103,7 @@
                             </p>
                         </div>
                     </a>
-                    <a class="contacto-card contacto-card--rosa"
-                        href="mailto:emir2007@micorreo.upp.edu.mx">
+                    <a class="contacto-card contacto-card--rosa" href="mailto:emir2007@micorreo.upp.edu.mx">
                         <div class="contacto-card__numero">
                             05
                         </div>
@@ -149,8 +117,7 @@
                             </p>
                         </div>
                     </a>
-                    <a class="contacto-card contacto-card--azul"
-                        href="mailto:Yaelhernandezcamargo@micorreo.upp.edu.mx">
+                    <a class="contacto-card contacto-card--azul" href="mailto:Yaelhernandezcamargo@micorreo.upp.edu.mx">
                         <div class="contacto-card__numero">
                             06
                         </div>
@@ -164,8 +131,7 @@
                             </p>
                         </div>
                     </a>
-                    <a class="contacto-card contacto-card--rosa"
-                        href="mailto:moc2531126199@micorreo.upp.edu.mx">
+                    <a class="contacto-card contacto-card--rosa" href="mailto:moc2531126199@micorreo.upp.edu.mx">
                         <div class="contacto-card__numero">
                             07
                         </div>
@@ -196,14 +162,10 @@
                     enfocado en la organización de actividades, el seguimiento
                     del progreso y la motivación mediante una mascota virtual.
                 </p>
-                <a class="contacto-info__link" href="nosotros.html">
+                <a class="contacto-info__link" href="{{ route('nosotros') }}">
                     Conoce al equipo
                 </a>
             </aside>
         </section>
     </main>
-    <!-- FOOTER -->
-    <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+@endsection

@@ -1,39 +1,13 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetTask - Racha de Actividad</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-        rel="stylesheet" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos.css" />
-    <link rel="stylesheet" href="css/racha-de-actividad.css" />
-</head>
-<body>
-    <!-- NAVBAR -->
-    <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesión</a>
-            </nav>
-        </div>
-    </header>
+@extends('layouts.app')
+
+@section('title', 'PetTask - Racha de Actividad')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/racha-de-actividad.css') }}" />
+@endsection
+
+@section('content')
     <main class="contenido">
         <section class="encabezado">
             <h1 class="titulo">Racha de Actividad</h1>
@@ -44,13 +18,13 @@
         <section class="card tarjeta-racha">
             <div class="racha-principal">
                 <span class="racha-etiqueta">Racha actual</span>
-                <span class="racha-valor">7</span>
+                <span class="racha-valor">{{ $rachaActual ?? 7 }}</span>
                 <span class="racha-unidad">tareas consecutivas</span>
             </div>
             <div class="mensaje-racha">
                 <h2 class="subtitulo">¡Sigue así!</h2>
                 <p>
-                    Has completado 7 tareas seguidas. Completa otra tarea para aumentar tu racha.
+                    Has completado {{ $rachaActual ?? 7 }} tareas seguidas. Completa otra tarea para aumentar tu racha.
                 </p>
             </div>
         </section>
@@ -91,18 +65,14 @@
             <h2 class="subtitulo">Resumen de actividad</h2>
             <div class="estadisticas">
                 <div class="estadistica">
-                    <span class="estadistica-valor">7</span>
+                    <span class="estadistica-valor">{{ $rachaActual ?? 7 }}</span>
                     <span class="estadistica-etiqueta">Racha actual (tareas)</span>
                 </div>
                 <div class="estadistica">
-                    <span class="estadistica-valor">12</span>
+                    <span class="estadistica-valor">{{ $mejorRacha ?? 12 }}</span>
                     <span class="estadistica-etiqueta">Mejor racha (tareas)</span>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+@endsection

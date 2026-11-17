@@ -1,39 +1,13 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetTask - Mi Mascota</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
-        rel="stylesheet" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos.css" />
-    <link rel="stylesheet" href="css/interaccion-con-mascota.css" />
-</head>
-<body>
-    <!-- NAVBAR -->
-    <header class="pet-nav navbar navbar-expand-lg navbar-dark">
-        <a class="pet-nav__brand" href="index.html">
-            <img src="img/logoNav.png" alt="Logotipo de PetTask" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <nav class="pet-nav__links navbar-nav ms-lg-auto" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-                <a class="pet-nav__login" href="iniciar-sesion.html">Iniciar sesión</a>
-            </nav>
-        </div>
-    </header>
+@extends('layouts.app')
+
+@section('title', 'PetTask - Mi Mascota')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/interaccion-con-mascota.css') }}" />
+@endsection
+
+@section('content')
     <main class="contenido">
         <section class="encabezado">
             <h1 class="titulo">Mi Mascota Virtual</h1>
@@ -50,8 +24,8 @@
                             <span class="placeholder-subtexto">Próximamente</span>
                         </div>
                     </div>
-                    <h2 class="nombre-mascota">Firulais</h2>
-                    <span class="badge-estado">Feliz</span>
+                    <h2 class="nombre-mascota">{{ $mascota->nombre ?? 'Firulais' }}</h2>
+                    <span class="badge-estado">{{ $mascota->estado ?? 'Feliz' }}</span>
                     <p class="texto-mascota">
                         Tu mascota está contenta y con mucha energía. ¡Sigue completando tareas para mantenerla así!
                     </p>
@@ -61,29 +35,31 @@
                 <div class="contenido-estado">
                     <div class="encabezado-estado">
                         <h2 class="subtitulo">Estado de la mascota</h2>
-                        <span class="badge-nivel">Nivel 5</span>
+                        <span class="badge-nivel">Nivel {{ $mascota->nivel ?? 5 }}</span>
                     </div>
                     <div class="estados">
                         <div class="estado">
-                            <div class="circulo-progreso" style="--porcentaje: 80;">
+                            <div class="circulo-progreso" style="--porcentaje: {{ $mascota->energia ?? 80 }};">
                                 <div class="circulo-interno">
-                                    <span class="circulo-valor">80%</span>
+                                    <span class="circulo-valor">{{ $mascota->energia ?? 80 }}%</span>
                                 </div>
                             </div>
                             <p class="circulo-etiqueta">Energía</p>
                         </div>
                         <div class="estado">
-                            <div class="circulo-progreso circulo-rosa" style="--porcentaje: 90;">
+                            <div class="circulo-progreso circulo-rosa"
+                                style="--porcentaje: {{ $mascota->felicidad ?? 90 }};">
                                 <div class="circulo-interno">
-                                    <span class="circulo-valor">90%</span>
+                                    <span class="circulo-valor">{{ $mascota->felicidad ?? 90 }}%</span>
                                 </div>
                             </div>
                             <p class="circulo-etiqueta">Felicidad</p>
                         </div>
                         <div class="estado">
-                            <div class="circulo-progreso circulo-oscuro" style="--porcentaje: 30;">
+                            <div class="circulo-progreso circulo-oscuro"
+                                style="--porcentaje: {{ $mascota->hambre ?? 30 }};">
                                 <div class="circulo-interno">
-                                    <span class="circulo-valor">30%</span>
+                                    <span class="circulo-valor">{{ $mascota->hambre ?? 30 }}%</span>
                                 </div>
                             </div>
                             <p class="circulo-etiqueta">Hambre</p>
@@ -171,8 +147,4 @@
             </div>
         </section>
     </main>
-    <footer class="site-footer">PetTask · Aplicaciones Web · 2026</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+@endsection

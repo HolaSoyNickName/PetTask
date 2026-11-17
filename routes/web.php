@@ -1,25 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PetTaskController;
+use App\Http\Controllers\TareaController;
+use App\Http\Controllers\PageController;
 
-// 1. Listado principal (GET)
-Route::get('/', [PetTaskController::class, 'index'])->name('tasks.index');
+// Páginas principales
+Route::get('/', [PageController::class, 'inicio'])->name('inicio');
+Route::get('/nosotros', [PageController::class, 'nosotros'])->name('nosotros');
+Route::get('/servicios', [PageController::class, 'servicios'])->name('servicios');
+Route::get('/contacto', [PageController::class, 'contacto'])->name('contacto');
+Route::get('/iniciar-sesion', [PageController::class, 'login'])->name('login');
+Route::get('/registro', [PageController::class, 'registro'])->name('registro');
 
-// 2. Formulario para crear (GET)
-Route::get('/tasks/create', [PetTaskController::class, 'create'])->name('tasks.create');
+// Rutas RESTful con Route::resource() y Route Model Binding (Rúbrica)
+Route::resource('tareas', TareaController::class);
 
-// 3. Guardar nueva tarea (POST)
-Route::post('/tasks', [PetTaskController::class, 'store'])->name('tasks.store');
+// Pantallas adicionales del dashboard
+Route::get('/resumen-general', [PageController::class, 'resumen'])->name('resumen');
+Route::get('/actualizar-tarea', [PageController::class, 'actualizarTarea'])->name('tareas.actualizar.vista');
+Route::get('/eliminar-tareas', [PageController::class, 'eliminarTareas'])->name('tareas.eliminar.vista');
+Route::get('/recordatorios', [PageController::class, 'recordatorios'])->name('recordatorios');
 
-// 4. Ver detalle de tarea (GET)
-Route::get('/tasks/{id}', [PetTaskController::class, 'show'])->name('tasks.show');
-
-// 5. Formulario para editar (GET)
-Route::get('/tasks/{id}/edit', [PetTaskController::class, 'edit'])->name('tasks.edit');
-
-// 6. Actualizar tarea (PUT)
-Route::put('/tasks/{id}', [PetTaskController::class, 'update'])->name('tasks.update');
-
-// 7. Eliminar tarea (DELETE)
-Route::delete('/tasks/{id}', [PetTaskController::class, 'destroy'])->name('tasks.destroy');
+// Mascota y racha
+Route::get('/interaccion-con-mascota', [PageController::class, 'interaccion'])->name('mascota.interaccion');
+Route::get('/tienda-de-mascota', [PageController::class, 'tienda'])->name('mascota.tienda');
+Route::get('/racha-de-actividad', [PageController::class, 'racha'])->name('mascota.racha');
