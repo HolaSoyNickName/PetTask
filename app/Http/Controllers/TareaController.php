@@ -3,55 +3,93 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tarea;
+use App\Models\User;
 use App\Http\Requests\StoreTareaRequest;
 use App\Http\Requests\UpdateTareaRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TareaController extends Controller
 {
-    // Muestra carga-de-datos-general.html
     public function index()
     {
-        $tareas = []; // Cuando conecten la BD: Tarea::latest()->get();
+        $tareas = Tarea::latest()->get();
         return view('tareas.index', compact('tareas'));
     }
 
-    // Muestra agregar-tareas.html
     public function create()
     {
         $tarea = new Tarea();
         return view('tareas.create', compact('tarea'));
     }
 
-    // Valida con FormRequest y guarda
     public function store(StoreTareaRequest $request)
     {
-        Tarea::create($request->validated());
+        $datos = $request->validated();
+
+        $usuario = Auth::user() ?? User::first();
+
+        if (! $usuario) {
+            $usuario = User::create([
+                'name' => 'Usuario PetTask',
+                'email' => 'usuario@pettask.com',
+                'password' => bcrypt('password123'),
+            ]);
+        }
+
+        $datos['user_id'] = $usuario->id;
+        $datos['estado'] = $datos['estado'] ?? 'Pendiente';
+
+        Tarea::create($datos);
+
         return redirect()->route('tareas.index')->with('success', 'Tarea creada correctamente.');
     }
 
-    // Route Model Binding (Tarea $tarea)
     public function show(Tarea $tarea)
     {
         return view('tareas.show', compact('tarea'));
     }
 
-    // Muestra actualizar-tarea.html con Route Model Binding
-    public function edit(Tarea $tarea)
+public function edit(Tarea $tarea)
     {
-        return view('tareas.edit', compact('tarea'));
+        $tareas = Tarea::orderBy('id', 'asc')->get();
+        return view('tareas.edit', compact('tarea', 'tareas'));
     }
 
-    // Valida con FormRequest y actualiza usando Route Model Binding
     public function update(UpdateTareaRequest $request, Tarea $tarea)
     {
-        $tarea->update($request->validated());
-        return redirect()->route('tareas.index')->with('success', 'Tarea actualizada.');
+        // Si el usuario eligió otra tarea en el selector de ID, actualizar esa tarea
+        if ($request->filled('id') && (int) $request->id !== $tarea->id) {
+            $tarea = Tarea::findOrFail($request->id);
+        }
+
+        $datos = [
+            'titulo' => $request->validated()['titulo'],
+            'descripcion' => $request->validated()['descripcion'] ?? null,
+        ];
+
+        if ($request->filled('materia')) {
+            $datos['materia'] = $request->validated()['materia'];
+        }
+
+        $tarea->update($datos);
+
+        return redirect()->route('tareas.index')->with('success', '¡Los cambios de la tarea se guardaron correctamente!');
     }
 
-    // Elimina usando Route Model Binding
     public function destroy(Tarea $tarea)
     {
         $tarea->delete();
-        return redirect()->route('tareas.index')->with('success', 'Tarea eliminada.');
+        return redirect()->route('tareas.index')->with('success', 'Tarea eliminada correctamente.');
+    }
+
+    public function cambiarEstado(Tarea $tarea)
+    {
+        $esCompletada = strtolower($tarea->estado ?? '') === 'completada';
+        $tarea->update([
+            'estado' => $esCompletada ? 'Pendiente' : 'Completada',
+        ]);
+
+        return redirect()->back()->with('success', 'Estado de la tarea actualizado.');
     }
 }
+

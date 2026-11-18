@@ -14,9 +14,11 @@ class UpdateTareaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'materia' => ['required', 'string', 'max:100'],
-            'tarea' => ['required', 'string', 'max:255'],
+            'id' => ['nullable', 'integer'],
+            'materia' => ['nullable', 'string', 'max:100'],
+            'titulo' => ['required', 'string', 'max:255'],
             'descripcion' => ['nullable', 'string'],
+            'estado' => ['nullable', 'string', 'max:50'],
         ];
     }
 }

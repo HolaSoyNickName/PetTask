@@ -15,7 +15,7 @@ class StoreTareaRequest extends FormRequest
     {
         return [
             'materia' => ['required', 'string', 'max:100'],
-            'tarea' => ['required', 'string', 'max:255'],
+            'titulo' => ['required', 'string', 'max:255'],
             'descripcion' => ['nullable', 'string'],
         ];
     }

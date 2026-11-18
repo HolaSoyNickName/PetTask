@@ -8,6 +8,9 @@
 @endsection
 
 @section('content')
+    @php
+        $tareaActual = $tarea ?? ($tareas->first() ?? null);
+    @endphp
     <main class="contenido">
         <section class="tarjeta-formulario">
             <h1 class="titulo">Actualizar Tarea</h1>
@@ -17,13 +20,17 @@
                 {{ session('success') ?? '¡Los cambios de la tarea se guardaron correctamente!' }}
             </div>
 
-            <form action="{{ isset($tarea) && $tarea->id ? route('tareas.update', $tarea) : '#' }}" method="POST">
-                @if (isset($tarea) && $tarea->id)
+            @if($tareaActual)
+                <form id="formActualizarTarea" action="{{ route('tareas.update', $tareaActual) }}" method="POST">
+                    @csrf
                     @method('PUT')
-                @endif
-
-                @include('tareas._form', ['modo' => 'actualizar'])
-            </form>
+                    @include('tareas._form', ['modo' => 'actualizar', 'tarea' => $tareaActual])
+                </form>
+            @else
+                <div class="alerta" role="alert">
+                    No hay tareas registradas todavía. <a href="{{ route('tareas.create') }}">Agrega una tarea aquí</a>.
+                </div>
+            @endif
         </section>
     </main>
 @endsection

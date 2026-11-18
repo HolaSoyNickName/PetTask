@@ -1,18 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePetTaskRequest;
 use App\Http\Requests\UpdatePetTaskRequest;
 use App\Models\Tarea;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 
 class PetTaskController extends Controller
 {
-    /**
-     * Mostrar todas las tareas registradas.
-     */
     public function index(): View
     {
         $tasks = session('tasks', []);
@@ -20,20 +19,13 @@ class PetTaskController extends Controller
         return view('tasks.index', compact('tasks'));
     }
 
-    /**
-     * Mostrar formulario para registrar una nueva tarea.
-     */
     public function create(): View
     {
         return view('tasks.create');
     }
 
-    /**
-     * Guardar una nueva tarea validando los datos con StorePetTaskRequest.
-     */
     public function store(StorePetTaskRequest $request): RedirectResponse
     {
-        // 6. Validar datos utilizando $request->validated()
         $validated = $request->validated();
 
         $tasks = session('tasks', []);
@@ -54,14 +46,13 @@ class PetTaskController extends Controller
 
         session(['tasks' => $tasks]);
 
-        // Si existe la tabla y hay un usuario autenticado, también persistir en BD
-        if (auth()->check() && class_exists(Tarea::class) && Schema::hasTable('tareas')) {
+        if (Auth::check() && class_exists(Tarea::class) && Schema::hasTable('tareas')) {
             Tarea::create([
                 'titulo' => $validated['title'],
                 'materia' => $validated['subject'],
                 'descripcion' => $validated['description'] ?? null,
                 'estado' => $validated['status'] ?? 'Pendiente',
-                'user_id' => auth()->id(),
+                'user_id' => Auth::id(),
             ]);
         }
 
@@ -69,9 +60,6 @@ class PetTaskController extends Controller
             ->with('success', '¡Tarea registrada correctamente!');
     }
 
-    /**
-     * Mostrar los detalles de una tarea específica.
-     */
     public function show(int|string $id): View
     {
         $tasks = session('tasks', []);
@@ -84,9 +72,6 @@ class PetTaskController extends Controller
         return view('tasks.show', compact('task'));
     }
 
-    /**
-     * Mostrar formulario para editar una tarea existente.
-     */
     public function edit(int|string $id): View
     {
         $tasks = session('tasks', []);
@@ -99,12 +84,8 @@ class PetTaskController extends Controller
         return view('tasks.edit', compact('task'));
     }
 
-    /**
-     * Actualizar una tarea existente validando los datos con UpdatePetTaskRequest.
-     */
     public function update(UpdatePetTaskRequest $request, int|string $id): RedirectResponse
     {
-        // 6. Validar datos utilizando $request->validated()
         $validated = $request->validated();
 
         $tasks = session('tasks', []);
@@ -132,9 +113,6 @@ class PetTaskController extends Controller
             ->with('success', '¡Tarea actualizada correctamente!');
     }
 
-    /**
-     * Eliminar una tarea del sistema.
-     */
     public function destroy(int|string $id): RedirectResponse
     {
         $tasks = session('tasks', []);

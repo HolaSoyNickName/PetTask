@@ -3,14 +3,66 @@
 @section('title', 'PetTask - Ver Tareas')
 
 @section('styles')
-    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/ver-tareas.css') }}" />
+    <style>
+        .lista-tareas {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .tarea-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 18px 24px;
+            border: 1.5px solid #8ea8f8;
+            border-radius: 16px;
+            background-color: #ffffff;
+        }
+        .tarea-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .tarea-acciones {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .btn-editar-guia {
+            background-color: #8294f2;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            padding: 10px 18px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-editar-guia:hover {
+            background-color: #6c7fe0;
+            color: #ffffff;
+        }
+    </style>
 @endsection
 
 @section('content')
+    @php
+        $listaTareas = collect($tareas ?? []);
+        $totalTareas = $listaTareas->count();
+        $completadasCount = $listaTareas->filter(fn($t) => strtolower($t->estado ?? '') === 'completada')->count();
+        $pendientesCount = $totalTareas - $completadasCount;
+    @endphp
+
     <main class="contenido">
         <section class="card tarjeta-tareas">
             <div class="encabezado-seccion">
@@ -19,15 +71,15 @@
             </div>
             <div class="metricas-grid">
                 <div class="tarjeta-metrica">
-                    <span class="metrica-num" id="cnt-total">0</span>
+                    <span class="metrica-num" id="cnt-total">{{ $totalTareas }}</span>
                     <span class="metrica-lbl">Totales</span>
                 </div>
                 <div class="tarjeta-metrica">
-                    <span class="metrica-num" id="cnt-pendientes">0</span>
+                    <span class="metrica-num" id="cnt-pendientes">{{ $pendientesCount }}</span>
                     <span class="metrica-lbl">Pendientes</span>
                 </div>
                 <div class="tarjeta-metrica">
-                    <span class="metrica-num" id="cnt-completadas">0</span>
+                    <span class="metrica-num" id="cnt-completadas">{{ $completadasCount }}</span>
                     <span class="metrica-lbl">Completadas</span>
                 </div>
             </div>
@@ -49,87 +101,58 @@
                         placeholder="Buscar tarea o materia..." onkeyup="buscarTarea()" />
                 </div>
             </div>
+
             <!-- Lista Interactiva de Tareas -->
             <div class="lista-tareas" id="listaTareas">
-                @forelse($tareas ?? [] as $tarea)
-                    <div class="tarea-item {{ ($tarea->estado ?? 'pendiente') === 'completada' ? 'completada' : '' }}"
-                        data-estado="{{ $tarea->estado ?? 'pendiente' }}">
+                @forelse($listaTareas as $tarea)
+                    @php
+                        $estadoNormalizado = strtolower($tarea->estado ?? 'pendiente') === 'completada' ? 'completada' : 'pendiente';
+                    @endphp
+                    <div class="tarea-item {{ $estadoNormalizado === 'completada' ? 'completada' : '' }}" data-estado="{{ $estadoNormalizado }}">
                         <div class="tarea-info">
                             <span class="materia-tag">{{ $tarea->materia }}</span>
-                            <strong>{{ $tarea->tarea }}</strong>
+                            <strong>{{ $tarea->titulo }}</strong>
                             <small>
                                 <i class="bi bi-calendar3"></i>
-                                {{ $tarea->descripcion ?? 'Sin fecha asignada' }}
+                                {{ $tarea->descripcion ?? 'Sin descripción' }}
                             </small>
                         </div>
                         <div class="tarea-acciones">
-                            <button class="btn-estado btn-completar" onclick="cambiarEstadoTarea(this)">
-                                <i class="bi bi-check2"></i>
-                                Marcar completada
-                            </button>
+                           <form action="{{ route('tareas.estado', $tarea) }}" method="POST" class="d-inline">
+    @csrf
+    @method('PATCH')
+    <button type="submit" class="btn-estado {{ $estadoNormalizado === 'completada' ? 'btn-deshacer' : 'btn-completar' }}">
+        <i class="bi {{ $estadoNormalizado === 'completada' ? 'bi-arrow-counterclockwise' : 'bi-check2' }}"></i>
+        {{ $estadoNormalizado === 'completada' ? 'Deshacer' : 'Marcar completada' }}
+    </button>
+</form>
+                            <a href="{{ route('tareas.edit', $tarea) }}" class="btn-editar-guia">
+                                <i class="bi bi-pencil-square"></i>
+                                Actualizar
+                            </a>
+                            <a href="{{ route('tareas.eliminar.vista') }}" class="btn-estado btn-completar text-decoration-none">
+                                <i class="bi bi-trash3"></i>
+                                Eliminar
+                            </a>
                         </div>
                     </div>
                 @empty
-                    <!-- Tarea 1 -->
-                    <div class="tarea-item" data-estado="pendiente">
+                    <div class="tarea-item">
                         <div class="tarea-info">
-                            <span class="materia-tag">Diseño de Interfaces</span>
-                            <strong>Crear prototipos en Figma para el login</strong>
-                            <small>
-                                <i class="bi bi-calendar3"></i>
-                                Entrega: 02/10/2026
-                            </small>
-                        </div>
-                        <div class="tarea-acciones">
-                            <button class="btn-estado btn-completar" onclick="cambiarEstadoTarea(this)">
-                                <i class="bi bi-check2"></i>
-                                Marcar completada
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Tarea 2 -->
-                    <div class="tarea-item" data-estado="pendiente">
-                        <div class="tarea-info">
-                            <span class="materia-tag">Programación POO</span>
-                            <strong>Terminar diagrama de clases UML</strong>
-                            <small>
-                                <i class="bi bi-calendar3"></i>
-                                Entrega: 30/09/2026
-                            </small>
-                        </div>
-                        <div class="tarea-acciones">
-                            <button class="btn-estado btn-completar" onclick="cambiarEstadoTarea(this)">
-                                <i class="bi bi-check2"></i>
-                                Marcar completada
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Tarea 3 -->
-                    <div class="tarea-item completada" data-estado="completada">
-                        <div class="tarea-info">
-                            <span class="materia-tag">Bases de Datos</span>
-                            <strong>Migrar tablas e integrar procedimientos en MySQL</strong>
-                            <small>
-                                <i class="bi bi-check2-circle"></i>
-                                Completada el: 22/09/2026
-                            </small>
-                        </div>
-                        <div class="tarea-acciones">
-                            <button class="btn-estado btn-deshacer" onclick="cambiarEstadoTarea(this)">
-                                <i class="bi bi-arrow-counterclockwise"></i>
-                                Deshacer
-                            </button>
+                            <span class="materia-tag">Sin tareas</span>
+                            <strong>Aún no has registrado tareas</strong>
+                            <small>Haz clic en Agregar nueva tarea para comenzar.</small>
                         </div>
                     </div>
                 @endforelse
             </div>
-            <!-- Estado vacío cuando no hay coincidencias -->
+
             <div class="estado-vacio" id="estadoVacio" style="display: none;">
                 <i class="bi bi-search"></i>
                 <p>No se encontraron tareas que coincidan con la búsqueda o filtro.</p>
             </div>
-            <!-- Pie de la tarjeta -->
-            <div class="pie-tarjeta">
+
+            <div class="pie-tarjeta mt-4">
                 <a href="{{ route('tareas.create') }}" class="btn-rosa text-decoration-none d-inline-block">
                     <i class="bi bi-plus-lg"></i>
                     Agregar nueva tarea

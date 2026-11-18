@@ -118,29 +118,30 @@
                 </button>
             </div>
         </section>
-        <section class="seccion-secundaria">
+       <section class="seccion-secundaria">
             <div class="tarjeta">
                 <h2 class="subtitulo">Logros</h2>
                 <ul class="lista-logros">
-                    <li>Primera tarea completada</li>
-                    <li>Racha de 7 tareas</li>
-                    <li>10 tareas completadas</li>
-                    <li>Mascota nivel 5</li>
+                    @forelse($datosMascota['logros'] ?? [] as $logro)
+                        <li><i class="bi bi-trophy-fill text-warning me-2"></i>{{ $logro }}</li>
+                    @empty
+                        <li>Completa tu primera tarea para desbloquear logros.</li>
+                    @endforelse
                 </ul>
             </div>
-            <div class="tarjeta">
+            <div class="tarjeta d-flex flex-column justify-content-center">
                 <h2 class="subtitulo">Resumen</h2>
-                <div class="resumen">
+                <div class="resumen my-auto">
                     <div class="dato-extra">
-                        <span class="dato-valor">12</span>
+                        <span class="dato-valor">{{ $datosMascota['completadas'] ?? 0 }}</span>
                         <span class="dato-etiqueta">Tareas completadas</span>
                     </div>
                     <div class="dato-extra">
-                        <span class="dato-valor">7</span>
+                        <span class="dato-valor">{{ $datosMascota['racha'] ?? 0 }}</span>
                         <span class="dato-etiqueta">Tareas consecutivas</span>
                     </div>
                     <div class="dato-extra">
-                        <span class="dato-valor">4</span>
+                        <span class="dato-valor">{{ count($datosMascota['logros'] ?? []) }}</span>
                         <span class="dato-etiqueta">Logros</span>
                     </div>
                 </div>

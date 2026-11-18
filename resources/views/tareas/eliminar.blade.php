@@ -22,58 +22,22 @@
                 @forelse($tareas ?? [] as $tarea)
                     <div class="tarea-item">
                         <div class="tarea-info">
-                            <h2 class="tarea-titulo">{{ $tarea->materia }} - {{ $tarea->tarea }}</h2>
-                            <p class="tarea-descripcion">{{ $tarea->descripcion }}</p>
+                            <h2 class="tarea-titulo">{{ $tarea->materia }} - {{ $tarea->titulo }}</h2>
+                            <p class="tarea-descripcion">{{ $tarea->descripcion ?? 'Sin descripción' }}</p>
                         </div>
-                        <form action="{{ route('tareas.destroy', $tarea) }}" method="POST"
-                            id="form-eliminar-{{ $tarea->id }}">
+                        <form action="{{ route('tareas.destroy', $tarea) }}" method="POST" id="form-eliminar-{{ $tarea->id }}">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="id_tarea" value="{{ $tarea->id }}" />
-                            <button type="button" class="btn-eliminar" data-bs-toggle="modal"
-                                data-bs-target="#confirmarEliminacion"
-                                data-formulario="form-eliminar-{{ $tarea->id }}">Eliminar</button>
+                            <button type="button" class="btn-eliminar" data-bs-toggle="modal" data-bs-target="#confirmarEliminacion" data-formulario="form-eliminar-{{ $tarea->id }}">Eliminar</button>
                         </form>
                     </div>
                 @empty
                     <div class="tarea-item">
                         <div class="tarea-info">
-                            <h2 class="tarea-titulo">[Nombre de la Materia]</h2>
-                            <p class="tarea-descripcion">[Descripción de la tarea]</p>
+                            <h2 class="tarea-titulo">No hay tareas registradas</h2>
+                            <p class="tarea-descripcion">Agrega una tarea primero para poder administrarla aquí.</p>
                         </div>
-                        <form action="#" method="post" id="form-eliminar-1">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id_tarea" value="1" />
-                            <button type="button" class="btn-eliminar" data-bs-toggle="modal"
-                                data-bs-target="#confirmarEliminacion" data-formulario="form-eliminar-1">Eliminar</button>
-                        </form>
-                    </div>
-                    <div class="tarea-item">
-                        <div class="tarea-info">
-                            <h2 class="tarea-titulo">[Nombre de la Materia]</h2>
-                            <p class="tarea-descripcion">[Descripción de la tarea]</p>
-                        </div>
-                        <form action="#" method="post" id="form-eliminar-2">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id_tarea" value="2" />
-                            <button type="button" class="btn-eliminar" data-bs-toggle="modal"
-                                data-bs-target="#confirmarEliminacion" data-formulario="form-eliminar-2">Eliminar</button>
-                        </form>
-                    </div>
-                    <div class="tarea-item">
-                        <div class="tarea-info">
-                            <h2 class="tarea-titulo">[Nombre de la Materia]</h2>
-                            <p class="tarea-descripcion">[Descripción de la tarea]</p>
-                        </div>
-                        <form action="#" method="post" id="form-eliminar-3">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id_tarea" value="3" />
-                            <button type="button" class="btn-eliminar" data-bs-toggle="modal"
-                                data-bs-target="#confirmarEliminacion" data-formulario="form-eliminar-3">Eliminar</button>
-                        </form>
                     </div>
                 @endforelse
             </div>
@@ -83,7 +47,8 @@
                     <div class="campo-filtro">
                         <label for="filtroMateria" class="form-label"> Materia </label>
                         <input type="text" class="form-control" id="filtroMateria" name="materia"
-                            value="{{ request('materia') }}" placeholder="Escribe el nombre de la materia..." />
+                            value="{{ request('materia') }}"
+                            placeholder="Escribe el nombre de la materia..." />
                     </div>
                     <button type="submit" class="btn-buscar">Buscar</button>
                 </form>
@@ -91,8 +56,7 @@
         </section>
     </main>
 
-    <div class="modal fade" id="confirmarEliminacion" tabindex="-1" aria-labelledby="tituloConfirmacion"
-        aria-hidden="true">
+    <div class="modal fade" id="confirmarEliminacion" tabindex="-1" aria-labelledby="tituloConfirmacion" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
