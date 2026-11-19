@@ -16,6 +16,20 @@
             </h1>
             <p class="site-lede">
                 Organiza tus tareas, mantén tu racha y cuida de tu mascota virtual.
+                @auth
+                <div class="mt-3 d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill"
+                    style="background: #eef2ff; border: 1.5px solid #8ea8f8; color: #1e1e50; font-weight: 600; animation: fadeInSaludo 0.6s ease;">
+                    <span
+                        style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; display: inline-block; box-shadow: 0 0 8px #22c55e;"></span>
+                    ¡Hola, {{ Auth::user()->name }}! Bienvenido a tu espacio de estudio.
+                </div>
+            @endauth
+
+            @if (session('auth_welcome'))
+                <div class="alert alert-success border-0 shadow-sm mt-3 mb-0 rounded-4" role="alert">
+                    <i class="bi bi-stars me-1"></i> {{ session('auth_welcome') }}
+                </div>
+            @endif
             </p>
         </section>
         <section class="dashboard">

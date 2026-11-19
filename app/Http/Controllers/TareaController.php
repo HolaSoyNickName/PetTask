@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class TareaController extends Controller
 {
-    public function index()
+   public function index()
     {
-        $tareas = Tarea::latest()->get();
+        $tareas = Auth::check()
+            ? Tarea::where('user_id', Auth::id())->latest()->get()
+            : Tarea::latest()->get();
+
         return view('tareas.index', compact('tareas'));
     }
 
@@ -51,7 +54,10 @@ class TareaController extends Controller
 
 public function edit(Tarea $tarea)
     {
-        $tareas = Tarea::orderBy('id', 'asc')->get();
+        $tareas = Auth::check()
+            ? Tarea::where('user_id', Auth::id())->orderBy('id', 'asc')->get()
+            : Tarea::orderBy('id', 'asc')->get();
+
         return view('tareas.edit', compact('tarea', 'tareas'));
     }
 

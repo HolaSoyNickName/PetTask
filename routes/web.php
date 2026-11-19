@@ -4,6 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareaController;
 use App\Http\Controllers\PetTaskController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AuthController;
+
+// Autenticación
+Route::get('/iniciar-sesion', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/iniciar-sesion', [AuthController::class, 'login'])->name('login.post');
+Route::get('/registro', [AuthController::class, 'showRegistro'])->name('registro');
+Route::post('/registro', [AuthController::class, 'register'])->name('registro.post');
+Route::post('/cerrar-sesion', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', [PageController::class, 'inicio'])->name('inicio');
 Route::get('/nosotros', [PageController::class, 'nosotros'])->name('nosotros');

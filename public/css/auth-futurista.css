@@ -1,0 +1,439 @@
+.auth-stage {
+    position: relative;
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    overflow: hidden;
+    background: radial-gradient(circle at 15% 20%, rgba(130, 148, 242, 0.22), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(255, 107, 129, 0.18), transparent 45%),
+        #eef2fa;
+}
+
+/* Orbes ambientales sutiles */
+.auth-stage::before,
+.auth-stage::after {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    filter: blur(75px);
+    opacity: 0.45;
+    z-index: 0;
+    animation: flotarOrbe 9s ease-in-out infinite alternate;
+}
+
+.auth-stage::before {
+    background: #8294f2;
+    top: -80px;
+    left: -80px;
+}
+
+.auth-stage::after {
+    background: #ff6b81;
+    bottom: -80px;
+    right: -80px;
+    animation-delay: -4s;
+}
+
+/* Marco con borde luminoso giratorio */
+.auth-card-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    padding: 2px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(130, 148, 242, 0.7), rgba(255, 107, 129, 0.55), rgba(30, 30, 80, 0.35));
+    background-size: 250% 250%;
+    box-shadow: 0 22px 55px rgba(30, 30, 80, 0.12);
+    animation: entradaTarjeta 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+        bordeFuturista 6s ease infinite;
+}
+
+.auth-card-wrapper.has-error {
+    animation: sacudirError 0.45s ease;
+}
+
+.auth-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 38px 34px;
+    overflow: hidden;
+}
+
+.auth-titulo {
+    text-align: center;
+    color: #1e1e50;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 26px;
+    letter-spacing: -0.02em;
+}
+
+/* Campos con aparición escalonada */
+.auth-campo {
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: aparecerCampo 0.5s ease forwards;
+}
+
+.auth-campo:nth-of-type(1) {
+    animation-delay: 0.12s;
+}
+
+.auth-campo:nth-of-type(2) {
+    animation-delay: 0.22s;
+}
+
+.auth-campo:nth-of-type(3) {
+    animation-delay: 0.32s;
+}
+
+.auth-campo label {
+    display: block;
+    color: #1e1e50;
+    font-weight: 500;
+    margin-bottom: 7px;
+    font-size: 0.95rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.6px solid #8ea8f8;
+    border-radius: 13px;
+    font-size: 0.98rem;
+    color: #1e1e50;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.auth-input:focus {
+    border-color: #6378f0;
+    box-shadow: 0 0 0 4px rgba(130, 148, 242, 0.24), 0 6px 18px rgba(130, 148, 242, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Botón futurista con destello */
+.auth-btn {
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #ff6b81 0%, #ff5272 100%);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.auth-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+    transform: skewX(-22deg);
+    transition: left 0.6s ease;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255, 107, 129, 0.38);
+}
+
+.auth-btn:hover::after {
+    left: 140%;
+}
+
+.auth-pie {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 0.94rem;
+    color: #3a3f5c;
+}
+
+.auth-pie a {
+    color: #4f7cff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-pie a:hover {
+    text-decoration: underline;
+}
+
+.auth-error {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #e63956;
+    font-weight: 500;
+}
+
+/* Overlay HUD futurista al enviar el formulario */
+.auth-hud {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 22, 58, 0.92);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    color: #ffffff;
+    text-align: center;
+    padding: 24px;
+}
+
+.auth-hud.activo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.hud-orbita {
+    position: relative;
+    width: 82px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hud-anillo {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #8ea8f8;
+    border-right-color: #ff6b81;
+    animation: girarOrbita 1s linear infinite;
+}
+
+.hud-anillo-interno {
+    position: absolute;
+    inset: 11px;
+    border-radius: 50%;
+    border: 2.5px solid transparent;
+    border-bottom-color: #ffffff;
+    border-left-color: #8294f2;
+    animation: girarOrbita 0.75s linear infinite reverse;
+}
+
+.hud-icono {
+    font-size: 1.7rem;
+    color: #ffffff;
+    animation: pulsoIcono 1.1s ease-in-out infinite;
+}
+
+.hud-texto {
+    font-size: 0.98rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #dce4ff;
+}
+
+.hud-barra {
+    width: 72%;
+    height: 4px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.16);
+    overflow: hidden;
+}
+
+.hud-barra-progreso {
+    width: 0%;
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #8ea8f8, #ff6b81);
+    transition: width 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auth-hud.activo .hud-barra-progreso {
+    width: 100%;
+}
+
+@keyframes entradaTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes bordeFuturista {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes aparecerCampo {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotarOrbe {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(28px, 22px) scale(1.1);
+    }
+}
+
+@keyframes girarOrbita {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulsoIcono {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+@keyframes sacudirError {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-7px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(7px);
+    }
+}
+
+/* Contenedor para el botón de mostrar/ocultar contraseña */
+.auth-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.auth-input--password {
+    padding-right: 48px;
+}
+
+.auth-toggle-pass {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #6378f0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.auth-toggle-pass:hover {
+    background: rgba(130, 148, 242, 0.16);
+    color: #1e1e50;
+}
+
+.auth-toggle-pass:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+/* Mejora 1: Medidor de seguridad y estado de coincidencia */
+.pass-strength {
+    margin-top: 8px;
+}
+
+.pass-strength__track {
+    width: 100%;
+    height: 5px;
+    border-radius: 99px;
+    background: #e2e8f8;
+    overflow: hidden;
+}
+
+.pass-strength__fill {
+    width: 0%;
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pass-strength__label {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #5c6484;
+}
+
+.pass-match {
+    margin-top: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 20px;
+}
+
+.pass-match--ok {
+    color: #16a34a;
+}
+
+.pass-match--error {
+    color: #e63956;
+}

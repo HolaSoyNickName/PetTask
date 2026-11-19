@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Tarea;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
+    private function consultaTareas()
+    {
+        return Auth::check()
+            ? Tarea::where('user_id', Auth::id())
+            : Tarea::query();
+    }
+
     public function inicio() { return view('pages.inicio'); }
     public function nosotros() { return view('pages.nosotros'); }
     public function servicios() { return view('pages.servicios'); }
@@ -16,17 +24,18 @@ class PageController extends Controller
 
     public function resumen()
     {
-        $tareas = Tarea::all();
+        $tareas = $this->consultaTareas()->get();
         $pendientes = $tareas->filter(fn($t) => strtolower($t->estado ?? 'pendiente') !== 'completada')->count();
         $completadas = $tareas->filter(fn($t) => strtolower($t->estado ?? '') === 'completada')->count();
+        $nivel = max(1, intdiv($completadas, 2) + 1);
 
         $resumen = [
             'total_tareas' => $tareas->count(),
             'tareas_pendientes' => $pendientes,
             'tareas_completadas' => $completadas,
             'nombre_mascota' => 'Firulais',
-            'estado_mascota' => 'Feliz',
-            'nivel_mascota' => 5,
+            'estado_mascota' => $completadas > 0 ? 'Feliz' : 'Esperando tareas',
+            'nivel_mascota' => $nivel,
             'racha_actual' => $completadas,
             'mejor_racha' => max($completadas, 7),
         ];
@@ -36,9 +45,9 @@ class PageController extends Controller
 
     public function actualizarTarea(Request $request)
     {
-        $tareas = Tarea::orderBy('id', 'asc')->get();
+        $tareas = $this->consultaTareas()->orderBy('id', 'asc')->get();
         $tarea = $request->filled('tarea_id')
-            ? Tarea::find($request->tarea_id)
+            ? $this->consultaTareas()->find($request->tarea_id)
             : $tareas->first();
 
         return view('tareas.edit', compact('tareas', 'tarea'));
@@ -46,22 +55,25 @@ class PageController extends Controller
 
     public function eliminarTareas(Request $request)
     {
-        $tareas = Tarea::when($request->filled('materia'), function ($query) use ($request) {
-            $query->where('materia', 'ilike', '%' . $request->materia . '%');
-        })->latest()->get();
+        $tareas = $this->consultaTareas()
+            ->when($request->filled('materia'), function ($query) use ($request) {
+                $query->whereRaw('LOWER(materia) LIKE ?', ['%' . strtolower($request->materia) . '%']);
+            })
+            ->latest()
+            ->get();
 
         return view('tareas.eliminar', compact('tareas'));
     }
 
     public function recordatorios()
     {
-        $recordatorios = Tarea::latest()->get();
+        $recordatorios = $this->consultaTareas()->latest()->get();
         return view('tareas.recordatorios', compact('recordatorios'));
     }
 
     public function interaccion()
     {
-        $tareas = Tarea::all();
+        $tareas = $this->consultaTareas()->get();
         $completadas = $tareas->filter(fn($t) => strtolower($t->estado ?? '') === 'completada')->count();
         $racha = $completadas;
         $nivel = max(1, intdiv($completadas, 2) + 1);
@@ -93,7 +105,7 @@ class PageController extends Controller
 
     public function racha()
     {
-        $completadas = Tarea::all()->filter(fn($t) => strtolower($t->estado ?? '') === 'completada')->count();
+        $completadas = $this->consultaTareas()->get()->filter(fn($t) => strtolower($t->estado ?? '') === 'completada')->count();
         $rachaActual = $completadas;
         $mejorRacha = max($completadas, 7);
         return view('mascota.racha', compact('rachaActual', 'mejorRacha'));
