@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Questrial&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/perfil.css') }}" />
     <!-- CSS específico de cada vista -->
     @yield('styles')
 </head>
@@ -38,19 +39,63 @@
                 <a href="{{ route('contacto') }}"
                     @if (request()->routeIs('contacto')) aria-current="page" @endif>Contacto</a>
                 @auth
-                    <div class="d-flex align-items-center gap-2 ms-lg-3">
-                        <span class="badge rounded-pill px-3 py-2 d-inline-flex align-items-center gap-2"
-                            style="background: rgba(130, 148, 242, 0.25); border: 1px solid #8ea8f8; color: #ffffff; font-size: 0.9rem;">
-                            <i class="bi bi-person-circle"></i>
-                            {{ Auth::user()->name }}
-                        </span>
-                        <form action="{{ route('logout') }}" method="POST" class="d-inline m-0">
-                            @csrf
-                            <button type="submit" class="btn btn-sm rounded-pill px-3"
-                                style="background-color: #ff6b81; color: #ffffff; border: none; font-weight: 600;">
-                                Salir
-                            </button>
-                        </form>
+                    <div class="dropdown ms-lg-3">
+                        <button class="user-menu-btn dropdown-toggle" type="button" id="menuUsuario"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            @if (Auth::user()->avatar)
+                                <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Foto de perfil"
+                                    class="user-avatar-nav" />
+                            @else
+                                <span class="user-avatar-nav">
+                                    {{ strtoupper(mb_substr(Auth::user()->name, 0, 1)) }}
+                                </span>
+                            @endif
+                            <span>{{ Auth::user()->name }}</span>
+                            <i class="bi bi-chevron-down small"></i>
+                        </button>
+
+                        <div class="dropdown-menu dropdown-menu-end user-dropdown-menu" aria-labelledby="menuUsuario">
+                            <div class="user-dropdown-header">
+                                @if (Auth::user()->avatar)
+                                    <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Foto de perfil"
+                                        class="user-dropdown-avatar" />
+                                @else
+                                    <div class="user-dropdown-avatar">
+                                        {{ strtoupper(mb_substr(Auth::user()->name, 0, 1)) }}
+                                    </div>
+                                @endif
+                                <div class="overflow-hidden">
+                                    <div class="user-dropdown-name text-truncate">{{ Auth::user()->name }}</div>
+                                    <div class="user-dropdown-pet text-truncate">
+                                        <i class="bi bi-heart-fill text-danger me-1"></i>
+                                        Mascota: {{ Auth::user()->mascota_nombre ?? 'Firulais' }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="{{ route('perfil.edit') }}" class="user-dropdown-item">
+                                <span class="user-dropdown-icon"><i class="bi bi-person-gear"></i></span>
+                                <span>Configuración y perfil</span>
+                            </a>
+                            <a href="{{ route('tareas.index') }}" class="user-dropdown-item">
+                                <span class="user-dropdown-icon"><i class="bi bi-list-check"></i></span>
+                                <span>Mis tareas</span>
+                            </a>
+                            <a href="{{ route('mascota.interaccion') }}" class="user-dropdown-item">
+                                <span class="user-dropdown-icon"><i class="bi bi-stars"></i></span>
+                                <span>Mi mascota virtual</span>
+                            </a>
+
+                            <hr class="my-2 opacity-25" />
+
+                            <form action="{{ route('logout') }}" method="POST" class="m-0">
+                                @csrf
+                                <button type="submit" class="user-dropdown-item user-dropdown-item--danger">
+                                    <span class="user-dropdown-icon"><i class="bi bi-box-arrow-right"></i></span>
+                                    <span>Cerrar sesión</span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 @else
                     <a class="pet-nav__login" href="{{ route('login') }}">Iniciar sesión</a>

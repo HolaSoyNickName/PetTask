@@ -33,7 +33,7 @@ class PageController extends Controller
             'total_tareas' => $tareas->count(),
             'tareas_pendientes' => $pendientes,
             'tareas_completadas' => $completadas,
-            'nombre_mascota' => 'Firulais',
+            'nombre_mascota' => Auth::user()?->mascota_nombre ?? 'Firulais',
             'estado_mascota' => $completadas > 0 ? 'Feliz' : 'Esperando tareas',
             'nivel_mascota' => $nivel,
             'racha_actual' => $completadas,
@@ -87,7 +87,7 @@ class PageController extends Controller
         if ($nivel >= 5) $logros[] = 'Mascota nivel 5';
 
         $datosMascota = [
-            'nombre' => 'Firulais',
+            'nombre' => Auth::user()?->mascota_nombre ?? 'Firulais',
             'estado' => $completadas > 0 ? 'Feliz' : 'Esperando tareas',
             'nivel' => $nivel,
             'energia' => min(100, 60 + ($completadas * 10)),

@@ -5,8 +5,15 @@ use App\Http\Controllers\TareaController;
 use App\Http\Controllers\PetTaskController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 // Autenticación
+Route::middleware('auth')->group(function () {
+    Route::get('/perfil', [ProfileController::class, 'edit'])->name('perfil.edit');
+    Route::put('/perfil', [ProfileController::class, 'update'])->name('perfil.update');
+    Route::put('/perfil/password', [ProfileController::class, 'updatePassword'])->name('perfil.password');
+});
+
 Route::get('/iniciar-sesion', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/iniciar-sesion', [AuthController::class, 'login'])->name('login.post');
 Route::get('/registro', [AuthController::class, 'showRegistro'])->name('registro');
